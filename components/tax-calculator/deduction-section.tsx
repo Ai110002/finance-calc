@@ -181,8 +181,11 @@ export function DeductionSection({
                 <span className="text-sm font-semibold text-green-800">2026 新制：租金特別扣除額</span>
                 <span className="rounded-full bg-green-200 px-2 py-0.5 text-xs font-bold text-green-800">NEW</span>
               </div>
-              <p className="mt-0.5 text-xs text-green-600">租屋族不用列舉也能扣，上限 18 萬</p>
-              <p className="mt-0.5 text-xs text-gray-500">⚠️ 適用稅率 20% 以上、股利選 28% 分離課稅、基本所得額超過 750 萬者不適用</p>
+              <p className="mt-0.5 text-xs text-green-600">租屋族不用列舉也能扣，每戶每年上限 18 萬</p>
+              <p className="mt-1 text-xs text-gray-500 leading-relaxed">
+                適用條件：國內無自有房屋、供自住使用、非供營業或執行業務。
+                <br />排富限制：適用稅率 20% 以上、股利選 28% 分離課稅、基本所得額超 750 萬者不適用。
+              </p>
             </div>
           </label>
           {claimRentalDeduction && (

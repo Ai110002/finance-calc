@@ -53,7 +53,8 @@ export const PROFESSION_RATES: ProfessionRate[] = [
   { code: "med-pharmacy", name: "藥師", rate: 0.20, category: "醫療" },
   { code: "med-vet", name: "獸醫師", rate: 0.32, category: "醫療" },
   { code: "med-nurse-midwife", name: "助產士", rate: 0.31, category: "醫療" },
-  { code: "med-physio", name: "物理治療師", rate: 0.43, category: "醫療" },
+  { code: "med-physio", name: "物理治療師（非健保收入）", rate: 0.43, category: "醫療" },
+  { code: "med-physio-nhi", name: "物理治療師（健保收入）", rate: 0.78, category: "醫療" },
 
   // 法律/會計
   { code: "law-lawyer", name: "律師", rate: 0.30, category: "法律會計" },
