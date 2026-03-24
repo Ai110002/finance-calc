@@ -13,6 +13,7 @@ import { StockRow } from "@/components/margin-ratio/stock-row";
 import { RatioResult } from "@/components/margin-ratio/ratio-result";
 import { HistoricalPanel } from "@/components/liquidation-sim/historical-panel";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const ProjectionChart = dynamic(
   () => import("@/components/planner/projection-chart"),
@@ -410,6 +411,20 @@ export default function Home() {
           <div className="rounded-xl bg-gray-50 p-6 text-center text-sm text-gray-400">請先在上方「⑤ 融資維持率」輸入持股資料</div>
         )}
       </Section>
+
+      {/* 報稅計算器入口 */}
+      <div className="rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-purple-50 p-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="text-sm font-semibold text-blue-700">自由工作者報稅計算器</div>
+            <p className="mt-0.5 text-xs text-gray-500">9A/9B 費用率 · 二代健保 · 省稅建議</p>
+          </div>
+          <Link href="/tax-calculator"
+            className="shrink-0 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
+            前往試算
+          </Link>
+        </div>
+      </div>
 
       <div className="rounded-xl bg-gray-100 p-4 text-center text-xs text-gray-500">
         本工具僅供個人財務規劃參考，<strong>不構成任何投資建議</strong>。年化報酬率為歷史回測數據，不保證未來。投資有風險，請自行評估。
