@@ -60,7 +60,7 @@ export default function TaxCalculatorPage() {
             自由工作者報稅計算器
           </h1>
           <p className="mt-2 text-sm text-blue-100">
-            2026 年度（114 年）所得稅試算 · 9A/9B 費用率 · 二代健保
+            2025 年度所得 · 2026 年 5 月申報
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {["40+ 職業費率", "標準vs列舉比較", "省稅建議"].map(tag => (
