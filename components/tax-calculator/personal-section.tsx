@@ -127,7 +127,7 @@ export function PersonalSection({
               className="h-4.5 w-4.5 rounded accent-green-600" />
             <div>
               <span className="text-sm font-medium text-gray-700">本人身心障礙</span>
-              <p className="text-xs text-gray-400">可扣除 207,000</p>
+              <p className="text-xs text-gray-400">可扣除 218,000</p>
             </div>
           </label>
           {maritalStatus === "married" && (
@@ -136,7 +136,7 @@ export function PersonalSection({
                 className="h-4.5 w-4.5 rounded accent-green-600" />
               <div>
                 <span className="text-sm font-medium text-gray-700">配偶身心障礙</span>
-                <p className="text-xs text-gray-400">可扣除 207,000</p>
+                <p className="text-xs text-gray-400">可扣除 218,000</p>
               </div>
             </label>
           )}

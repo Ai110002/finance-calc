@@ -19,7 +19,7 @@ export const STANDARD_DEDUCTION_MARRIED = 262_000;
 
 /** 特別扣除額上限 */
 export const SALARY_SPECIAL_DEDUCTION = 218_000;
-export const DISABILITY_DEDUCTION = 207_000;
+export const DISABILITY_DEDUCTION = 218_000;
 export const EDUCATION_DEDUCTION = 25_000; // 每人
 export const PRESCHOOL_DEDUCTION_FIRST = 150_000; // 第 1 個
 export const PRESCHOOL_DEDUCTION_EXTRA = 225_000; // 第 2 個起
