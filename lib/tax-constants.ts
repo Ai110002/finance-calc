@@ -1,29 +1,29 @@
 import type { TaxBracket, ProfessionRate } from "./tax-types";
 
-/** 2026 年度（114 年度）綜合所得稅稅率級距 */
+/** 114 年度綜合所得稅稅率級距（2026 年 5 月申報） */
 export const TAX_BRACKETS: TaxBracket[] = [
-  { min: 0, max: 610_000, rate: 0.05, progressiveDifference: 0 },
-  { min: 610_001, max: 1_380_000, rate: 0.12, progressiveDifference: 42_700 },
-  { min: 1_380_001, max: 2_770_000, rate: 0.20, progressiveDifference: 153_100 },
-  { min: 2_770_001, max: 5_190_000, rate: 0.30, progressiveDifference: 430_100 },
-  { min: 5_190_001, max: Infinity, rate: 0.40, progressiveDifference: 949_100 },
+  { min: 0, max: 590_000, rate: 0.05, progressiveDifference: 0 },
+  { min: 590_001, max: 1_330_000, rate: 0.12, progressiveDifference: 41_300 },
+  { min: 1_330_001, max: 2_660_000, rate: 0.20, progressiveDifference: 147_700 },
+  { min: 2_660_001, max: 4_980_000, rate: 0.30, progressiveDifference: 413_700 },
+  { min: 4_980_001, max: Infinity, rate: 0.40, progressiveDifference: 911_700 },
 ];
 
 /** 免稅額 */
-export const EXEMPTION_AMOUNT = 101_000;
-export const EXEMPTION_SENIOR = 151_500; // 70 歲以上
+export const EXEMPTION_AMOUNT = 97_000;
+export const EXEMPTION_SENIOR = 145_500; // 70 歲以上
 
 /** 標準扣除額 */
-export const STANDARD_DEDUCTION_SINGLE = 136_000;
-export const STANDARD_DEDUCTION_MARRIED = 272_000;
+export const STANDARD_DEDUCTION_SINGLE = 131_000;
+export const STANDARD_DEDUCTION_MARRIED = 262_000;
 
 /** 特別扣除額上限 */
-export const SALARY_SPECIAL_DEDUCTION = 227_000;
-export const DISABILITY_DEDUCTION = 218_000;
+export const SALARY_SPECIAL_DEDUCTION = 218_000;
+export const DISABILITY_DEDUCTION = 207_000;
 export const EDUCATION_DEDUCTION = 25_000; // 每人
 export const PRESCHOOL_DEDUCTION_FIRST = 150_000; // 第 1 個
 export const PRESCHOOL_DEDUCTION_EXTRA = 225_000; // 第 2 個起
-export const RENTAL_SPECIAL_DEDUCTION = 180_000; // 2026 新制
+export const RENTAL_SPECIAL_DEDUCTION = 180_000; // 114 年度新制
 
 /** 列舉扣除額上限 */
 export const INSURANCE_DEDUCTION_CAP = 24_000; // 每人
@@ -31,11 +31,12 @@ export const RENTAL_EXPENSE_CAP = 180_000;
 export const MORTGAGE_INTEREST_CAP = 300_000;
 
 /** 基本生活費 */
-export const BASIC_LIVING_EXPENSE = 213_000; // 每人
+export const BASIC_LIVING_EXPENSE = 210_000; // 每人
 
 /** 二代健保補充保費 */
 export const NHI_SUPPLEMENTARY_RATE = 0.0211;
 export const NHI_THRESHOLD = 20_000; // 單筆門檻
+export const NHI_SINGLE_CAP = 10_000_000; // 單次給付上限
 
 /** 9B 稿費/版稅/作曲/編劇/漫畫 */
 export const INCOME_9B_EXEMPTION = 180_000;
@@ -43,7 +44,7 @@ export const INCOME_9B_EXPENSE_RATE = 0.30;
 
 /** 50 執行業務所得（非 9A） */
 
-/** 9A 執行業務所得 — 職業費率表 */
+/** 9A 執行業務所得 — 職業費率表（依財政部 113 年度費用標準） */
 export const PROFESSION_RATES: ProfessionRate[] = [
   // 醫療
   { code: "med-western", name: "西醫師", rate: 0.78, category: "醫療" },
@@ -52,12 +53,12 @@ export const PROFESSION_RATES: ProfessionRate[] = [
   { code: "med-pharmacy", name: "藥師", rate: 0.20, category: "醫療" },
   { code: "med-vet", name: "獸醫師", rate: 0.32, category: "醫療" },
   { code: "med-nurse-midwife", name: "助產士", rate: 0.31, category: "醫療" },
-  { code: "med-physio", name: "物理治療師", rate: 0.18, category: "醫療" },
+  { code: "med-physio", name: "物理治療師", rate: 0.43, category: "醫療" },
 
   // 法律/會計
   { code: "law-lawyer", name: "律師", rate: 0.30, category: "法律會計" },
-  { code: "law-accountant", name: "會計師", rate: 0.30, category: "法律會計" },
-  { code: "law-bookkeeper", name: "記帳士", rate: 0.30, category: "法律會計" },
+  { code: "law-accountant", name: "會計師", rate: 0.35, category: "法律會計" },
+  { code: "law-bookkeeper", name: "記帳士", rate: 0.35, category: "法律會計" },
   { code: "law-patent", name: "專利師", rate: 0.30, category: "法律會計" },
   { code: "law-notary", name: "公證人", rate: 0.30, category: "法律會計" },
 
@@ -69,22 +70,22 @@ export const PROFESSION_RATES: ProfessionRate[] = [
   { code: "eng-programmer", name: "程式設計師", rate: 0.20, category: "工程技術" },
 
   // 文化/創意
-  { code: "art-performer", name: "表演人（演員、歌手）", rate: 0.45, category: "文化創意" },
-  { code: "art-writer", name: "作家（稿費 9B）", rate: 0.30, category: "文化創意" },
+  { code: "art-performer", name: "表演人（演員、歌手、模特兒）", rate: 0.45, category: "文化創意" },
+  { code: "art-youtuber", name: "YouTuber／網紅（內容創作者）", rate: 0.45, category: "文化創意" },
+  { code: "art-writer", name: "作家（稿費請用 9B）", rate: 0.30, category: "文化創意" },
   { code: "art-designer", name: "設計師", rate: 0.35, category: "文化創意" },
   { code: "art-photographer", name: "攝影師", rate: 0.35, category: "文化創意" },
   { code: "art-translator", name: "翻譯", rate: 0.20, category: "文化創意" },
-  { code: "art-makeup", name: "化妝師/造型師", rate: 0.35, category: "文化創意" },
-  { code: "art-music-teacher", name: "音樂老師/鋼琴老師", rate: 0.20, category: "文化創意" },
+  { code: "art-makeup", name: "化妝師／造型師", rate: 0.35, category: "文化創意" },
+  { code: "art-music-teacher", name: "音樂老師／鋼琴老師", rate: 0.20, category: "文化創意" },
 
   // 商業/顧問
   { code: "biz-broker-insurance", name: "保險經紀人", rate: 0.26, category: "商業顧問" },
   { code: "biz-agent-insurance", name: "保險代理人", rate: 0.26, category: "商業顧問" },
   { code: "biz-realtor", name: "不動產經紀人", rate: 0.26, category: "商業顧問" },
   { code: "biz-consultant", name: "管理顧問", rate: 0.25, category: "商業顧問" },
-  { code: "biz-instructor", name: "講師/補教老師", rate: 0.25, category: "商業顧問" },
+  { code: "biz-instructor", name: "講師／補教老師", rate: 0.25, category: "商業顧問" },
   { code: "biz-fitness", name: "健身教練", rate: 0.25, category: "商業顧問" },
-  { code: "biz-youtuber", name: "YouTuber/網紅", rate: 0.20, category: "商業顧問" },
 
   // 其他
   { code: "other-broker", name: "證券經紀人", rate: 0.20, category: "其他" },
@@ -119,3 +120,7 @@ export const INCOME_TYPE_LABELS: Record<string, string> = {
   dividend: "股利所得",
   other: "其他所得",
 };
+
+/** 租金特別扣除額排除條件 */
+export const RENTAL_DEDUCTION_EXCLUSION_RATE = 0.20; // 適用稅率 20% 以上不能用
+export const RENTAL_DEDUCTION_EXCLUSION_AMT = 7_500_000; // 基本所得額超過 750 萬不能用

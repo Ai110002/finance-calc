@@ -9,10 +9,12 @@ import {
   EDUCATION_DEDUCTION, PRESCHOOL_DEDUCTION_FIRST,
   PRESCHOOL_DEDUCTION_EXTRA, RENTAL_SPECIAL_DEDUCTION,
   BASIC_LIVING_EXPENSE, NHI_SUPPLEMENTARY_RATE, NHI_THRESHOLD,
+  NHI_SINGLE_CAP,
   INCOME_9B_EXEMPTION, INCOME_9B_EXPENSE_RATE,
   UNION_LABOR_INSURANCE_RATE, UNION_LABOR_SELF_RATIO,
   UNION_HEALTH_INSURANCE_RATE, UNION_HEALTH_SELF_RATIO,
   COMMON_INSURED_SALARIES,
+  RENTAL_DEDUCTION_EXCLUSION_RATE,
 } from "../tax-constants";
 
 /* ──────────────────── 各來源淨所得 ──────────────────── */
@@ -126,7 +128,8 @@ export function computeSpecialDeductions(input: TaxInput, incomeSources: IncomeS
     preschoolDeduction += i === 0 ? PRESCHOOL_DEDUCTION_FIRST : PRESCHOOL_DEDUCTION_EXTRA;
   });
 
-  // 租金特別扣除額（2026 新制）
+  // 租金特別扣除額（114 年度新制）
+  // 排除條件：適用稅率 20% 以上者不適用（在主計算中會再檢查）
   const rentalDeduction = input.claimRentalDeduction
     ? Math.min(input.rentalAmount, RENTAL_SPECIAL_DEDUCTION)
     : 0;
@@ -211,11 +214,14 @@ export function computeNHI(incomeSources: IncomeSource[]): NHIResult {
   let total = 0;
 
   for (const s of incomeSources) {
-    // 執行業務所得、稿費、租金、股利 — 單筆 ≥ 20,000 要扣
-    if (s.type === "salary") continue; // 薪資由雇主扣
+    // 薪資由雇主扣，不在這裡算
+    if (s.type === "salary") continue;
+    // 單筆給付未達 20,000 元門檻，不扣
     if (s.grossAmount < NHI_THRESHOLD) continue;
 
-    const premium = Math.round(s.grossAmount * NHI_SUPPLEMENTARY_RATE);
+    // 單次給付上限 1,000 萬
+    const taxableAmount = Math.min(s.grossAmount, NHI_SINGLE_CAP);
+    const premium = Math.round(taxableAmount * NHI_SUPPLEMENTARY_RATE);
     details.push({ source: s.label, amount: s.grossAmount, premium });
     total += premium;
   }
@@ -402,6 +408,14 @@ export function calculateTax(input: TaxInput): TaxResult {
     .reduce((sum, s) => sum + s.grossAmount, 0) / 12;
   const unionInsurance = computeUnionInsurance(freelancerMonthlyIncome);
 
+  // 租金特別扣除額排除條件檢查
+  let rentalDeductionWarning: string | null = null;
+  if (input.claimRentalDeduction && input.rentalAmount > 0) {
+    if (marginalRate >= RENTAL_DEDUCTION_EXCLUSION_RATE) {
+      rentalDeductionWarning = `注意：你的適用稅率為 ${(marginalRate * 100).toFixed(0)}%（≥ 20%），依規定可能無法適用租金特別扣除額。建議諮詢會計師確認。`;
+    }
+  }
+
   // 組裝結果（不含 tips）
   const partialResult: Omit<TaxResult, "tips"> = {
     incomeBySource,
@@ -418,6 +432,7 @@ export function calculateTax(input: TaxInput): TaxResult {
     specialDeductionTotal,
     basicLivingExpense: basicLiving,
     basicLivingDifference,
+    rentalDeductionWarning,
     taxableIncome,
     taxAmount,
     effectiveRate,

@@ -148,6 +148,9 @@ export interface TaxResult {
   marginalRate: number;
   bracketBreakdown: { bracket: string; amount: number; rate: number; tax: number }[];
 
+  /** 租金扣除額排除警告 */
+  rentalDeductionWarning: string | null;
+
   /** 二代健保 */
   nhiResult: NHIResult;
 

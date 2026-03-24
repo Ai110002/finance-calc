@@ -182,6 +182,7 @@ export function DeductionSection({
                 <span className="rounded-full bg-green-200 px-2 py-0.5 text-xs font-bold text-green-800">NEW</span>
               </div>
               <p className="mt-0.5 text-xs text-green-600">租屋族不用列舉也能扣，上限 18 萬</p>
+              <p className="mt-0.5 text-xs text-gray-500">⚠️ 適用稅率 20% 以上、股利選 28% 分離課稅、基本所得額超過 750 萬者不適用</p>
             </div>
           </label>
           {claimRentalDeduction && (
@@ -202,6 +203,14 @@ export function DeductionSection({
             </div>
           )}
         </div>
+
+        {/* 租金扣除排除警告 */}
+        {result.rentalDeductionWarning && (
+          <div className="mt-3 flex items-start gap-2.5 rounded-xl bg-red-50 px-4 py-3 ring-1 ring-red-200">
+            <span className="mt-0.5 text-sm">⚠️</span>
+            <p className="text-xs font-medium text-red-700">{result.rentalDeductionWarning}</p>
+          </div>
+        )}
 
         {/* 基本生活費差額 */}
         {result.basicLivingDifference > 0 && (
