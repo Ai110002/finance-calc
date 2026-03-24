@@ -139,7 +139,7 @@ export function IncomeSection({
                       <optgroup key={cat} label={cat}>
                         {profs.map(p => (
                           <option key={p.code} value={p.code}>
-                            {p.name}（{(p.rate * 100).toFixed(0)}%）
+                            {p.name}
                           </option>
                         ))}
                       </optgroup>
