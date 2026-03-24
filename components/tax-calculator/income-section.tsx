@@ -120,7 +120,7 @@ export function IncomeSection({
               {/* 9A 職業選擇 */}
               {source.type === "9A" && (
                 <div className="mt-3">
-                  <label className="text-xs font-medium text-gray-500">職業（自動帶入費用率）</label>
+                  <label className="text-xs font-medium text-gray-500">你的職業</label>
                   <select
                     value={source.professionCode ?? ""}
                     onChange={(e) => {
@@ -146,9 +146,9 @@ export function IncomeSection({
                     ))}
                   </select>
                   <div className="mt-2 flex items-center gap-2 rounded-lg bg-blue-50 px-3 py-1.5">
-                    <span className="text-xs text-blue-600">費用率 {((source.expenseRate ?? 0) * 100).toFixed(0)}%</span>
+                    <span className="text-xs text-blue-600">政府認定 {((source.expenseRate ?? 0) * 100).toFixed(0)}% 是成本，不用課稅</span>
                     <span className="text-xs text-gray-400">→</span>
-                    <span className="text-xs font-semibold text-blue-700">淨所得 {formatNTD(computeNetIncome(source))}</span>
+                    <span className="text-xs font-semibold text-blue-700">實際課稅 {formatNTD(computeNetIncome(source))}</span>
                   </div>
                 </div>
               )}
@@ -156,21 +156,21 @@ export function IncomeSection({
               {/* 9B 說明 */}
               {source.type === "9B" && source.grossAmount > 0 && (
                 <div className="mt-2 rounded-lg bg-green-50 px-3 py-1.5 text-xs text-green-700">
-                  免稅 18 萬 + 超額 30% 費用率 → 淨所得 <strong>{formatNTD(computeNetIncome(source))}</strong>
+                  前 18 萬免稅，超過的部分有 30% 算成本不課稅 → 實際課稅 <strong>{formatNTD(computeNetIncome(source))}</strong>
                 </div>
               )}
 
               {/* 租金說明 */}
               {source.type === "rental" && source.grossAmount > 0 && (
                 <div className="mt-2 rounded-lg bg-amber-50 px-3 py-1.5 text-xs text-amber-700">
-                  43% 必要費用 → 淨所得 <strong>{formatNTD(computeNetIncome(source))}</strong>
+                  租金收入有 43% 算成本不課稅 → 實際課稅 <strong>{formatNTD(computeNetIncome(source))}</strong>
                 </div>
               )}
 
               {/* 其他所得 */}
               {!["9A", "9B", "rental"].includes(source.type) && source.grossAmount > 0 && (
                 <div className="mt-2 rounded-lg bg-gray-100 px-3 py-1.5 text-xs text-gray-600">
-                  淨所得 <strong>{formatNTD(computeNetIncome(source))}</strong>
+                  實際課稅金額 <strong>{formatNTD(computeNetIncome(source))}</strong>
                 </div>
               )}
             </div>
@@ -202,7 +202,7 @@ export function IncomeSection({
               <span className="text-lg font-bold">{formatNTD(totalGross)}</span>
             </div>
             <div className="mt-1 flex items-center justify-between">
-              <span className="text-sm text-gray-400">扣除費用後淨所得</span>
+              <span className="text-sm text-gray-400">扣除成本後，實際被課稅的金額</span>
               <span className="text-base font-semibold text-blue-300">{formatNTD(totalNet)}</span>
             </div>
           </div>
