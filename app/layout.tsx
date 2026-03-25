@@ -24,6 +24,14 @@ export default function RootLayout({
         <div className="mx-auto min-h-screen max-w-lg">
           {children}
         </div>
+        <a
+          href="https://forms.gle/AhwPK6uPuZ7pQHoDA"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-5 right-5 z-50 rounded-full bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl active:scale-95"
+        >
+          意見回饋
+        </a>
       </body>
     </html>
   );
