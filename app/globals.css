@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light only;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -22,10 +23,11 @@ body {
 input,
 select,
 textarea {
-  color: #111 !important;
-  background-color: #fff !important;
+  color-scheme: light;
+  color: #111;
+  background-color: #fff;
 }
 
 input::placeholder {
-  color: #9ca3af !important;
+  color: #9ca3af;
 }
