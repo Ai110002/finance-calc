@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-TW" className={`${font.className} h-full antialiased scroll-smooth`}>
+    <html lang="zh-TW" className={`${font.className} h-full antialiased scroll-smooth`} style={{ colorScheme: "light" }}>
       <body className="min-h-full bg-gray-50 text-gray-900">
         <div className="mx-auto min-h-screen max-w-lg">
           {children}
