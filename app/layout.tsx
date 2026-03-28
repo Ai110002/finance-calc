@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_TC } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { ViewCounter } from "@/components/view-counter";
 import "./globals.css";
@@ -24,17 +25,18 @@ export default function RootLayout({
     <html lang="zh-TW" className={`${font.className} h-full antialiased scroll-smooth`}>
       <head>
         <meta name="color-scheme" content="light dark" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4227670315328051"
-          crossOrigin="anonymous"
-        />
       </head>
       <body className="min-h-full bg-gray-50 text-gray-900">
         <div className="mx-auto min-h-screen max-w-lg">
           {children}
         </div>
         <ViewCounter />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4227670315328051"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Analytics />
         <a
           href="https://forms.gle/AhwPK6uPuZ7pQHoDA"
