@@ -26,7 +26,7 @@ function NumberInput({
       <input
         type="text"
         inputMode="decimal"
-        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
         placeholder={placeholder}
         value={value || ""}
         onChange={(e) => {
@@ -49,7 +49,7 @@ export function StockRow({
       <div className="mb-2 flex items-center justify-between">
         <input
           type="text"
-          className="w-40 rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium focus:border-blue-500 focus:outline-none"
+          className="w-40 rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-900 focus:border-blue-500 focus:outline-none"
           placeholder="股票名稱 (如 2330 台積電)"
           value={position.name}
           onChange={(e) => onUpdate(position.id, { name: e.target.value })}

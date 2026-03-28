@@ -36,7 +36,7 @@ function NumField({ label, hint, value, onChange, suffix, placeholder }: {
       {hint && <p className="mb-1 text-xs text-gray-400">{hint}</p>}
       <div className="flex items-center gap-2">
         <input type="text" inputMode="decimal"
-          className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-base focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-base text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
           placeholder={placeholder} value={value || ""}
           onChange={(e) => { const v = parseFloat(e.target.value); onChange(isNaN(v) ? 0 : v); }}
         />
@@ -201,7 +201,7 @@ export default function Home() {
                   <div key={e.id} className="flex items-center gap-2">
                     <span className="w-28 text-sm text-gray-600 shrink-0">{e.label}</span>
                     <input type="text" inputMode="decimal"
-                      className="w-full rounded-lg border border-gray-200 px-3 py-1.5 text-sm text-right focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-lg border border-gray-200 px-3 py-1.5 text-sm text-right text-gray-900 focus:border-blue-500 focus:outline-none"
                       placeholder="0" value={e.amount || ""}
                       onChange={(ev) => { const v = parseFloat(ev.target.value); updateExpense(e.id, isNaN(v) ? 0 : v); }}
                     />
@@ -266,14 +266,14 @@ export default function Home() {
                   <div>
                     <label className="text-xs text-gray-500">金額(萬)</label>
                     <input type="text" inputMode="decimal"
-                      className="w-full rounded-lg border border-gray-200 px-3 py-1.5 text-sm focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-lg border border-gray-200 px-3 py-1.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"
                       value={g.amount || ""} onChange={(e) => { const v = parseFloat(e.target.value); updateGoal(g.id, { amount: isNaN(v) ? 0 : v }); }}
                     />
                   </div>
                   <div>
                     <label className="text-xs text-gray-500">幾年後</label>
                     <input type="text" inputMode="decimal"
-                      className="w-full rounded-lg border border-gray-200 px-3 py-1.5 text-sm focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-lg border border-gray-200 px-3 py-1.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"
                       value={g.yearsFromNow || ""} onChange={(e) => { const v = parseInt(e.target.value); updateGoal(g.id, { yearsFromNow: isNaN(v) ? 0 : v }); }}
                     />
                   </div>

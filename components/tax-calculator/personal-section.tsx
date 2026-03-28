@@ -88,7 +88,7 @@ export function PersonalSection({
             <label className="mb-1.5 block text-xs font-medium text-gray-500">本人年齡</label>
             <input
               type="text" inputMode="numeric"
-              className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-center text-base font-medium transition focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-100"
+              className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-center text-base font-medium text-gray-900 transition focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-100"
               value={filingAge || ""}
               onChange={(e) => { const v = parseInt(e.target.value); onSetFilingAge(isNaN(v) ? 0 : v); }}
               placeholder="35"
@@ -105,7 +105,7 @@ export function PersonalSection({
               <label className="mb-1.5 block text-xs font-medium text-gray-500">配偶年齡</label>
               <input
                 type="text" inputMode="numeric"
-                className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-center text-base font-medium transition focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-100"
+                className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-center text-base font-medium text-gray-900 transition focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-100"
                 value={spouseAge || ""}
                 onChange={(e) => { const v = parseInt(e.target.value); onSetSpouseAge(isNaN(v) ? 0 : v); }}
                 placeholder="35"
@@ -171,7 +171,7 @@ export function PersonalSection({
                     const label = RELATIONSHIP_OPTIONS.find(r => r.value === rel)?.label ?? "其他";
                     onUpdateDependent(dep.id, { relationship: rel, label });
                   }}
-                  className="rounded-lg border border-gray-200 bg-white px-2 py-1.5 text-xs font-medium"
+                  className="rounded-lg border border-gray-200 bg-white px-2 py-1.5 text-xs font-medium text-gray-900"
                 >
                   {RELATIONSHIP_OPTIONS.map(r => (
                     <option key={r.value} value={r.value}>{r.icon} {r.label}</option>
@@ -180,7 +180,7 @@ export function PersonalSection({
                 <div className="flex items-center gap-1">
                   <input
                     type="text" inputMode="numeric" placeholder="年齡"
-                    className="w-14 rounded-lg border border-gray-200 bg-white px-2 py-1.5 text-center text-xs font-medium"
+                    className="w-14 rounded-lg border border-gray-200 bg-white px-2 py-1.5 text-center text-xs font-medium text-gray-900"
                     value={dep.age || ""}
                     onChange={(e) => {
                       const v = parseInt(e.target.value);
@@ -214,7 +214,7 @@ export function PersonalSection({
             <div className="flex items-center gap-1.5">
               <input
                 type="text" inputMode="numeric"
-                className="w-12 rounded-lg border border-gray-200 px-2 py-1 text-center text-xs font-medium"
+                className="w-12 rounded-lg border border-gray-200 px-2 py-1 text-center text-xs font-medium text-gray-900"
                 value={educationExpenseCount || ""}
                 onChange={(e) => { const v = parseInt(e.target.value); onSetEducationExpenseCount(isNaN(v) ? 0 : v); }}
               />

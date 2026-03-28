@@ -112,7 +112,7 @@ export function DeductionSection({
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">NT$</span>
                   <input
                     type="text" inputMode="decimal"
-                    className="w-full rounded-xl border border-gray-200 bg-white py-2.5 pl-10 pr-4 text-right text-sm font-medium transition focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                    className="w-full rounded-xl border border-gray-200 bg-white py-2.5 pl-10 pr-4 text-right text-sm font-medium text-gray-900 transition focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-100"
                     placeholder="0"
                     value={itemizedDeductions[f.key] || ""}
                     onChange={(e) => {
