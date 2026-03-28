@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className={`${font.className} h-full antialiased scroll-smooth`}>
       <head>
-        <meta name="color-scheme" content="light only" />
+        <meta name="color-scheme" content="light dark" />
       </head>
       <body className="min-h-full bg-gray-50 text-gray-900">
         <div className="mx-auto min-h-screen max-w-lg">

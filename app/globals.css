@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light only;
+  color-scheme: light dark;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -13,21 +13,110 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111118;
+    --foreground: #e8e8ed;
+  }
+
+  /* ── 背景 ── */
+  .bg-white { background-color: #1c1c28 !important; }
+  .bg-gray-50 { background-color: #111118 !important; }
+  .bg-gray-100 { background-color: #1c1c28 !important; }
+
+  /* ── 卡片/區塊淺色背景 ── */
+  .bg-blue-50, .bg-blue-50\/50 { background-color: #1a1a2e !important; }
+  .bg-green-50, .bg-green-50\/50 { background-color: #152218 !important; }
+  .bg-orange-50 { background-color: #2a1f10 !important; }
+  .bg-purple-50 { background-color: #1e152e !important; }
+  .bg-red-50 { background-color: #2a1515 !important; }
+  .bg-amber-50 { background-color: #2a2210 !important; }
+
+  /* ── 漸層背景 ── */
+  [class*="bg-gradient-to-r"][class*="from-blue-50"] { background: linear-gradient(to right, #1a1a2e, #1c1c28) !important; }
+  [class*="bg-gradient-to-r"][class*="from-green-50"] { background: linear-gradient(to right, #152218, #1c1c28) !important; }
+  [class*="bg-gradient-to-r"][class*="from-purple-50"] { background: linear-gradient(to right, #1e152e, #1c1c28) !important; }
+  [class*="bg-gradient-to-r"][class*="from-gray-900"] { background: linear-gradient(to right, #0a0a12, #111118) !important; }
+
+  /* ── 文字 ── */
+  .text-gray-900 { color: #f0f0f5 !important; }
+  .text-gray-800 { color: #e0e0e8 !important; }
+  .text-gray-700 { color: #c8c8d4 !important; }
+  .text-gray-600 { color: #a8a8b8 !important; }
+  .text-gray-500 { color: #8888a0 !important; }
+  .text-gray-400 { color: #686880 !important; }
+  .text-gray-300 { color: #555568 !important; }
+
+  .text-blue-600 { color: #6ea8ff !important; }
+  .text-blue-700 { color: #5c9aff !important; }
+  .text-green-600 { color: #5cc98a !important; }
+  .text-green-700 { color: #4cb87a !important; }
+  .text-green-800 { color: #5cc98a !important; }
+  .text-orange-600 { color: #f0a050 !important; }
+  .text-purple-500 { color: #b088e0 !important; }
+  .text-purple-700 { color: #c0a0f0 !important; }
+  .text-red-500 { color: #f06060 !important; }
+  .text-red-700 { color: #f08080 !important; }
+  .text-amber-700 { color: #d4a030 !important; }
+
+  /* ── 邊框 ── */
+  .border-gray-100 { border-color: #2a2a38 !important; }
+  .border-gray-200 { border-color: #333344 !important; }
+  .border-gray-300 { border-color: #444458 !important; }
+  .border-blue-300, .border-blue-500 { border-color: #3366aa !important; }
+  .border-green-200, .border-green-300, .border-green-500 { border-color: #2a6640 !important; }
+  .border-purple-500 { border-color: #6644aa !important; }
+
+  .border-dashed { border-color: #444458 !important; }
+
+  /* ── ring ── */
+  .ring-black\/5 { --tw-ring-color: rgba(255, 255, 255, 0.08) !important; }
+  .ring-green-200 { --tw-ring-color: #2a6640 !important; }
+  .ring-red-200 { --tw-ring-color: #662a2a !important; }
+  .ring-purple-200 { --tw-ring-color: #44336a !important; }
+  .ring-amber-200 { --tw-ring-color: #6a5530 !important; }
+
+  /* ── 表單元素 ── */
+  input,
+  select,
+  textarea {
+    background-color: #252535 !important;
+    color: #f0f0f5 !important;
+    border-color: #444458 !important;
+  }
+
+  input::placeholder {
+    color: #686880 !important;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #5588cc !important;
+  }
+
+  /* ── 按鈕 hover ── */
+  .hover\:bg-gray-50:hover { background-color: #222232 !important; }
+  .hover\:bg-red-50:hover { background-color: #2a1515 !important; }
+  .hover\:bg-blue-50:hover { background-color: #1a1a2e !important; }
+  .hover\:bg-green-100:hover { background-color: #1a3020 !important; }
+
+  /* ── 標籤/badge ── */
+  .bg-green-100 { background-color: #1a3020 !important; }
+  .bg-green-200 { background-color: #204028 !important; }
+  .bg-amber-100 { background-color: #2a2210 !important; }
+  .bg-blue-100 { background-color: #1a2040 !important; }
+
+  /* ── shadow ── */
+  .shadow-sm, .shadow-lg { box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important; }
+
+  /* ── 頂部 tab ── */
+  .accent-blue-600 { accent-color: #5588cc !important; }
+  .accent-green-600 { accent-color: #44aa66 !important; }
+}
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-input,
-select,
-textarea {
-  color-scheme: light;
-  color: #111;
-  background-color: #fff;
-}
-
-input::placeholder {
-  color: #9ca3af;
 }
