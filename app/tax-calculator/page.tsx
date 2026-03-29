@@ -49,15 +49,16 @@ export default function TaxCalculatorPage() {
   return (
     <div className="min-h-screen pb-10">
       {/* 工具切換 */}
-      <div className="flex gap-2 bg-white px-4 pt-4 pb-2">
-        <div className="flex-1">
-          <Link href="/" className="block rounded-lg bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 transition">
-            財務自由計算器
-          </Link>
-        </div>
-        <div className="flex-1 rounded-lg bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm">
-          報稅計算器
-        </div>
+      <div className="flex gap-2 overflow-x-auto bg-white px-4 pt-4 pb-2 text-sm">
+        <Link href="/" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          財務自由
+        </Link>
+        <span className="whitespace-nowrap rounded-full bg-blue-600 px-3 py-1 font-medium text-white">
+          報稅計算
+        </span>
+        <Link href="/overtime-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          加班費
+        </Link>
       </div>
 
       {/* Hero */}

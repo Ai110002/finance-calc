@@ -149,12 +149,15 @@ export default function Home() {
   return (
     <div className="space-y-5 px-4 pt-8 pb-8">
       {/* 工具切換 */}
-      <div className="flex gap-2 rounded-xl bg-gray-100 p-1">
-        <div className="flex-1 rounded-lg bg-white px-3 py-2 text-center text-sm font-semibold text-gray-900 shadow-sm">
-          財務自由計算器
+      <div className="flex gap-2 overflow-x-auto text-sm">
+        <div className="whitespace-nowrap rounded-full bg-blue-600 px-3 py-1.5 font-semibold text-white shadow-sm">
+          財務自由
         </div>
-        <Link href="/tax-calculator" className="flex-1 rounded-lg px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-white hover:shadow-sm transition">
-          報稅計算器
+        <Link href="/tax-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          報稅計算
+        </Link>
+        <Link href="/overtime-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          加班費
         </Link>
       </div>
 
