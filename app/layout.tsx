@@ -12,9 +12,24 @@ const font = Noto_Sans_TC({
 });
 
 export const metadata: Metadata = {
-  title: "財務自由計算器 — 存錢目標 · 退休提領 · 融資維持率 · 斷頭模擬",
+  metadataBase: new URL("https://www.twtaxcalc.com"),
+  title: {
+    default: "台灣金融工具｜報稅・房貸・財務自由計算器",
+    template: "%s｜twtaxcalc.com",
+  },
   description:
-    "一站式財務規劃：設定目標、計算每月儲蓄、退休4%法則、股票質押、融資維持率計算、斷頭模擬。免費、免登入、不構成投資建議。",
+    "一站式財務規劃：報稅試算、房貸月付金、加班費計算、財務自由目標、融資維持率。免費、免登入。",
+  openGraph: {
+    siteName: "twtaxcalc.com",
+    locale: "zh_TW",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com",
+  },
 };
 
 export default function RootLayout({

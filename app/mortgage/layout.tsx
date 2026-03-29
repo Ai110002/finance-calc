@@ -12,6 +12,15 @@ export const metadata: Metadata = {
     title: "房貸計算器 2026｜月付金試算・新青安・利率比較",
     description: "輸入金額和利率，秒算每月還款。支援新青安、寬限期、兩種還款方式比較。免費、免登入。",
     type: "website",
+    url: "https://www.twtaxcalc.com/mortgage",
+    siteName: "twtaxcalc.com",
+    locale: "zh_TW",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/mortgage",
   },
 };
 

@@ -12,6 +12,15 @@ export const metadata: Metadata = {
     title: "2026 報稅版｜自由工作者所得稅計算器",
     description: "專為台灣自由工作者設計。9A/9B 成本比例自動帶入、標準vs列舉即時比較、二代健保試算。114 年度所得，2026 年 5 月申報。",
     type: "website",
+    url: "https://www.twtaxcalc.com/tax-calculator",
+    siteName: "twtaxcalc.com",
+    locale: "zh_TW",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/tax-calculator",
   },
 };
 
