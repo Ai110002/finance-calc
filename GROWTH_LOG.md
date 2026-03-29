@@ -1,5 +1,36 @@
 # Growth Log
 
+## 2026-03-29（第二次）
+
+### 管道狀態檢查
+- **AdSense**：ads.txt 設定正確（pub-4227670315328051），但 `.env.local` 不存在，`NEXT_PUBLIC_ADSENSE_SLOT` 未設定 → **Ian 需要在 Vercel 後台設定這個環境變數，否則廣告不會顯示**
+- **聯盟行銷**：`MortgageAffiliateCTA` 和 `TaxAffiliateCTA` 已存在，links 目前是 money101.com.tw placeholder → **Ian 需要去申請 Money101 聯盟帳號取得真實 tracking link**
+- **流量**：未搜尋（token 節省），預計 SEO 尚未有排名，重點在導流
+
+### 今天做了什麼
+**補上加班費計算器的變現缺口**
+
+加班費計算器（上次新建）沒有任何廣告或聯盟 CTA，等於把流量白白浪費。今次補上：
+
+- `app/overtime-calculator/page.tsx` 加入 `<AdUnit>` × 2（計算結果上方 + FAQ下方）
+- 加入 `<TaxAffiliateCTA>`（FAQ 下方，引導找會計師報稅 → Money101）
+- 新增 `public/threads-drafts/2026-03-29-overtime.md`：3 篇可直接發布的 Threads 文案
+- 新增 `public/forum-posts/2026-03-29-overtime-ptt.md`：PTT/Dcard 長文（帶工具連結）
+
+### 預期營收影響
+- AdUnit：有流量 + AdSense 審核通過後，每次頁面瀏覽約 $0.5–2 台幣 RPM（視廣告填充率）
+- TaxAffiliateCTA：每 10 次點擊 × 報稅服務核卡約 $200–500 = **月 $500–2000**（需 Money101 帳號）
+- Threads 文案：每篇約 500–5000 impressions，預估帶入 50–200 次訪客
+
+### 下次要做的事（優先順序）
+1. **Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`**（AdSense 後台取得 ad unit ID）
+2. **Ian 申請 Money101 聯盟帳號**，取得真實 tracking link 替換 placeholder
+3. **發 Threads 文**：`public/threads-drafts/2026-03-29-overtime.md` 文案 A 先發，配截圖
+4. **發 PTT/Dcard 文**：`public/forum-posts/2026-03-29-overtime-ptt.md`
+5. 資遣費計算器（高意圖、報稅季前）
+
+---
+
 ## 2026-03-29
 
 ### 今天做了什麼
