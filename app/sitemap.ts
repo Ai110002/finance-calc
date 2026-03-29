@@ -54,5 +54,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${base}/basic-living-deduction`,
+      lastModified: lastDeploy,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 }

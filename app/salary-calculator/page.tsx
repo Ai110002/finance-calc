@@ -129,6 +129,7 @@ const NAV_LINKS = [
   { href: "/salary-calculator", label: "月薪試算", active: true },
   { href: "/bonus-calculator", label: "年終獎金" },
   { href: "/pension-calculator", label: "勞退計算" },
+  { href: "/basic-living-deduction", label: "免稅天花板" },
 ];
 
 export default function SalaryCalculatorPage() {
