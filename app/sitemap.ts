@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.twtaxcalc.com";
   // Use a fixed date per deploy rather than new Date() on every request
-  const lastDeploy = new Date("2026-03-29T12:00:00Z");
+  const lastDeploy = new Date("2026-03-29T18:00:00Z");
 
   return [
     {
@@ -35,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastDeploy,
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${base}/salary-calculator`,
+      lastModified: lastDeploy,
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
   ];
 }
