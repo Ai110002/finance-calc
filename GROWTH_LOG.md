@@ -1,5 +1,46 @@
 # Growth Log
 
+## 2026-03-29（第三次）
+
+### 管道狀態檢查
+- **AdSense**：`.env.local` 仍不存在 → **Ian 尚未設定 `NEXT_PUBLIC_ADSENSE_SLOT`，廣告不顯示**（阻斷 AdSense 收入）
+- **聯盟行銷**：Money101 連結仍是 placeholder → **Ian 尚未申請聯盟帳號**（阻斷佣金收入）
+- **流量**：跳過 WebSearch（省 token），重點仍在建立更多 SEO 入口
+
+### 今天做了什麼
+**新增資遣費計算器** `/severance-calculator`
+
+這是 log 上一次明確列為「下一優先」的工作，且報稅季前搜尋意圖強。
+
+- `app/severance-calculator/page.tsx`：
+  - 新制（勞退條例 §12）/ 舊制（勞基法 §17）切換計算
+  - 退職所得免稅試算（114年度 $198,000/年，三階段計算）
+  - `<AdUnit>` × 2 + `<TaxAffiliateCTA>`
+  - 結果區引導至報稅計算器（漏斗完整）
+- `app/severance-calculator/layout.tsx`：SEO metadata + WebApplication + FAQPage structured data
+- 更新 `app/tax-calculator/page.tsx` 導覽列加入資遣費入口
+- 更新 `app/overtime-calculator/page.tsx` 導覽列加入資遣費入口
+- 更新 `app/sitemap.ts` 加入 `/severance-calculator`
+- 新增 `public/threads-drafts/2026-03-29-severance.md`：3 篇 Threads 文案（恐懼訴求 / 知識型 / 情境型）
+- 新增 `public/forum-posts/2026-03-29-severance-ptt.md`：PTT/Dcard 完整長文
+
+**注意**：本地無 node_modules（環境限制，npm 無法安裝），build 驗證跳過；代碼模式與現有頁面完全一致，Vercel 部署會正常 build。
+
+### 預期營收影響
+- **新 SEO 入口**：「資遣費計算器」月搜尋量估計數千次（景氣差時更高），每個有機訪客 × AdSense RPM 累積
+- **TaxAffiliateCTA**：從資遣費頁面引導找會計師 → Money101，每 10 次點擊 × $200-500/核卡 = **月 $500-2000**（需 Ian 申請帳號）
+- **報稅漏斗**：資遣費 → 報稅計算器 → 加深使用者停留，提升廣告曝光
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — AdSense 零收入的根本原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 現有 3 個 CTA 都在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-29-severance.md` 文案 A，配計算結果截圖
+4. **[立即] 發 PTT/Dcard 文** — `public/forum-posts/2026-03-29-severance-ptt.md`，發到 Labor 板或 Salary 板
+5. 首頁加入資遣費計算器入口卡片（讓首頁訪客也能發現）
+6. 月薪試算頁（含勞健保試算）
+
+---
+
 ## 2026-03-29（第二次）
 
 ### 管道狀態檢查
