@@ -128,6 +128,7 @@ const NAV_LINKS = [
   { href: "/severance-calculator", label: "資遣費" },
   { href: "/salary-calculator", label: "月薪試算", active: true },
   { href: "/bonus-calculator", label: "年終獎金" },
+  { href: "/pension-calculator", label: "勞退計算" },
 ];
 
 export default function SalaryCalculatorPage() {

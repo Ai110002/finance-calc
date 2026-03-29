@@ -71,6 +71,9 @@ export default function MortgagePage() {
         <Link href="/bonus-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
           年終獎金
         </Link>
+        <Link href="/pension-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          勞退計算
+        </Link>
       </div>
 
       {/* Hero */}

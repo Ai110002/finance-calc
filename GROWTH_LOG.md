@@ -1,5 +1,49 @@
 # Growth Log
 
+## 2026-03-29（第六次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認「報稅計算器」「年終獎金稅額計算」twtaxcalc.com **未出現**在搜尋結果 → 網站尚未被索引，重點持續擴充 SEO 入口
+
+### 今天做了什麼
+
+#### 新增勞退自提節稅計算器 `/pension-calculator`
+
+「勞退自提」是報稅季前最熱門的理財話題之一：
+- 搜尋意圖強（「勞退自提節稅」「勞退自提多少」「自提6%值得嗎」）
+- 年初年終後大家開始想「今年要不要調整自提比例」
+- 自然內連報稅計算器（完整漏斗）
+
+- `app/pension-calculator/page.tsx`：
+  - 輸入月薪、自提比例（0–6% slider）、婚姻狀況、受扶養人數
+  - 依 114 年度五級累進稅率估算邊際稅率
+  - 輸出：每月自提金額、每年省稅金額、每月實際淨成本（含省稅後）
+  - 退休積累試算：距退休年數 + 預估年化報酬率，含雇主提撥 6% 與自提複利終值
+  - AdUnit × 2 + TaxAffiliateCTA + 報稅計算器 CTA
+- `app/pension-calculator/layout.tsx`：SEO metadata + WebApplication + FAQPage schema
+  - 關鍵字：「勞退自提」「勞退自提節稅」「自提6%省稅」「退休金計算器」
+- 所有頁面 nav 加入「勞退計算」入口（首頁、報稅、房貸、加班費、資遣費、月薪、年終）
+- `app/sitemap.ts`：加入 `/pension-calculator`（priority 0.9）
+- `public/threads-drafts/2026-03-29-pension.md`：4 篇文案（省稅驚喜型/知識型/報稅季緊迫型/Dcard短版）
+
+### 預期營收影響
+- **新 SEO 入口**：「勞退自提節稅」「勞退自提計算」搜尋量穩定，尤其 1-5 月報稅季高峰
+- **TaxAffiliateCTA**：勞退頁引導找會計師 → Money101，預估月 **$500-2000**（需 Ian 申請帳號）
+- **報稅漏斗**：勞退試算完 → 「去報稅計算器試算節稅效果」，提升跨頁深度 + 廣告曝光
+- **nav 更新**：全站 8 個頁面互相連結，Googlebot 爬蟲覆蓋率提升
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — AdSense 零收入的根本原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 6 個頁面 CTA 都在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-29-pension.md` 文案 A（省稅數字驚喜型），配計算結果截圖
+4. **[立即] 發 Threads** — `2026-03-29-bonus.md` 文案 A（年終主題）也還沒發，報稅季前時機還在
+5. 向 Google Search Console 提交 sitemap（手動操作，需 Ian 登入 GSC 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 免稅天花板計算器（基本生活費差額，高搜尋量）
+
+---
+
 ## 2026-03-29（第五次）
 
 ### 管道狀態檢查
