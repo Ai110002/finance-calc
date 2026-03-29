@@ -7,6 +7,8 @@ import { PersonalSection } from "@/components/tax-calculator/personal-section";
 import { DeductionSection } from "@/components/tax-calculator/deduction-section";
 import dynamic from "next/dynamic";
 import { TipsSection } from "@/components/tax-calculator/tips-section";
+import { EmailCTA } from "@/components/email-cta";
+import { AdUnit } from "@/components/ad-unit";
 import Link from "next/link";
 
 const ResultSection = dynamic(
@@ -168,9 +170,18 @@ export default function TaxCalculatorPage() {
           <ResultSection result={tc.result} />
         </div>
 
+        {/* Ad between result and tips */}
+        <AdUnit className="my-2" />
+
+        {/* Email CTA after results */}
+        <EmailCTA />
+
         <div id="tips">
           <TipsSection tips={tc.result.tips} result={tc.result} />
         </div>
+
+        {/* Ad after tips */}
+        <AdUnit className="my-2" />
       </div>
 
       {/* Footer */}
