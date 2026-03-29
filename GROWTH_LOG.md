@@ -1,5 +1,49 @@
 # Growth Log
 
+## 2026-03-29（第七次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：上次 WebSearch 確認未出現，本次省 token，SEO 持續擴充入口策略
+
+### 今天做了什麼
+
+#### 新增基本生活費差額計算器 `/basic-living-deduction`
+
+「基本生活費差額」是報稅季前最被低估的節稅搜尋：
+- 搜尋意圖強：「基本生活費差額計算」「基本生活費 202000」「報稅基本生活費怎麼算」
+- 很多人報稅時根本不知道這個扣除額，自然分享口碑佳
+- 114年度基本生活費由 196,000 提高至 202,000，新聞熱點
+
+- `app/basic-living-deduction/page.tsx`：
+  - 輸入：婚姻狀況、受扶養人數、薪資所得人數、月收入（估稅率用）、身障/幼兒/大學子女
+  - 計算：基本生活費總額 vs 相關扣除額合計，輸出差額與節稅金額
+  - 明細展開各項扣除（免稅額、標準扣除、薪資特別、身障、幼兒學前、教育學費）
+  - AdUnit × 2 + TaxAffiliateCTA + 報稅計算器 CTA
+- `app/basic-living-deduction/layout.tsx`：SEO metadata + WebApplication + FAQPage schema
+  - 關鍵字：「基本生活費差額」「免稅天花板」「基本生活費 202000」「基本生活費差額計算」
+- 全站 9 個頁面 nav 加入「免稅天花板」入口
+- `app/sitemap.ts`：加入 `/basic-living-deduction`（priority 0.9）
+- `public/threads-drafts/2026-03-29-basic-living.md`：4 篇文案（驚喜型/知識型/實例型/Dcard短版）
+
+### 預期營收影響
+- **新 SEO 入口**：「基本生活費差額計算」「基本生活費 202000」報稅季前高意圖搜尋，估計月搜尋數千次
+- **低競爭關鍵字**：此主題在大型財稅網站覆蓋不深，新站有機會排名
+- **TaxAffiliateCTA**：差額計算完引導找會計師，月預估 **$500-2000**（需 Ian 申請帳號）
+- **報稅漏斗**：計算完差額 → 報稅計算器試算全年稅額，提升跨頁深度 + 廣告曝光
+- **nav 全站更新**：9 個頁面互相連結，Googlebot 爬蟲覆蓋率再提升
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 7 個頁面 CTA 在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-29-basic-living.md` 文案 A（數字驚喜型），報稅季前最佳時機
+4. **[立即] 發 Threads** — 歷次文案（pension/bonus）還未發，都是報稅季素材
+5. **向 Google Search Console 提交 sitemap**（Ian 手動：GSC → 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 勞健保費率說明頁（純 SEO 內容，不需互動，吸引「勞保費率」搜尋流量）
+
+---
+
 ## 2026-03-29（第六次）
 
 ### 管道狀態檢查
