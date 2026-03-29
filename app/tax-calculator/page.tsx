@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import { TipsSection } from "@/components/tax-calculator/tips-section";
 import { EmailCTA } from "@/components/email-cta";
 import { AdUnit } from "@/components/ad-unit";
+import { TaxAffiliateCTA } from "@/components/affiliate-cta";
 import Link from "next/link";
 
 const ResultSection = dynamic(
@@ -176,6 +177,9 @@ export default function TaxCalculatorPage() {
 
         {/* Ad between result and tips */}
         <AdUnit className="my-2" />
+
+        {/* Affiliate CTA — direct monetization */}
+        <TaxAffiliateCTA />
 
         {/* Email CTA after results */}
         <EmailCTA />

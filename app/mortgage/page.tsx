@@ -6,6 +6,7 @@ import type { MortgageInput } from "@/lib/calc/mortgage";
 import { formatNTD, formatNumber } from "@/lib/format";
 import { EmailCTA } from "@/components/email-cta";
 import { AdUnit } from "@/components/ad-unit";
+import { MortgageAffiliateCTA } from "@/components/affiliate-cta";
 import Link from "next/link";
 
 const PRESETS = [
@@ -313,6 +314,9 @@ export default function MortgagePage() {
             </table>
           </div>
         </div>
+
+        {/* Affiliate CTA — direct monetization */}
+        <MortgageAffiliateCTA />
 
         <AdUnit className="my-2" />
 
