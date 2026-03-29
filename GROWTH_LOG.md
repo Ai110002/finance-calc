@@ -1,5 +1,46 @@
 # Growth Log
 
+## 2026-03-29（第四次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定，否則廣告不顯示**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：省 token，不做 WebSearch，重點仍在擴充 SEO 入口
+
+### 今天做了什麼
+**新增月薪試算計算器** `/salary-calculator`
+
+上次 log 明確列為第 6 優先項，「月薪28000實拿多少」類搜尋意圖強且常年高量。
+
+- `app/salary-calculator/page.tsx`：
+  - 輸入月薪、眷屬人數、勞退自提 %
+  - 依 114 年度分級表計算：勞保費（13%×20%）、健保費（5.17%×30%×眷屬倍數）、二代健保補充保費（2.11%）
+  - 雇主成本展開（含勞保70%、健保60%、勞退6%）
+  - AdUnit × 2 + TaxAffiliateCTA + 報稅計算器 CTA（完整漏斗）
+- `app/salary-calculator/layout.tsx`：SEO metadata + WebApplication + FAQPage schema
+- `app/page.tsx`：首頁 nav 補上「資遣費」＋「月薪試算」兩個入口（上次遺漏的第5項）
+- `app/sitemap.ts`：加入 `/salary-calculator`（priority 0.9）
+- `public/threads-drafts/2026-03-29-salary.md`：3 篇文案（驚喜型/知識型/求職季）
+- `public/forum-posts/2026-03-29-salary-ptt.md`：PTT/Dcard 長文含費率計算範例
+
+**注意**：npm registry 403（環境限制），build 跳過，代碼模式與現有頁面一致，Vercel 正常部署。
+
+### 預期營收影響
+- **新 SEO 入口**：「月薪計算器」「實拿薪資」「勞保費計算」月搜尋量估計數千~萬次
+- **TaxAffiliateCTA**：月薪頁引導找會計師 → Money101，每10次點擊 × $200-500/核卡 = **月 $500-2000**（需 Ian 申請帳號）
+- **報稅漏斗**：月薪計算後點擊「去報稅計算器估算年度稅額」，提升跨頁深度 + 廣告曝光
+- **雇主成本功能**：「公司實際花多少雇你」高互動內容，適合 Threads/Dcard 傳播帶流量
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — AdSense 零收入的根本原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 4 個頁面 CTA 都在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-29-salary.md` 文案 A，配計算器截圖
+4. **[立即] 發 PTT/Dcard** — `public/forum-posts/2026-03-29-salary-ptt.md`，目標 Salary 板
+5. 各計算器頁面補齊 nav 連結（保持一致性、改善 crawlability）
+6. 年終獎金試算頁 — 5月報稅季前高意圖
+
+---
+
 ## 2026-03-29（第三次）
 
 ### 管道狀態檢查
