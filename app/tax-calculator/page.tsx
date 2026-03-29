@@ -66,6 +66,12 @@ export default function TaxCalculatorPage() {
         <Link href="/severance-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           資遣費
         </Link>
+        <Link href="/salary-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          月薪試算
+        </Link>
+        <Link href="/bonus-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          年終獎金
+        </Link>
       </div>
 
       {/* Hero */}

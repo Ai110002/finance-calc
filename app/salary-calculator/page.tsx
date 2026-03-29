@@ -127,6 +127,7 @@ const NAV_LINKS = [
   { href: "/overtime-calculator", label: "加班費" },
   { href: "/severance-calculator", label: "資遣費" },
   { href: "/salary-calculator", label: "月薪試算", active: true },
+  { href: "/bonus-calculator", label: "年終獎金" },
 ];
 
 export default function SalaryCalculatorPage() {

@@ -49,16 +49,28 @@ export default function MortgagePage() {
   return (
     <div className="min-h-screen pb-10">
       {/* Tool Switch */}
-      <div className="flex gap-2 bg-white px-4 pt-4 pb-2">
-        <Link href="/" className="flex-1 rounded-lg bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 transition">
+      <div className="flex gap-2 overflow-x-auto bg-white px-4 pt-4 pb-2 text-sm">
+        <Link href="/" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
           財務自由
         </Link>
-        <Link href="/tax-calculator" className="flex-1 rounded-lg bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 transition">
+        <Link href="/tax-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
           報稅計算
         </Link>
-        <div className="flex-1 rounded-lg bg-emerald-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm">
+        <span className="whitespace-nowrap rounded-full bg-emerald-600 px-3 py-1 font-medium text-white">
           房貸計算
-        </div>
+        </span>
+        <Link href="/overtime-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          加班費
+        </Link>
+        <Link href="/severance-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          資遣費
+        </Link>
+        <Link href="/salary-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          月薪試算
+        </Link>
+        <Link href="/bonus-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          年終獎金
+        </Link>
       </div>
 
       {/* Hero */}

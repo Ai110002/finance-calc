@@ -1,5 +1,55 @@
 # Growth Log
 
+## 2026-03-29（第五次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定，否則廣告不顯示**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：跳過 WebSearch（省 token），重點在擴充 SEO 入口
+
+### 今天做了什麼
+
+#### 1. 修復所有頁面 nav 缺失連結（crawlability）
+上次發現各頁面 nav 不一致，今次全部補齊：
+- `tax-calculator`：補上「月薪試算」
+- `overtime-calculator`：補上「房貸計算」＋「月薪試算」
+- `severance-calculator`：補上「房貸計算」＋「月薪試算」
+
+效益：Google 爬蟲更容易從任何頁面發現所有工具，改善整站 crawlability。
+
+#### 2. 新增年終獎金稅額計算器 `/bonus-calculator`
+
+報稅季前 6 週，「年終獎金要繳稅嗎」「年終獎金稅率」是高意圖搜尋，全年最高峰在 1~5 月。
+
+- `app/bonus-calculator/page.tsx`：
+  - 輸入月薪、年終月數（slider）或自訂金額
+  - 婚姻狀況、受扶養人數
+  - 依 114 年度五級累進稅率計算：加上年終後多繳多少稅、有效稅率、實拿金額
+  - 節稅小技巧（勞退自提、列舉扣除額）
+  - AdUnit × 2 + TaxAffiliateCTA + 導流到報稅計算器（完整漏斗）
+- `app/bonus-calculator/layout.tsx`：SEO metadata + WebApplication + FAQPage schema
+- 所有頁面 nav 加入「年終獎金」入口（首頁、報稅、月薪、加班費、資遣費）
+- `app/sitemap.ts`：加入 `/bonus-calculator`（priority 0.9）
+- `public/threads-drafts/2026-03-29-bonus.md`：3 篇 Threads 文案（恐懼型/知識型/節稅技巧型）
+- `public/forum-posts/2026-03-29-bonus-ptt.md`：PTT/Dcard 長文含完整計算範例
+
+### 預期營收影響
+- **新 SEO 入口**：「年終獎金稅額」「年終獎金要繳稅嗎」1~5 月搜尋量高峰，估計月搜尋量數千~萬次
+- **TaxAffiliateCTA**：年終後引導找會計師 → Money101，每 10 次點擊 × $200-500/核卡 = **月 $500-2000**（需 Ian 申請帳號）
+- **報稅漏斗**：年終計算完 → 報稅計算器，提升跨頁深度 + 廣告曝光
+- **nav 修復**：提升各頁面被 Google 索引的機會，間接帶動全站流量
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — AdSense 零收入的根本原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 5 個頁面 CTA 都在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-29-bonus.md` 文案 A（恐懼型），配計算結果截圖，時機完美（報稅季前）
+4. **[立即] 發 PTT/Dcard 文** — `public/forum-posts/2026-03-29-bonus-ptt.md`，發到 Salary 板
+5. WebSearch 確認 twtaxcalc.com 是否出現在「年終獎金稅額」搜尋結果
+6. 房貸計算器 nav 補齊（目前未確認有無加入年終獎金入口）
+7. 勞退試算頁（自提節稅是年終後最熱門的理財話題）
+
+---
+
 ## 2026-03-29（第四次）
 
 ### 管道狀態檢查

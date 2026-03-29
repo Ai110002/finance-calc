@@ -42,5 +42,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${base}/bonus-calculator`,
+      lastModified: lastDeploy,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 }

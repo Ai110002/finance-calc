@@ -161,6 +161,12 @@ export default function OvertimeCalculatorPage() {
         >
           報稅計算
         </Link>
+        <Link
+          href="/mortgage"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600"
+        >
+          房貸計算
+        </Link>
         <span className="whitespace-nowrap rounded-full bg-blue-600 px-3 py-1 font-medium text-white">
           加班費
         </span>
@@ -169,6 +175,18 @@ export default function OvertimeCalculatorPage() {
           className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600"
         >
           資遣費
+        </Link>
+        <Link
+          href="/salary-calculator"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600"
+        >
+          月薪試算
+        </Link>
+        <Link
+          href="/bonus-calculator"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600"
+        >
+          年終獎金
         </Link>
       </div>
 
