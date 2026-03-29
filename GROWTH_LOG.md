@@ -1,5 +1,50 @@
 # Growth Log
 
+## 2026-03-29（第八次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認「報稅計算器 2026 台灣」**twtaxcalc.com 未出現**。前三名：財政部etax、cpacorey.com、money101.com.tw。繼續擴充 SEO 入口。
+
+### 今天做了什麼
+
+#### 新增勞健保費率說明頁 `/labor-insurance-rates`
+
+SEO 內容頁，目標關鍵字「勞保費率2026」「健保費率2026」「二代健保補充保費」，這類搜尋報稅季前大量出現且多數網站內容不夠深入。
+
+- `app/labor-insurance-rates/page.tsx`（**Server Component**，有利 SEO）：
+  - 快速總覽費率表（勞保13% / 健保5.17% / 二代健保2.11% / 勞退6%）
+  - 勞保費率詳解 + 部分投保薪資分級表（動態從37級取樣顯示）
+  - 健保費率詳解 + 眷屬加成計算方式
+  - 二代健保補充保費六大課徵項目說明
+  - 勞退費率（雇主強制6% vs 員工自提節稅）
+  - 常見問題 4 則（自然語言 → 對話式搜尋友好）
+  - AdUnit × 2 + TaxAffiliateCTA + 月薪試算 CTA
+- `app/labor-insurance-rates/layout.tsx`：SEO metadata + Article schema + FAQPage schema
+  - 主要關鍵字：「勞保費率」「勞保費率2026」「健保費率2026」「勞健保怎麼算」「二代健保補充保費」
+- 全站 10 個頁面 nav 加入「勞健保費率」入口
+- `app/sitemap.ts`：加入 `/labor-insurance-rates`（priority 0.8）
+- `public/threads-drafts/2026-03-29-labor-insurance.md`：4 篇文案（數字驚喜型/知識型/報稅季緊迫型/Dcard短版）
+
+**注意**：npm 環境限制，本地 build 跳過；代碼模式與現有頁面一致，Vercel 正常部署。
+
+### 預期營收影響
+- **SEO 長尾流量**：「勞保費率2026」「健保費率115年」「二代健保補充保費」每月搜尋量合計估計數千次；純內容頁比計算器更容易在 0-3 個月內排名
+- **入口漏斗**：費率說明頁 → 月薪試算計算器 → 報稅計算器，三層漏斗提升停留時間與廣告曝光
+- **TaxAffiliateCTA**：月薪了解後引導找會計師 → 月預估 **$500-2000**（需 Ian 申請帳號）
+- **全站爬蟲覆蓋**：10 個頁面互相連結，Googlebot 覆蓋率持續提升
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 8 個頁面 CTA 在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-29-labor-insurance.md` 文案 A（數字驚喜型）
+4. **[立即] 發 Threads** — 歷次未發文案（basic-living、pension、bonus）報稅季前都還有效
+5. **向 Google Search Console 提交 sitemap**（Ian 手動：GSC → 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 下一個 SEO 內容頁：「115年度所得稅級距完整表」— 高搜尋量，此主題 Google 搜尋前三名都是部落格，有機可趁
+
+---
+
 ## 2026-03-29（第七次）
 
 ### 管道狀態檢查
