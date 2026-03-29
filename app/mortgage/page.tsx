@@ -77,6 +77,9 @@ export default function MortgagePage() {
         <Link href="/basic-living-deduction" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
           免稅天花板
         </Link>
+        <Link href="/labor-insurance-rates" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          勞健保費率
+        </Link>
       </div>
 
       {/* Hero */}

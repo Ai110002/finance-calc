@@ -60,5 +60,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${base}/labor-insurance-rates`,
+      lastModified: lastDeploy,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }
