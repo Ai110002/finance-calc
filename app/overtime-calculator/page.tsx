@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { AdUnit } from "@/components/ad-unit";
+import { TaxAffiliateCTA } from "@/components/affiliate-cta";
 
 // ── 勞基法 §24 加班費計算規則 ──────────────────────────────────
 // 時薪 = 月薪 ÷ 240（月薪 ÷ 30天 ÷ 8小時）
@@ -306,6 +308,8 @@ export default function OvertimeCalculatorPage() {
           </div>
         )}
 
+        <AdUnit className="my-1" />
+
         {/* 加班費與報稅 */}
         <div className="rounded-2xl bg-amber-50 p-5 ring-1 ring-amber-100 space-y-3">
           <h2 className="font-semibold text-amber-900">加班費要報稅嗎？</h2>
@@ -389,6 +393,10 @@ export default function OvertimeCalculatorPage() {
             </div>
           </div>
         </div>
+
+        <TaxAffiliateCTA />
+
+        <AdUnit className="my-1" />
 
         {/* 相關工具 */}
         <div className="rounded-2xl bg-gray-50 p-5 space-y-3">
