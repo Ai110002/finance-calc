@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.twtaxcalc.com";
   // Use a fixed date per deploy rather than new Date() on every request
-  const lastDeploy = new Date("2026-03-29");
+  const lastDeploy = new Date("2026-03-29T12:00:00Z");
 
   return [
     {
@@ -26,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/overtime-calculator`,
+      lastModified: lastDeploy,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/severance-calculator`,
       lastModified: lastDeploy,
       changeFrequency: "monthly",
       priority: 0.8,

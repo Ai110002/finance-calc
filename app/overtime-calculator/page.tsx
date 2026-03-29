@@ -164,6 +164,12 @@ export default function OvertimeCalculatorPage() {
         <span className="whitespace-nowrap rounded-full bg-blue-600 px-3 py-1 font-medium text-white">
           加班費
         </span>
+        <Link
+          href="/severance-calculator"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600"
+        >
+          資遣費
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">

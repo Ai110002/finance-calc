@@ -63,6 +63,9 @@ export default function TaxCalculatorPage() {
         <Link href="/overtime-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           加班費
         </Link>
+        <Link href="/severance-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          資遣費
+        </Link>
       </div>
 
       {/* Hero */}
