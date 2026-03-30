@@ -1,5 +1,54 @@
 # Growth Log
 
+## 2026-03-30（第十一次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認 **twtaxcalc.com 仍未出現**在「自由工作者報稅」「接案族報稅」「SOHO族報稅」搜尋結果中
+  - 競爭格局：SWAP Blog（有試算工具）排名第1；104職場力、tasker.com.tw、商周財富網等皆為純文字文章
+  - **機會**：現有競爭頁幾乎全是文字說明，無完整試算表 → 本頁差異化明確
+
+### 今天做了什麼
+
+#### 新增「自由工作者接案報稅指南」頁面 `/freelancer-tax-guide`
+
+上次 log 明確列為最優先 SEO 頁。目標關鍵字：「自由工作者報稅」「接案族報稅」「SOHO族報稅」「執行業務所得費用率」「接案繳多少稅」，Google 搜尋現有競爭者幾乎全是文字文章（除 SWAP Blog 有試算），本頁有完整稅額試算表，差異化明顯。
+
+- `app/freelancer-tax-guide/page.tsx`（**Server Component**，有利 SEO）：
+  - 接案稅額試算表（年收40~300萬 × 20%費用率，含有效稅率）
+  - **獨家分析**：接案族 vs 受僱員工稅負比較表（年收109萬交叉點）→ 超過109萬接案更省稅
+  - 6大職類費用率說明（20%一般接案 / 30%律師講師 / 35%建築師 / 40%醫師）
+  - 二代健保補充保費說明（費率2.11%，付款方代扣）
+  - 節稅3大策略（申報實際費用/扶養親屬/設立行號）
+  - FAQ 4則（FAQPage schema）
+  - AdUnit × 2 + TaxAffiliateCTA + 相關工具連結
+- `app/freelancer-tax-guide/layout.tsx`：SEO metadata + Article schema + FAQPage schema
+  - 主要關鍵字：「自由工作者報稅」「接案族報稅」「SOHO族報稅」「執行業務所得費用率」「115年度接案報稅」「freelancer tax taiwan」
+- 全站 8 個頁面 nav 加入「接案報稅」入口（勞健保、所得稅級距、勞退、免稅天花板、月薪、扶養節稅、新頁面自身）
+- `app/sitemap.ts`：加入 `/freelancer-tax-guide`（priority 0.9）
+- `public/threads-drafts/2026-03-30-freelancer-tax.md`：4 篇文案（數字驚喜型/比較型/迷思破解型/Dcard短版）
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **SEO 高意圖流量**：「自由工作者報稅」「接案族報稅」報稅季前搜尋量大（3~5月高峰），現有競爭頁幾乎無試算表 → 本頁覆蓋差異化內容，排名潛力高
+- **獨特試算功能**：接案 vs 員工稅負比較表（含109萬交叉點）是目前搜尋結果中獨家內容，分享性強
+- **入站漏斗**：搜尋接案報稅 → 看試算表找到自己情況 → 點「開啟報稅計算器」精算 → 廣告曝光 + TaxAffiliateCTA（找會計師）點擊
+- **TaxAffiliateCTA**：接案族正在研究節稅，意圖明確，會計師 CTA 點擊率高 → 月預估 **$500-2000**（需 Ian 申請帳號）
+- **全站爬蟲覆蓋**：13 個頁面互相連結，Googlebot 覆蓋率持續提升
+- **報稅季時效**：3~5 月是黃金期，流量窗口正在打開
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 13 個頁面 CTA 在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-30-freelancer-tax.md` 文案 A（數字驚喜型）
+4. **[立即] 補發之前未發的文案** — `2026-03-30-dependent-deduction.md`、`2026-03-30-income-tax-brackets.md` 等都還有效
+5. **向 Google Search Console 提交 sitemap**（Ian 手動：GSC → 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 下一個 SEO 頁候選：「二代健保完整指南」（接案族和上班族都搜尋，流量大）或「薪資 vs 執行業務所得比較計算器」（直接 interactive）
+
+---
+
 ## 2026-03-30（第十次）
 
 ### 管道狀態檢查
