@@ -236,6 +236,12 @@ export default function OvertimeCalculatorPage() {
         >
           薪資vs接案
         </Link>
+        <Link
+          href="/tax-filing-guide"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          報稅攻略
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">

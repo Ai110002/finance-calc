@@ -96,6 +96,12 @@ export default function TaxCalculatorPage() {
         <Link href="/salary-vs-freelancer" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           薪資vs接案
         </Link>
+        <Link
+          href="/tax-filing-guide"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          報稅攻略
+        </Link>
       </div>
 
       {/* Hero */}

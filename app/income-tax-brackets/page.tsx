@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { href: "/freelancer-tax-guide", label: "接案報稅" },
   { href: "/supplement-premium", label: "二代健保" },
   { href: "/salary-vs-freelancer", label: "薪資vs接案" },
+  { href: "/tax-filing-guide", label: "報稅攻略" },
 ];
 
 // ── 115年度（2026年5月申報）綜合所得稅五級累進稅率 ────────────────────

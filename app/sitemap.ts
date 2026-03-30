@@ -96,5 +96,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.9,
     },
+    {
+      url: `${base}/tax-filing-guide`,
+      lastModified: new Date("2026-03-30T18:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }
