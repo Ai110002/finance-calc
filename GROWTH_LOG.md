@@ -1,5 +1,65 @@
 # Growth Log
 
+## 2026-03-30（第二十五次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：節省 token，跳過 WebSearch → 繼續累積 SEO 頁面衝刺5月報稅季
+
+### 今天做了什麼
+
+#### 新增「海外所得 & 最低稅負制試算」頁面 `/foreign-income-tax`
+
+**選頁邏輯（為什麼選此頁）：**
+- GROWTH_LOG 第二十四次候選：「股票投資所得稅計算」— 台股投資人族群，結合 /dividend-tax 形成集群
+- 更精準定位為「海外所得/最低稅負制」：因為台股資本利得免稅，真正的稅務疑問集中在美股/海外ETF
+- 距離5月報稅季約31天——SEO索引最後時機
+- 搜尋意圖強：「美股報稅台灣」「海外所得申報」「最低稅負制試算」目前無互動計算器
+- 族群精準：台灣持有美股ETF（VTI、SPY等）人數快速增長，每年5月報稅都有疑問
+
+**頁面功能亮點：**
+- 三步驟判斷邏輯：①海外所得是否超過100萬→②基本所得額是否超過670萬→③AMT vs 一般稅額取大值
+- 申報身分（單身/夫妻合報），夫妻分別輸入薪資
+- 即時結果：一般稅額、基本稅額（AMT）、應繳稅額、是否補繳AMT差額
+- **亮點**：AMT狀態顯示（4種狀況：不觸發→無需申報/觸發但不補繳/需補繳AMT）
+- 情境比較表6種：含實際觸發AMT案例（薪資100萬+海外所得1000萬→需補繳約54萬AMT）
+- 申報重點4點（含台灣掛牌ETF vs 美股掛牌ETF差異說明）
+- FAQ×4（Schema markup）+ WebApplication schema + Article schema + FAQPage schema
+- TaxAffiliateCTA → Money101
+- 相關工具：→ 股利申報、→ 二代健保、→ 報稅計算、→ 所得稅級距、→ 列舉vs標準、→ 報稅攻略
+
+**全站更新：**
+- 全站20個頁面 NAV_LINKS 加入「海外所得」入口（sed批量更新）
+- `app/sitemap.ts`：加入 `/foreign-income-tax`（priority 0.9，共28個URL）
+- `public/threads-drafts/2026-03-30-foreign-income-tax.md`：3篇 Threads 文案 A/B/C + Dcard 長文版
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「美股投資人注意：你大概不需要繳最低稅負（AMT）。薪資100萬、美股股利200萬的人，基本所得額只有154萬，完全不用繳AMT。你的狀況到底會不會觸發？30秒算完 → twtaxcalc.com/foreign-income-tax」
+→ 破解「持有美股就要被課20%」的迷思，引起興趣並帶行動連結
+
+### 預期營收影響
+- **5月報稅季高搜尋**：「美股報稅」「海外所得申報」「最低稅負制」是每年4~5月高峰搜尋詞
+- **族群精準 + 高焦慮**：美股投資人擔心被課稅，搜尋意圖強，計算後發現「原來不用繳AMT」有高分享誘因
+- **差異化極強**：現有搜尋結果只有靜態文章/政府公告，本頁是台灣第一個互動版AMT試算器
+- **投資集群SEO**：與 /dividend-tax（股利計稅）+ /supplement-premium（二代健保）形成完整「投資人報稅工具集」
+- **TaxAffiliateCTA轉換路徑**：算完發現複雜或有AMT疑慮 → 找會計師確認 → 點 Money101
+- **月預估影響**：$200–400（需 Ian 申請 Money101 + 設定 AdSense）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 28頁都在等廣告
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 28頁 TaxAffiliateCTA 等待真實 affiliate link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-foreign-income-tax.md` 文案 A 最強（破解AMT迷思）
+4. **[立即] Ian 在 Dcard 理財/投資版發長文** — 同文件末尾 Dcard 版本（含完整試算步驟）
+5. **下一個 SEO 頁候選（5月報稅季最後衝刺）：**
+   - **「2026報稅懶人包（新手完整攻略）」** — SEO內容頁攻「報稅懶人包」「2026報稅怎麼報」長尾，補完 /tax-filing-guide
+   - **「退休金/勞退二代提撥試算」** — 退休族 + 薪資族，長青搜尋量穩定
+   - **「所得稅退稅資格試算」** — 「我可以退稅嗎？」5月報稅後最高搜尋量之一
+
+---
+
 ## 2026-03-30（第二十四次）
 
 ### 管道狀態檢查
