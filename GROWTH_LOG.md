@@ -1,5 +1,51 @@
 # Growth Log
 
+## 2026-03-30（第十七次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認 twtaxcalc.com 仍未出現在「報稅計算器」「買房 vs 租房計算機」搜尋結果 → 繼續累積 SEO 頁面
+
+### 今天做了什麼
+
+#### 新增「買房 vs 租房比較計算機」頁面 `/buy-vs-rent`
+
+目標關鍵字：「買房還是租房」「買房vs租房」「買房租房比較」「台灣買房划算嗎」「租房投資比買房好」，全年長青搜尋（不只報稅季），且搜尋結果全是靜態文字文章，**無任何互動計算工具**。
+
+**頁面亮點：**
+- 全台灣唯一「輸入房價+租金+投資報酬率 → 30年後財富比較」互動計算機
+- 考量：首付機會成本（把首付投ETF）+ 月供vs月租差額複利投資 + 房價增值率 + 租金通膨
+- 3種情境快比表（保守/中性/樂觀房價增率，固定在1500萬房+月租3萬+投資6%）
+- 關鍵洞察區：買房槓桿效應 vs 租房首付機會成本 + 台灣租售比偏低說明
+- 年度里程碑追蹤表（5/10/15/20/25/30年逐年比較）
+- MortgageAffiliateCTA → Money101 房貸比較（最強變現點）
+- FAQPage schema × 4 + Article schema + WebApplication schema
+- 全站 17 個頁面 nav 加入「買vs租」入口
+- `app/sitemap.ts`：加入 `/buy-vs-rent`（priority 0.9）
+- `public/threads-drafts/2026-03-30-buy-vs-rent.md`：4篇文案（含 Dcard 長文版）
+
+**注意：** 本次 build 無法在本地驗證（npm registry 403 / node_modules 空），依賴 Vercel 部署時的建置。代碼完全照現有頁面 pattern 撰寫（`use client` + useState/useMemo + Next.js Link + 同樣 layout.tsx 結構）。
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **全年流量**：「買房還是租房」是永恆討論話題，非季節性，全年穩定搜尋量
+- **差異化極強**：目前台灣搜尋結果全是靜態文章（銀行、房地產媒體），本頁是唯一互動計算器
+- **高分享潛力**：「1500萬台北房，月租3萬，房價增1%的話租房+投資勝」這個結論違反直覺，易引發轉發
+- **Money101 最強漏斗**：算完買房合算 → 直接點 Money101 比較銀行房貸 → 核貸佣金（估值每筆 $200+）
+- **月預估影響**：$500-2,000（需 Ian 申請 Money101 + AdSense 帳號）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — buy-vs-rent + mortgage-full-cost 都是最強房貸比較落地頁
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-buy-vs-rent.md` 文案 A（數字衝擊型）最強
+4. **下一個 SEO 頁候選：**
+   - **「勞工退休金試算與提領策略」** （勞退帳戶×投報率×退休年齡）→ 退休規劃族群全年需求
+   - **「房地合一稅計算機」**（2.0版，賣房前必查）→ 高意圖、高變現（Money101 房貸比較）
+
+---
+
 ## 2026-03-30（第十六次）
 
 ### 管道狀態檢查

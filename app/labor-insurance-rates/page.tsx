@@ -21,6 +21,7 @@ const NAV_LINKS = [
   { href: "/tax-filing-guide", label: "報稅攻略" },
   { href: "/dividend-tax", label: "股利申報" },
   { href: "/mortgage-full-cost", label: "買房費用" },
+  { href: "/buy-vs-rent", label: "買vs租" },
 ];
 
 // ── 114/115年度 費率（相同，通膨未達調整門檻）─────────────────────

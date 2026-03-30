@@ -114,6 +114,12 @@ export default function TaxCalculatorPage() {
         >
           買房費用
         </Link>
+        <Link
+          href="/buy-vs-rent"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          買vs租
+        </Link>
       </div>
 
       {/* Hero */}
