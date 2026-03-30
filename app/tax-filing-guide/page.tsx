@@ -23,6 +23,7 @@ const NAV_LINKS = [
   { href: "/supplement-premium", label: "二代健保" },
   { href: "/salary-vs-freelancer", label: "薪資vs接案" },
   { href: "/tax-filing-guide", label: "報稅攻略", active: true },
+  { href: "/dividend-tax", label: "股利申報" },
 ];
 
 const TAX_BRACKETS = [
