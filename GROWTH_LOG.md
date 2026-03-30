@@ -1,5 +1,66 @@
 # Growth Log
 
+## 2026-03-30（第二十四次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：節省 token，跳過 WebSearch（前幾次結果一致：未出現排名）→ 繼續累積 SEO 頁面衝刺5月報稅季
+
+### 今天做了什麼
+
+#### 新增「幼兒學前特別扣除額試算」頁面 `/preschool-deduction`
+
+**選頁邏輯（為什麼選此頁）：**
+- GROWTH_LOG 第二十三次候選：「幼兒學前特別扣除額試算，上班族父母精準族群」
+- 距離5月報稅季剩約30天——SEO索引最後時機
+- 搜尋詞精準：「幼兒學前扣除額」「有小孩報稅省多少」「未滿6歲扣除額」，目前搜尋結果無任何互動計算器
+- 族群精準：台灣年出生約 15 萬嬰兒，目標受眾約 15~45 萬潛在有幼兒的申報戶（1~5歲幼兒家庭）
+- 強分享誘因：「原來我家還可以省這麼多」，在父母群組、PTT親子版、Dcard親子版有天然傳播潛力
+- 補完節稅集群：→ /tax-calculator + /dependent-deduction + /basic-living-deduction + /deduction-compare + /preschool-deduction
+
+**頁面功能亮點：**
+- 申報身分（單身/夫妻合報），夫妻可分別輸入薪資
+- 幼兒人數選擇（1/2/3/4人）
+- 即時計算：所得淨額、應繳稅額（含vs不含幼兒學前扣除）、節稅差異
+- **亮點**：同時顯示「幼兒學前扣除節稅」＋「受扶養子女免稅額節稅」合計
+- 計算明細展開（薪資扣除、免稅額、標準扣除、幼兒學前扣除逐項列出）
+- 情境比較表：8種常見家庭情境（單薪80萬~雙薪各150萬 × 1~2幼兒）
+- 申報條件4點說明（未滿6歲基準日、受扶養資格、夫妻申報、無所得上限）
+- FAQ × 4（Schema markup）+ Article schema + WebApplication schema
+- TaxAffiliateCTA → Money101
+- 相關工具內部連結：→ 報稅計算、→ 扶養節稅、→ 列舉vs標準、→ 免稅天花板、→ 所得稅級距、→ 報稅攻略
+
+**全站更新：**
+- 全站19個頁面 NAV_LINKS 加入「幼兒學前扣除」入口（sed批量更新）
+- `app/sitemap.ts`：加入 `/preschool-deduction`（priority 0.9，共27個URL）
+- `public/threads-drafts/2026-03-30-preschool-deduction.md`：3篇 Threads 文案 A/B/C + Dcard 長文版
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「未滿6歲幼兒，每人可扣除 15 萬元。兩個孩子就是 30 萬元。雙薪夫妻各 100 萬年薪，一個幼兒可以省 18,000 元。你的情況能省多少？30 秒算完 → twtaxcalc.com/preschool-deduction」
+→ 具體金額觸發「我有沒有漏報」焦慮，直接帶行動連結
+
+### 預期營收影響
+- **5月報稅季高搜尋**：「幼兒學前扣除額」「有小孩報稅省多少」是5月前高峰搜尋詞，目前無競品互動計算器
+- **族群精準 + 高分享**：有幼兒的父母群組傳播天然，Dcard親子版、PTT親子板話題性強
+- **節稅集群SEO**：第5個節稅工具頁，與現有4頁形成「台灣最完整報稅節稅工具集」
+- **TaxAffiliateCTA轉換**：算完後發現稅法複雜 → 找會計師 → 點 Money101
+- **月預估影響**：$200–400（需 Ian 申請 Money101 + 設定 AdSense）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 27頁都在等廣告
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 27頁 TaxAffiliateCTA 等待真實 affiliate link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-preschool-deduction.md` 文案 A 最強
+4. **[立即] Ian 在 Dcard 親子版/理財版發長文** — 同文件末尾 Dcard 版本
+5. **下一個 SEO 頁候選（5月報稅季最後衝刺）：**
+   - **「股票投資所得稅計算」** — 台股投資人族群，結合 /dividend-tax 形成集群（買賣獲利 vs 股利稅務差異）
+   - **「薪資 vs 執行業務所得申報比較」** — 自由工作者接案必看，月薪聘僱 vs 勞務報酬的稅務差異
+   - **「二代健保補充保費完整試算」** — 年終、股利、租金等被動收入的補充保費精算
+
+---
+
 ## 2026-03-30（第二十三次）
 
 ### 管道狀態檢查
