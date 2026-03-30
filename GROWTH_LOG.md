@@ -1,5 +1,52 @@
 # Growth Log
 
+## 2026-03-30（第十二次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現在搜尋結果 → 繼續 SEO 頁積累
+
+### 今天做了什麼
+
+#### 新增「二代健保補充保費完整指南」頁面 `/supplement-premium`
+
+上次 log 候選頁之一。目標關鍵字：「二代健保補充保費」「二代健保費率」「獎金二代健保」「接案二代健保」「股利二代健保」「補充保費六大類」，現有搜尋結果幾乎全是純文字說明，本頁含三張試算表，差異化明顯。
+
+- `app/supplement-premium/page.tsx`（**Server Component**，有利 SEO）：
+  - 六大類補充保費完整說明（高額獎金/兼職/執行業務/股利/利息/租金），含情境範例
+  - **接案收入試算表**（年收 5萬～150萬，全年補充保費＆月均金額）
+  - **高額獎金試算表**（5萬～100萬獎金，門檻 109,880，超出部分 × 2.11%）
+  - **股利試算表**（超過 2萬才扣，差額 × 2.11%）
+  - 三大常見誤解澄清（本薪不扣/股利非全額/補充保費非報稅時繳）
+  - AdUnit × 2 + TaxAffiliateCTA + 相關工具連結（tax-calculator / freelancer-tax-guide / income-tax-brackets / dependent-deduction）
+- `app/supplement-premium/layout.tsx`：SEO metadata + Article schema + FAQPage schema（4 則）
+  - 主要關鍵字：「二代健保補充保費」「二代健保費率」「補充保費六大類」「獎金二代健保」「115年度補充保費」
+- 全站 14 個頁面 nav 加入「二代健保」入口
+- `app/sitemap.ts`：加入 `/supplement-premium`（priority 0.9）
+- `public/threads-drafts/2026-03-30-supplement-premium.md`：4 篇文案（數字驚喜型/接案族型/股民版/Dcard短版）
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **SEO 高意圖流量**：「二代健保」是員工和接案族都在搜的關鍵字，比純接案受眾更廣，報稅季前（3~5月）搜尋量大
+- **差異化內容**：三張試算表（接案/獎金/股利）是目前搜尋結果中獨家，分享性強
+- **入站漏斗**：搜尋二代健保 → 看試算表對照自己情況 → 點「開啟接案報稅指南」或「報稅計算器」 → 廣告曝光 + TaxAffiliateCTA 點擊
+- **TaxAffiliateCTA**：研究補充保費的用戶正在準備報稅，意圖明確，會計師 CTA 點擊率高 → 月預估 **$300-1500**（需 Ian 申請帳號）
+- **全站爬蟲覆蓋**：14 個頁面互相連結，Googlebot 覆蓋率持續提升
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 14 個頁面 CTA 在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-30-supplement-premium.md` 文案 A（數字驚喜型：年終15萬到底扣不扣）
+4. **[立即] 補發未發文案** — `2026-03-30-freelancer-tax.md`、`2026-03-30-dependent-deduction.md` 等
+5. **向 Google Search Console 提交 sitemap**（Ian 手動：GSC → 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 下一個 SEO 頁候選：
+   - **「薪資 vs 執行業務所得比較計算器」**（互動式，讓使用者輸入年收，比較兩種身份稅負）→ 高分享率
+   - **「房貸族完整費用指南」**（含貸款成本、保險、設定費、代書費等）→ 房貸頁流量導入
+
+---
+
 ## 2026-03-30（第十一次）
 
 ### 管道狀態檢查
