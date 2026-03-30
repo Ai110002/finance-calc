@@ -244,6 +244,12 @@ export default function BonusCalculatorPage() {
         >
           所得稅級距
         </Link>
+        <Link
+          href="/dependent-deduction"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          扶養節稅
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">

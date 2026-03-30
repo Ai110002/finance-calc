@@ -132,6 +132,7 @@ const NAV_LINKS = [
   { href: "/basic-living-deduction", label: "免稅天花板" },
   { href: "/labor-insurance-rates", label: "勞健保費率" },
   { href: "/income-tax-brackets", label: "所得稅級距" },
+  { href: "/dependent-deduction", label: "扶養節稅" },
 ];
 
 export default function SalaryCalculatorPage() {
