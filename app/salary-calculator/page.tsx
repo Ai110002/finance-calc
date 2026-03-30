@@ -141,6 +141,7 @@ const NAV_LINKS = [
   { href: "/mortgage-full-cost", label: "買房費用" },
   { href: "/buy-vs-rent", label: "買vs租" },
   { href: "/real-estate-tax", label: "房地合一稅" },
+  { href: "/inheritance-tax", label: "遺產稅" },
 ];
 
 export default function SalaryCalculatorPage() {

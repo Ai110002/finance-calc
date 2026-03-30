@@ -126,6 +126,12 @@ export default function TaxCalculatorPage() {
         >
           房地合一稅
         </Link>
+        <Link
+          href="/inheritance-tax"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          遺產稅
+        </Link>
       </div>
 
       {/* Hero */}

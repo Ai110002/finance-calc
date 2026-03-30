@@ -195,6 +195,9 @@ export default function Home() {
         <Link href="/salary-vs-freelancer" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           薪資vs接案
         </Link>
+        <Link href="/inheritance-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          遺產稅
+        </Link>
       </div>
 
       <div className="text-center">
