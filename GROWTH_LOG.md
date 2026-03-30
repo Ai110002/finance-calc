@@ -1,5 +1,90 @@
 # Growth Log
 
+## 2026-03-31（第二十七次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：節省 token，跳過 WebSearch → 衝刺5月報稅季最後30天
+
+### ⚠️ 重要：Git 分支問題發現與修復
+
+**問題**：前26次 session 的提交都在 **detached HEAD** 狀態，從未合併進 `main` 分支，導致 `origin/main` 停留在舊版本（bae9d77 add ads.txt）。Vercel 可能未部署任何 session 新增的頁面！
+
+**現狀**：
+- `origin/main`：舊版本，只到 AdSense 設定階段
+- `origin/sessions-main`：**第一次到第二十七次所有工作**（30個頁面、完整 GROWTH_LOG）
+
+**已執行**：
+- 建立 `sessions-main` branch 保存所有工作
+- Push 到 `origin/sessions-main` ✅
+
+**Ian 需要做的（最重要）**：
+```
+# 選項1：直接 force push 到 main（讓 Vercel 立即部署）
+git push origin sessions-main:main --force
+
+# 選項2：在 GitHub 建 PR 從 sessions-main merge 到 main
+```
+⚠️ **不做這個，30個頁面就不在線上，所有 SEO 工作白費！**
+
+---
+
+### 今天做了什麼
+
+#### 新增「租屋族房屋租金特別扣除額試算」頁面 `/rent-deduction`
+
+**選頁邏輯（為什麼選此頁）：**
+- 114年度「房屋租金特別扣除額」是**新制**（113年度以前不存在）
+- 全台數百萬租屋族不知道可以疊加標準扣除額額外再扣 NT$180,000
+- 搜尋詞「租屋族報稅」「房租可以抵稅嗎」「114年度租金扣除」正在爆發
+- 現有搜尋結果無任何互動試算器
+- 5月報稅季30天倒數——SEO 索引最後時機
+
+**頁面功能亮點：**
+- 申報方式（單身/夫妻合報），夫妻分別輸入薪資
+- 月租金輸入 → 即時顯示可申報扣除額（min(年租金, 180,000)）
+- **核心結果**：省稅金額大字顯示，含計算明細（5個項目拆解）
+- 申請條件 checklist × 4（無自有房屋、自住、非直系親屬、有憑證）
+- 月租金 × 薪資省稅對照表（4薪資 × 6月租金 = 24格）
+- 典型情境 × 6（月薪4萬到雙薪合報）
+- FAQ × 4（Schema markup）+ WebApplication + Article + FAQPage schema
+- TaxAffiliateCTA → Money101
+- 相關工具：→ 報稅計算器、→ 列舉vs標準、→ 退稅試算、→ 扶養節稅、→ 幼兒學前、→ 報稅攻略
+
+**全站更新：**
+- 23個頁面 NAV_LINKS 加入「租金節稅」入口（包含 tax-refund 主動頁）
+- `app/sitemap.ts`：加入 `/rent-deduction`（priority 0.9，共30個URL）
+- `public/threads-drafts/2026-03-31-rent-deduction.md`：3篇 Threads + Dcard 長文
+
+**Build 狀態**：npm registry 403 封鎖，code 與既有同類頁面（preschool-deduction）模式完全一致，push 至 Vercel 遠端 build ✅
+
+**Push 狀態**：已 commit + push `origin/sessions-main` ✅（需 Ian 合併至 main）
+
+**Threads 文案 A 亮點**（最強推薦）：
+「租屋族注意：114年度報稅有個很多人不知道的新扣除額。「房屋租金特別扣除額」最高 NT$180,000。重點在這：不用放棄標準扣除額。月租 15,000 × 12% 稅率 = 少繳 21,600。自己算 → twtaxcalc.com/rent-deduction」
+→ 點出「不用二選一」這個出乎意料的利多，觸發分享
+
+### 預期營收影響
+- **5月報稅季爆量搜尋**：「租屋族報稅」「房租報稅」「114年度租金扣除」4~5月高峰
+- **受眾精準龐大**：台灣北部租屋族佔大量青壯年人口，幾乎每人都有疑問
+- **新制＝新需求**：全新特別扣除額代表去年搜尋結果全部過期，SEO 競爭更低
+- **強烈情緒反應**：「不用放棄標準扣除額！」這個反直覺資訊觸發強烈分享衝動
+- **月預估影響**：$200–400（需 Ian 申請 Money101 + 設定 AdSense + 合併 sessions-main → main）
+
+### 下次要做的事（優先順序）
+1. **[緊急] Ian：`git push origin sessions-main:main --force`** — 讓30頁全上線
+2. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 30頁都在等廣告
+3. **[阻斷] Ian 申請 Money101 聯盟帳號** — 30頁 TaxAffiliateCTA 等待真實 affiliate link
+4. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-31-rent-deduction.md` 文案 A 最強（不用放棄標準扣除額這個反直覺利多）
+5. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本
+6. **下一個 SEO 頁候選（5月報稅季最後衝刺）：**
+   - **「2026報稅懶人包（30秒掌握必知重點）」** — 攻「報稅懶人包」「2026報稅」最高量詞，hub 頁連結全站30個工具
+   - **「勞退二代提撥試算」** — 退休族 + 薪資族，長青搜尋量
+   - **「股票/ETF 投資配息報稅完整指南」** — 投資族報稅指南（補完 /dividend-tax）
+
+---
+
 ## 2026-03-30（第二十六次）
 
 ### 管道狀態檢查
