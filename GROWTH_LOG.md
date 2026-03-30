@@ -5,7 +5,9 @@
 ### 管道狀態檢查
 - **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
 - **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
-- **流量**：WebSearch 背景執行中（結果另補），根據第八次 log 站台仍未出現搜尋結果，繼續 SEO 擴充策略
+- **流量**：WebSearch 確認 **twtaxcalc.com 仍未出現**在「報稅計算器2026台灣」「所得稅級距2026台灣」「115年度所得稅級距」三個搜尋結果中
+  - 競爭格局：cpacorey.com（會計師部落格）三個搜尋都排第1/2；money101.com.tw 持續前3；政府網站；stockfeel.com.tw；houseloan.tw
+  - **正面訊號**：marconmktgroup.com（新站）出現在「115年度所得稅級距」第5名，代表新站可以排進去 → 今天建的頁面目標對了
 
 ### 今天做了什麼
 
