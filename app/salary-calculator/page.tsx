@@ -133,6 +133,7 @@ const NAV_LINKS = [
   { href: "/labor-insurance-rates", label: "勞健保費率" },
   { href: "/income-tax-brackets", label: "所得稅級距" },
   { href: "/dependent-deduction", label: "扶養節稅" },
+  { href: "/freelancer-tax-guide", label: "接案報稅" },
 ];
 
 export default function SalaryCalculatorPage() {
