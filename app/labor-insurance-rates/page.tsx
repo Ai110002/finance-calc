@@ -17,6 +17,7 @@ const NAV_LINKS = [
   { href: "/dependent-deduction", label: "扶養節稅" },
   { href: "/freelancer-tax-guide", label: "接案報稅" },
   { href: "/supplement-premium", label: "二代健保" },
+  { href: "/salary-vs-freelancer", label: "薪資vs接案" },
 ];
 
 // ── 114/115年度 費率（相同，通膨未達調整門檻）─────────────────────

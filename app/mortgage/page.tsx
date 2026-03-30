@@ -92,6 +92,9 @@ export default function MortgagePage() {
         <Link href="/supplement-premium" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
           二代健保
         </Link>
+        <Link href="/salary-vs-freelancer" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          薪資vs接案
+        </Link>
       </div>
 
       {/* Hero */}

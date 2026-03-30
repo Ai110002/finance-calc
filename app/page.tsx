@@ -192,6 +192,9 @@ export default function Home() {
         <Link href="/supplement-premium" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           二代健保
         </Link>
+        <Link href="/salary-vs-freelancer" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          薪資vs接案
+        </Link>
       </div>
 
       <div className="text-center">
