@@ -90,6 +90,7 @@ const NAV_LINKS = [
   { href: "/deduction-compare", label: "列舉vs標準" },
   { href: "/preschool-deduction", label: "幼兒學前扣除" },
   { href: "/foreign-income-tax", label: "海外所得" },
+  { href: "/tax-refund", label: "退稅試算" },
 ];
 
 // 情境比較：以各類稅率×評定現值 300 萬（台北市常見中古屋）為基準

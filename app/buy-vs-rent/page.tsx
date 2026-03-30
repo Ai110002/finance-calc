@@ -33,6 +33,7 @@ const NAV_LINKS = [
   { href: "/deduction-compare", label: "列舉vs標準" },
   { href: "/preschool-deduction", label: "幼兒學前扣除" },
   { href: "/foreign-income-tax", label: "海外所得" },
+  { href: "/tax-refund", label: "退稅試算" },
 ];
 
 // ── 月供計算（等額本息）──────────────────────────────────────────────────────
