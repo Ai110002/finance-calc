@@ -87,6 +87,7 @@ const NAV_LINKS = [
   { href: "/salary-vs-freelancer", label: "薪資vs接案" },
   { href: "/tax-filing-guide", label: "報稅攻略" },
   { href: "/dividend-tax", label: "股利申報" },
+  { href: "/deduction-compare", label: "列舉vs標準" },
 ];
 
 // 情境比較：以各類稅率×評定現值 300 萬（台北市常見中古屋）為基準

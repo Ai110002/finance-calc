@@ -86,6 +86,7 @@ const NAV_LINKS = [
   { href: "/salary-vs-freelancer", label: "薪資vs接案" },
   { href: "/tax-filing-guide", label: "報稅攻略" },
   { href: "/dividend-tax", label: "股利申報" },
+  { href: "/deduction-compare", label: "列舉vs標準" },
 ];
 
 const SCENARIOS = [

@@ -27,6 +27,7 @@ const NAV_LINKS = [
   { href: "/labor-retirement", label: "勞退新制" },
   { href: "/inheritance-tax", label: "遺產稅" },
   { href: "/gift-tax", label: "贈與稅" },
+  { href: "/deduction-compare", label: "列舉vs標準" },
 ];
 
 // ── 114/115年度 費率（相同，通膨未達調整門檻）─────────────────────

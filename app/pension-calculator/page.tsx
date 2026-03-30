@@ -84,6 +84,7 @@ const NAV_LINKS = [
   { href: "/labor-retirement", label: "勞退新制" },
   { href: "/inheritance-tax", label: "遺產稅" },
   { href: "/gift-tax", label: "贈與稅" },
+  { href: "/deduction-compare", label: "列舉vs標準" },
 ];
 
 export default function PensionCalculatorPage() {
