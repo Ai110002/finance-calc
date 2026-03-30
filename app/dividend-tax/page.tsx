@@ -31,6 +31,7 @@ const NAV_LINKS = [
   { href: "/buy-vs-rent", label: "買vs租" },
   { href: "/real-estate-tax", label: "房地合一稅" },
   { href: "/house-tax", label: "房屋稅" },
+  { href: "/labor-retirement", label: "勞退新制" },
   { href: "/inheritance-tax", label: "遺產稅" },
   { href: "/gift-tax", label: "贈與稅" },
 ];
