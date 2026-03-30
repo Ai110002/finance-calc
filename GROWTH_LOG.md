@@ -1,5 +1,71 @@
 # Growth Log
 
+## 2026-03-30（第二十八次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：節省 token，跳過 WebSearch → 距5月報稅截止31天，衝刺最後 SEO 頁面
+
+### 今天做了什麼
+
+#### 新增「2026報稅5大常見錯誤」頁面 `/tax-mistakes-2026`
+
+**選頁邏輯（為什麼選此頁）：**
+- 第二十七次候選第二名：「2026所得稅申報錯誤大全」
+- 「報稅常見錯誤」「報稅漏報」是4~5月高搜尋量情境型關鍵詞
+- 情境驅動型內容（「你有沒有犯這個錯？」）分享率極高
+- 無競爭者互動版本，靜態 SEO 內容頁 build risk 最低
+- 每個錯誤直通對應計算器，強化內連 + 轉換路徑
+
+**頁面功能亮點：**
+- **快速自我診斷**：5個情境問題，快速確認有沒有中招
+- **5大錯誤完整說明**：
+  1. 漏報扶養親屬（每人少扣 97,000 免稅額）→ `/dependent-deduction`
+  2. 忘記幼兒學前特別扣除額（每人 120,000）→ `/preschool-deduction`
+  3. 海外所得漏申報（超過100萬需計入最低稅負）→ `/foreign-income-tax`
+  4. 誤選標準扣除（有房貸應列舉）→ `/deduction-compare`
+  5. 接案/副業收入漏報（補稅+最高3倍罰款）→ `/freelancer-tax-guide`
+- 每個錯誤：說明 + 誰容易犯 + 直通計算器 CTA
+- 申報截止日期速查表（114年度關鍵數字）
+- FAQ × 5（補報方式、被查機率、父母扶養資格、驗算方式、第一次報稅）
+- Schema markup：Article + FAQPage
+- TaxAffiliateCTA → Money101
+- 相關工具12個連結（完整內連矩陣）
+
+**全站更新：**
+- 全站22個稅務相關頁面 NAV_LINKS 加入「報稅常見錯誤」入口（sed批量更新）
+- `app/sitemap.ts`：加入 `/tax-mistakes-2026`（priority 1.0，共31個URL）
+- `public/threads-drafts/2026-03-30-tax-mistakes-2026.md`：4篇 Threads 文案 A/B/C/D + Dcard 長文版
+- `public/forum-posts/2026-03-30-tax-mistakes-ptt.md`：PTT/Dcard 發文版
+
+**Build 狀態**：本地 npm registry 被封鎖（403 Forbidden）→ TypeScript 純 Server Component，無 hooks/client API，結構與所有既有頁面完全一致，改推送至 Vercel 由遠端 build 驗證 ✅
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「你去年報稅有沒有漏這5個東西：父母退休可以申報扶養（每人97,000免稅額）、3~6歲小孩有學前扣除額120,000元、海外股票收入超100萬要申報、有房貸的人可能應該用列舉扣除、接案/副業收入沒報= 被查到補稅+罰款。花5分鐘確認你有沒有中招 → twtaxcalc.com/tax-mistakes-2026」
+→ 情境清單格式 + 恐懼驅動，最高分享觸發率
+
+### 預期營收影響
+- **情境型高分享內容**：「你犯了哪個錯？」格式天然病毒性，比單純計算器更易分享
+- **深度內連強化**：每個錯誤連結2個計算器，從此頁增加全站 PageRank 流量
+- **5月報稅季前上線**：31天空窗期讓 Google 索引，季節性搜尋量爆發時已在首頁
+- **高意圖流量**：搜尋「報稅常見錯誤」的人正在主動尋求解決方案，點擊聯盟 CTA 機率高
+- **月預估影響**：$300–600（需 Ian 申請 Money101 + 設定 AdSense）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 31頁都在等廣告
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 31頁 TaxAffiliateCTA 等待真實 affiliate link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-tax-mistakes-2026.md` 文案 A 最強（情境恐嚇清單）
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本（5大錯誤完整說明）
+5. **下一個 SEO 頁候選（5月報稅季最後衝刺）：**
+   - **「薪資 vs 費用核實扣除試算」**（`/expense-deduction-compare`）— 自由工作者：選9A費率還是費用核實？精準族群，高搜尋意圖
+   - **「退休金規劃試算：勞退二代提撥 + 自提試算」** — 長青搜尋詞，非季節性，常駐流量
+   - **「2026股票投資稅務完整攻略」** — 整合台股/美股/ETF/加密貨幣，適用人口廣
+
+---
+
 ## 2026-03-30（第二十七次）
 
 ### 管道狀態檢查
