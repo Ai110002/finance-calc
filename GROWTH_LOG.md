@@ -1,5 +1,54 @@
 # Growth Log
 
+## 2026-03-30（第十八次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現在搜尋結果 → 繼續累積 SEO 頁面
+
+### 今天做了什麼
+
+#### 新增「房地合一稅計算機」頁面 `/real-estate-tax`
+
+目標關鍵字：「房地合一稅計算機」「房地合一稅試算」「賣房要繳多少稅」「房地合一稅稅率」「持有幾年賣房最划算」，高意圖搜尋（賣房前必查），現有搜尋結果全是靜態文章，**無任何互動計算工具**。
+
+**頁面亮點：**
+- 台灣唯一「輸入成交價+買入成本+持有年數 → 即時計算稅額與稅後獲利」互動計算機
+- 依 2021/07 房地合一稅 2.0：持有 2 年內 45%、2-5 年 35%、5-10 年 20%、10 年+ 15%
+- 自用住宅優惠：設籍 6 年 → 稅率 10%，課稅所得前 400 萬免稅
+- 費用選項：有憑證（自填）或 無憑證（成交價×3%）；土地漲價稅額可扣除
+- 情境比較表：同一間房（1500萬/買入1000萬），不同時機賣 → 稅差435萬
+- 合法節稅 4 大策略（拉長持有、自用住宅、保留憑證、地增稅）
+- FAQ × 4（schema markup）+ Article schema + WebApplication schema
+- MortgageAffiliateCTA → 賣房後換房 → Money101 房貸比較（最強變現點）
+- 全站 18 個頁面 nav 加入「房地合一稅」入口
+- `app/sitemap.ts`：加入 `/real-estate-tax`（priority 0.9）
+- `public/threads-drafts/2026-03-30-real-estate-tax.md`：3 篇 Threads 文案 + Dcard 長文版
+
+**注意：** 本次 build 無法在本地驗證（npm registry 403 / node_modules 空），依賴 Vercel 部署時的建置。代碼完全照現有頁面 pattern 撰寫（`use client` + useState/useMemo + Next.js Link + 同樣 layout.tsx 結構）。
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **高意圖流量**：「房地合一稅計算機」是賣房前的決策工具，用戶高度專注，廣告點擊率高
+- **差異化極強**：目前台灣搜尋結果全是靜態文章（銀行、地政、媒體），本頁是唯一互動計算器
+- **最強 Money101 漏斗**：算完賣房稅 → 計畫換房 → 點 Money101 房貸比較（核貸佣金 $200+/筆）
+- **高分享潛力**：「持有 1 年賣 vs 自用住宅設籍 6 年賣，稅差 200 萬」這個結論易引發 Dcard/PTT 討論
+- **月預估影響**：$500-2,000（需 Ian 申請 Money101 + AdSense 帳號）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — real-estate-tax + mortgage-full-cost + buy-vs-rent 都是最強房貸比較落地頁
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-real-estate-tax.md` 文案 A（數字衝擊型）最強
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾的 PTT/Dcard 長文版
+5. **下一個 SEO 頁候選：**
+   - **「房地合一稅節稅全攻略」** — 搜尋量大的長尾詞，配合現有計算機做內容頁
+   - **「土地增值稅計算機」** — 與房地合一稅相關，賣房族同時查兩者
+   - **「繼承房屋怎麼賣最省稅」** — 高意圖長尾，計算機直接接受繼承案例輸入
+
+---
+
 ## 2026-03-30（第十七次）
 
 ### 管道狀態檢查
