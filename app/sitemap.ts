@@ -192,5 +192,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/tax-mistakes-2026`,
+      lastModified: new Date("2026-03-30T23:59:55Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }
