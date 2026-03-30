@@ -75,6 +75,7 @@ const NAV_LINKS = [
   { href: "/income-tax-brackets", label: "所得稅級距" },
   { href: "/dependent-deduction", label: "扶養節稅" },
   { href: "/freelancer-tax-guide", label: "接案報稅" },
+  { href: "/expense-deduction-compare", label: "費用核實試算" },
   { href: "/supplement-premium", label: "二代健保" },
   { href: "/salary-vs-freelancer", label: "薪資vs接案" },
   { href: "/tax-filing-guide", label: "報稅攻略" },

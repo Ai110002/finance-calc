@@ -198,5 +198,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/expense-deduction-compare`,
+      lastModified: new Date("2026-03-30T23:59:58Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }
