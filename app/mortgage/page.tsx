@@ -86,6 +86,12 @@ export default function MortgagePage() {
         <Link href="/dependent-deduction" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
           扶養節稅
         </Link>
+        <Link href="/freelancer-tax-guide" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          接案報稅
+        </Link>
+        <Link href="/supplement-premium" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          二代健保
+        </Link>
       </div>
 
       {/* Hero */}

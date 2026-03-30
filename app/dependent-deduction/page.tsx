@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { href: "/income-tax-brackets", label: "所得稅級距" },
   { href: "/dependent-deduction", label: "扶養節稅", active: true },
   { href: "/freelancer-tax-guide", label: "接案報稅" },
+  { href: "/supplement-premium", label: "二代健保" },
 ];
 
 // ── 115年度（2026年5月申報）扶養免稅額 ──────────────────────────────

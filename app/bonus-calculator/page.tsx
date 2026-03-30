@@ -250,6 +250,18 @@ export default function BonusCalculatorPage() {
         >
           扶養節稅
         </Link>
+        <Link
+          href="/freelancer-tax-guide"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          接案報稅
+        </Link>
+        <Link
+          href="/supplement-premium"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          二代健保
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">

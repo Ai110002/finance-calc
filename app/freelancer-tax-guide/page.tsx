@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { href: "/income-tax-brackets", label: "所得稅級距" },
   { href: "/dependent-deduction", label: "扶養節稅" },
   { href: "/freelancer-tax-guide", label: "接案報稅", active: true },
+  { href: "/supplement-premium", label: "二代健保" },
 ];
 
 // ── 115年度（114年所得，2026年5月申報）─────────────────────────────────

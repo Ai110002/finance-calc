@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { href: "/income-tax-brackets", label: "所得稅級距" },
   { href: "/dependent-deduction", label: "扶養節稅" },
   { href: "/freelancer-tax-guide", label: "接案報稅" },
+  { href: "/supplement-premium", label: "二代健保" },
 ];
 
 // ── 114/115年度 費率（相同，通膨未達調整門檻）─────────────────────
