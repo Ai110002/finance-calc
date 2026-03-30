@@ -1,5 +1,58 @@
 # Growth Log
 
+## 2026-03-30（第十三次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認 twtaxcalc.com 仍未出現在「報稅計算器」「薪資所得vs執行業務所得」搜尋結果 → 繼續 SEO 頁積累
+
+### 今天做了什麼
+
+#### 新增「薪資 vs 執行業務所得稅負比較計算器」頁面 `/salary-vs-freelancer`
+
+目標關鍵字：「薪資所得vs執行業務所得」「薪資vs接案稅負」「接案vs上班稅負」「接案繳稅比較」「執行業務所得計算」，Google 搜尋現有競爭者全是純文字文章（法律百科、天秤座法律網、twlawbot），本頁有互動計算器，差異化明顯。
+
+**技術正確性亮點（數字獨家）：**
+- 揭示**兩個損益平衡點**：所得稅平衡點109萬（常識）、總稅負平衡點230萬（含補充保費，業界幾乎沒人說清楚）
+- 所有競爭文章只說「超過109萬接案比較省」，但都沒算進二代健保補充保費2.11%
+- 本頁是目前搜尋結果中唯一正確計算**含補充保費的真實稅務負擔**的工具
+
+- `app/salary-vs-freelancer/page.tsx`（**Client Component**，互動式）：
+  - 滑桿+輸入框即時計算，30萬～500萬範圍
+  - 上班族vs接案族雙欄對比（省稅方加邊框highlight）
+  - 含補充保費對照表（60萬～400萬，標示230萬總稅負平衡點）
+  - 兩個損益平衡點說明區塊
+  - 各職類費用率損益平衡點表（20%/30%/35%/40%）
+  - 常見迷思破解 × 3
+  - AdUnit × 2 + TaxAffiliateCTA
+- `app/salary-vs-freelancer/layout.tsx`：SEO metadata + Article schema + FAQPage schema（4則）
+  - 主要關鍵字：「薪資所得vs執行業務所得」「薪資vs接案稅負」「接案vs上班稅負」「115年度接案報稅」
+- 全站 15 個頁面 nav 加入「薪資vs接案」入口
+- `app/sitemap.ts`：加入 `/salary-vs-freelancer`（priority 0.9）
+- `public/threads-drafts/2026-03-30-salary-vs-freelancer.md`：4篇文案（數字衝擊型/疑問導入型/實用資訊型/Dcard版）
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **SEO 差異化**：搜尋「薪資所得vs執行業務所得」的全是文字文章，無互動計算器 → 本頁有強差異化，點擊率預估高於競爭頁
+- **獨家數字**：「含補充保費的真實平衡點約230萬」是目前搜尋結果中獨家分析，分享性強
+- **入站漏斗**：正在考慮轉接案/兼職接案的人 → 用計算器算清楚 → 點「找會計師確認最佳方案」TaxAffiliateCTA → 月預估 **$300-1500**（需Ian申請帳號）
+- **報稅季時效**：報稅季前（3~5月）正是這類搜尋的高峰期
+- **全站爬蟲覆蓋**：15 個頁面互相連結，Googlebot 覆蓋率持續提升
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 15 個頁面 TaxAffiliateCTA 在等真實 link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-salary-vs-freelancer.md` 文案 A（數字衝擊型）最適合先發
+4. **[立即] Ian 補發未發文案** — 所有 `threads-drafts/*.md` 都還是新鮮有效的報稅季內容
+5. **向 Google Search Console 提交 sitemap**（Ian 手動：GSC → 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 下一個 SEO 頁候選：
+   - **「房貸族完整費用指南」**（含貸款成本、保險、設定費、代書費等）→ 房貸頁流量導入，搭配 Money101 房貸比較連結
+   - **「114年度所得稅完整申報攻略」**（整合頁，連結全站所有計算器）→ 廣泛關鍵字覆蓋，報稅季流量主力
+
+---
+
 ## 2026-03-30（第十二次）
 
 ### 管道狀態檢查
