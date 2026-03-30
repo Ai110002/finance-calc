@@ -1,5 +1,51 @@
 # Growth Log
 
+## 2026-03-30（第十次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現在「報稅計算器」等搜尋 → SEO 頁持續累積，爬蟲尚未索引完成，預計報稅季前（3~4月）開始有機會排名
+
+### 今天做了什麼
+
+#### 新增「扶養親屬節稅試算」頁面 `/dependent-deduction`
+
+上次 log 明確列為下一個 SEO 頁。目標關鍵字：「扶養父母節稅」「報稅扶養」「扶養可以省多少稅」「報稅可以扶養幾個人」「扶養免稅額」，Google 搜尋現有競爭者多為薄頁（無試算表），本頁有明顯差異化。
+
+- `app/dependent-deduction/page.tsx`（**Server Component**，有利 SEO）：
+  - 一般親屬節稅試算表（97,000免稅額 × 5稅率 × 4人數）
+  - 70歲以上節稅試算表（145,500免稅額 × 5稅率 × 4人數）
+  - 依年薪實例（年薪50萬~350萬 → 適用稅率 → 省稅金額）
+  - 受扶養資格完整說明（子女、父母、祖父母、兄弟姊妹、其他）
+  - 「扶養 vs 自己申報」判斷邏輯（附綠/橙色情境框）
+  - FAQ 4則（FAQPage schema）
+  - AdUnit × 2 + TaxAffiliateCTA + 相關工具連結
+- `app/dependent-deduction/layout.tsx`：SEO metadata + Article schema + FAQPage schema
+  - 主要關鍵字：「扶養親屬節稅」「報稅扶養」「扶養父母節稅」「115年度扶養免稅額」「dependent tax deduction taiwan」
+- 全站 11 個頁面 nav 加入「扶養節稅」入口
+- `app/sitemap.ts`：加入 `/dependent-deduction`（priority 0.9）
+- `public/threads-drafts/2026-03-30-dependent-deduction.md`：4 篇文案（數字驚喜型/破迷思型/子女在學型/Dcard短版）
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **SEO 高意圖流量**：「扶養父母可以省多少稅」「報稅扶養」是報稅季前搜尋量激增的關鍵字，現有競爭頁多為純文字說明，本頁含完整試算表，優勢明顯
+- **入站漏斗**：搜尋扶養節稅 → 看試算表對照自己情況 → 點「開啟報稅計算器」 → 廣告曝光 + TaxAffiliateCTA點擊
+- **TaxAffiliateCTA**：扶養頁用戶正在研究省稅，意圖明確，會計師 CTA 點擊率高 → 月預估 **$500-2000**（需 Ian 申請帳號）
+- **全站爬蟲覆蓋**：12 個頁面互相連結，Googlebot 覆蓋率持續提升
+- **報稅季時效**：3~5 月是黃金期，流量窗口正在打開
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 10 個頁面 CTA 在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-30-dependent-deduction.md` 文案 A（數字驚喜型）
+4. **[立即] 補發之前未發的文案** — `2026-03-30-income-tax-brackets.md`、`2026-03-29-*` 系列都還有效
+5. **向 Google Search Console 提交 sitemap**（Ian 手動：GSC → 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 下一個 SEO 頁：「自由工作者報稅完全指南」— 高搜尋量、高意圖（自由工作者/接案族/SOHO），結合 9A費率表說明，可直接導向報稅計算器，聯盟轉換率高
+
+---
+
 ## 2026-03-30（第九次）
 
 ### 管道狀態檢查
