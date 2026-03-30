@@ -1,5 +1,60 @@
 # Growth Log
 
+## 2026-03-30（第十四次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch（背景 agent）執行中；twtaxcalc.com 仍未出現在搜尋首頁 → 繼續 SEO 頁積累
+
+### 今天做了什麼
+
+#### 新增「114年度綜合所得稅申報攻略」頁面 `/tax-filing-guide`
+
+目標關鍵字：「114年度報稅」「報稅攻略2026」「如何報稅」「報稅步驟」「綜合所得稅申報」「報稅注意事項」，這是目前搜尋量最大、時效最強的報稅季關鍵字群，且本頁是**全站 SEO hub 頁**，覆蓋廣、連結密，Google 有很大動機爬並排名。
+
+**頁面亮點：**
+- 全站唯一「報稅完整攻略」頁，覆蓋所有報稅場景（薪資族/自由工作者/有扶養眷口者）
+- 114年度關鍵數字速查表（免稅額 97,000、標準扣除額 131,000/262,000、薪資特別扣除 218,000、稅率五級）
+- 報稅4步驟流程（完整申報邏輯）
+- 9張節稅計算工具卡，連結全站所有計算器 → 最大化內部連結網絡，提升全站 PageRank 分佈
+- 5個常見申報錯誤（「接案被扣10%不用申報」等高分享誤區）
+- FAQPage schema × 4 + Article schema → Google 富文本結果（FAQ in SERP）
+
+- `app/tax-filing-guide/layout.tsx`：SEO metadata + Article schema + FAQPage schema（4則）
+  - 主要關鍵字：「114年度報稅」「報稅攻略2026」「如何報稅」「報稅步驟」「所得稅申報」
+- `app/tax-filing-guide/page.tsx`（**Server Component**，SEO最佳化）：
+  - 數字速查表（免稅額/扣除額/稅率級距）
+  - 4步驟申報流程（含計算器 CTA）
+  - 節稅工具 9 張卡片（全站 16 個頁面互聯）
+  - 常見錯誤 × 5
+  - AdUnit × 2 + TaxAffiliateCTA
+- 全站 16 個頁面 nav 加入「報稅攻略」入口
+- `app/sitemap.ts`：加入 `/tax-filing-guide`（priority **1.0**，最高優先）
+- `public/threads-drafts/2026-03-30-tax-filing-guide.md`：4篇文案
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **流量主力頁**：「如何報稅」「報稅步驟」這類廣域關鍵字月搜尋量估計數萬，且報稅季（3-5月）達到峰值，本頁是最具備排名潛力的頁面
+- **SEO Hub 效應**：全站 16 個計算器頁都被本頁連結，Google 爬蟲從本頁出發可以爬遍全站，提升全站排名
+- **FAQ Schema**：4 則 FAQPage 有機會在 SERP 直接顯示，點擊率比一般結果高 2-3 倍
+- **AdSense 暖機**：報稅攻略用戶停留時間長（需要邊看邊算），廣告曝光時間更長
+- **入站漏斗**：搜尋「如何報稅」→ 看完攻略 → 點計算器試算 → 看廣告/點 TaxAffiliateCTA → 月預估 **$500-2500**（需 Ian 申請帳號）
+- **全站內鏈**：16 個頁面互相連結，Googlebot 覆蓋率持續提升
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 16 個頁面 TaxAffiliateCTA 在等真實 link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-tax-filing-guide.md` 文案 A（數字衝擊型）最適合先發，報稅季正在開始
+4. **[立即] Ian 補發積壓文案** — `2026-03-30-salary-vs-freelancer.md`（接案vs薪資）、`2026-03-30-supplement-premium.md`（二代健保）都是報稅季黃金內容
+5. **向 Google Search Console 提交 sitemap**（Ian 手動：GSC → 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 下一個 SEO 頁候選：
+   - **「房貸族完整費用指南」**（含貸款成本、保險、設定費、代書費、提前還款試算）→ 搭配 Money101 房貸比較，最強變現頁
+   - **「114年度股利所得申報試算」**（合併計稅 vs 分開計稅比較）→ 股利族報稅季高意圖搜尋
+
+---
+
 ## 2026-03-30（第十三次）
 
 ### 管道狀態檢查
