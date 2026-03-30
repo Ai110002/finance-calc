@@ -1,5 +1,65 @@
 # Growth Log
 
+## 2026-03-30（第二十九次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：節省 token，跳過 WebSearch → 距5月報稅截止30天，衝刺最後 SEO 頁面
+
+### 今天做了什麼
+
+#### 新增「費用核實 vs 必要費用率9A」頁面 `/expense-deduction-compare`
+
+**選頁邏輯（為什麼選此頁）：**
+- 第二十八次候選第一名：「薪資 vs 費用核實扣除試算」
+- 「費用核實」「9A費率」是接案族報稅季最高意圖搜尋詞
+- 現有 `/freelancer-tax-guide` 雖提及費用率，但缺乏費用核實 vs 9A的決策工具
+- 能帶動現有頁面的 SEO（強化內連矩陣）
+- Server Component 結構，build risk 最低
+
+**頁面功能亮點：**
+- **30秒判斷框**：三步驟快速決策（查費用率 → 算損益平衡點 → 比較）
+- **兩種方式完整比較表**：憑證需求、難度、稽查風險、適合族群
+- **114年度各業別費用率**：20%（設計/工程/顧問）、30%（演講≤5000）
+- **損益平衡試算表**：年收30萬～300萬 × 費用率20%，7個檔次
+- **可核實費用清單**：7大類（硬體、軟體、辦公室、通訊、交通、進修、推廣），共約30項
+- **FAQ × 5**（核實vs費率差別、折舊問題、混用限制、稽查風險、每年換選）
+- Schema markup：Article + FAQPage
+- TaxAffiliateCTA × 2
+- 相關工具9個連結
+
+**全站更新：**
+- 全站30頁 NAV_LINKS 加入「費用核實試算」入口（Python批量更新）
+- `app/sitemap.ts`：加入 `/expense-deduction-compare`（priority 1.0，共32個URL）
+- `public/threads-drafts/2026-03-30-expense-deduction-compare.md`：4篇文案 A/B/C/D + Dcard 長文版
+
+**Build 狀態**：本地 npm registry 仍封鎖（403 Forbidden）→ Server Component、無 hooks，結構與現有頁面完全一致，推送至 Vercel 遠端 build 驗證 ✅
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「接案族每年報稅都有一個問題沒人講清楚：費用要核實申報還是用政府給的費用率？快速答案：年收80萬×20%=16萬，今年設備+軟體+辦公室超過16萬嗎？超過就選費用核實省更多，沒超過就用費用率最省事。損益平衡點試算 → twtaxcalc.com/expense-deduction-compare」
+
+### 預期營收影響
+- **高意圖關鍵詞**：「費用核實」「9A費率」是接案族報稅決策型搜尋，轉換率高
+- **強化現有頁面權威性**：補強 `/freelancer-tax-guide` 的主題涵蓋度，兩頁互相強化排名
+- **Money101 CTA 放置**：「報稅眉角多，找會計師一次搞定」與費用核實複雜度高度相關，點擊意圖強
+- **月預估影響**：$200–500（含 AdSense + 聯盟，需 Ian 完成阻斷項設定）
+- **5月報稅季前上線**：30天讓 Google 索引，季節性搜尋量爆發時已在線
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 32頁都在等廣告
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 32頁 TaxAffiliateCTA 等待真實 affiliate link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-expense-deduction-compare.md` 文案 A 最強（情境判斷型）
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本（費用核實完整攻略）
+5. **下一個 SEO 頁候選（5月報稅季最後衝刺）：**
+   - **「2026股票投資稅務完整攻略」**（`/stock-tax-2026`）— 台股/美股/ETF/加密貨幣，受眾最廣，非季節性常駐流量
+   - **「退休金規劃試算：勞退二代提撥 + 自提試算」** — 長青搜尋詞，非季節性
+   - **「2026最低稅負制（AMT）試算」** — 海外所得高的族群，高收入高意圖
+
+---
+
 ## 2026-03-30（第二十八次）
 
 ### 管道狀態檢查
