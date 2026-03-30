@@ -66,6 +66,7 @@ const RETURN_OPTIONS = [
 const NAV_LINKS = [
   { href: "/", label: "財務自由" },
   { href: "/tax-calculator", label: "報稅計算" },
+  { href: "/tax-checklist-2026", label: "報稅懶人包" },
   { href: "/mortgage", label: "房貸計算" },
   { href: "/mortgage-full-cost", label: "買房費用" },
   { href: "/buy-vs-rent", label: "買vs租" },

@@ -186,5 +186,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.9,
     },
+    {
+      url: `${base}/tax-checklist-2026`,
+      lastModified: new Date("2026-03-30T23:59:30Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }

@@ -8,6 +8,7 @@ import { TaxAffiliateCTA } from "@/components/affiliate-cta";
 const NAV_LINKS = [
   { href: "/", label: "財務自由" },
   { href: "/tax-calculator", label: "報稅計算" },
+  { href: "/tax-checklist-2026", label: "報稅懶人包" },
   { href: "/mortgage", label: "房貸計算" },
   { href: "/overtime-calculator", label: "加班費" },
   { href: "/severance-calculator", label: "資遣費" },
