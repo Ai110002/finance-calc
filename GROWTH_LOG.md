@@ -1,5 +1,60 @@
 # Growth Log
 
+## 2026-03-30（第十五次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現在搜尋首頁 → 繼續 SEO 頁積累（報稅季衝量）
+
+### 今天做了什麼
+
+#### 新增「股利所得申報試算」頁面 `/dividend-tax`
+
+目標關鍵字：「股利所得申報」「股利合併計稅」「股利分開計稅」「股利28%」「股利合併還是分開」「ETF配息申報」「股利抵減稅額」，報稅季（3-5月）高意圖搜尋，且 Google 目前無互動計算工具。
+
+**頁面亮點：**
+- 全台灣目前唯一「股利合併 vs 分開課稅30組試算表」頁面（6 薪資情境 × 5 股利金額）
+- 快速決策表：5 種邊際稅率建議哪種方式，一表看懂
+- 揭示業界常見誤區：「大部分人（稅率5%~30%）合併計稅才是對的，分開28%反而多繳」
+- ETF 配息細分說明（股利 vs 資本利得配發不同課稅）
+- 申報實務4步驟（收憑單→試算→選方式→截止日）
+- FAQPage schema × 4 + Article schema
+
+- `app/dividend-tax/layout.tsx`：SEO metadata + Article schema + FAQPage schema（4則）
+  - 主要關鍵字：「股利所得申報」「股利合併計稅」「股利分開計稅」「股利8.5%抵減」
+- `app/dividend-tax/page.tsx`（**Server Component**，SEO最佳化）：
+  - 快速決策表（5種邊際稅率）
+  - 6情境×5股利金額 = 30組詳細試算（含8.5%抵減、合併稅、分開稅、差額、建議）
+  - 常見誤區 × 4
+  - 申報實務步驟 × 4
+  - AdUnit × 2 + TaxAffiliateCTA
+- 全站 15 個頁面 nav 加入「股利申報」入口
+- `app/sitemap.ts`：加入 `/dividend-tax`（priority 0.9）
+- `public/threads-drafts/2026-03-30-dividend-tax.md`：4篇文案（含 Dcard 長文版）
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **報稅季黃金流量**：「股利申報」「股利合併計稅」在3-5月搜尋量高峰，有台股/ETF的人每年這個時期都要查
+- **差異化競爭**：現有搜尋結果全是純文字法律說明，無互動試算表 → 本頁差異化強
+- **獨家試算角度**：「大部分人選錯了（選分開28%）」是高分享內容，有機會自然擴散
+- **入站漏斗**：搜尋股利申報 → 看試算表 → 算完去報稅計算器 → 看廣告/點TaxAffiliateCTA
+- **AdSense 暖機**：股利族通常有投資行為，廣告 CPM 較高（金融廣告主出價高）
+- **月預估影響**：$500-2000（需 Ian 設定 AdSense 及 Money101 帳號）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 17 個頁面 TaxAffiliateCTA 在等真實 link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-dividend-tax.md` 文案 A（數字衝擊型）+ 文案 C（快速判斷型）最適合報稅季發送
+4. **[立即] Ian 補發積壓文案** — `2026-03-30-tax-filing-guide.md` 文案 A 是當前最強推廣內容
+5. **向 Google Search Console 提交 sitemap**（Ian 手動：GSC → 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 下一個 SEO 頁候選：
+   - **「房貸族完整費用指南」**（含貸款成本、保險、設定費、代書費、提前還款試算）→ 搭配 Money101 房貸比較，最強變現頁，且全年長青
+   - **「勞工退休金試算與提領策略」**（勞退帳戶餘額×投報率×退休年齡）→ 勞退族常搜
+
+---
+
 ## 2026-03-30（第十四次）
 
 ### 管道狀態檢查
