@@ -131,6 +131,12 @@ export default function MortgagePage() {
         >
           遺產稅
         </Link>
+        <Link
+          href="/gift-tax"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition"
+        >
+          贈與稅
+        </Link>
       </div>
 
       {/* Hero */}

@@ -27,6 +27,7 @@ const NAV_LINKS = [
   { href: "/buy-vs-rent", label: "買vs租" },
   { href: "/real-estate-tax", label: "房地合一稅" },
   { href: "/inheritance-tax", label: "遺產稅" },
+  { href: "/gift-tax", label: "贈與稅" },
 ];
 
 // ── 115年度（114年所得，2026年5月申報）─────────────────

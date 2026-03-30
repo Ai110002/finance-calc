@@ -144,5 +144,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.9,
     },
+    {
+      url: `${base}/gift-tax`,
+      lastModified: new Date("2026-03-30T22:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 0.9,
+    },
   ];
 }

@@ -287,6 +287,12 @@ export default function SeveranceCalculatorPage() {
         >
           遺產稅
         </Link>
+        <Link
+          href="/gift-tax"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          贈與稅
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">

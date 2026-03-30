@@ -66,6 +66,7 @@ const NAV_LINKS = [
   { href: "/buy-vs-rent", label: "買vs租" },
   { href: "/real-estate-tax", label: "房地合一稅" },
   { href: "/inheritance-tax", label: "遺產稅" },
+  { href: "/gift-tax", label: "贈與稅" },
 ];
 
 export default function BasicLivingDeductionPage() {

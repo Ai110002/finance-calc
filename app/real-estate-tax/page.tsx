@@ -127,6 +127,8 @@ const NAV_LINKS = [
   { href: "/mortgage-full-cost", label: "買房費用" },
   { href: "/buy-vs-rent", label: "買vs租" },
   { href: "/real-estate-tax", label: "房地合一稅", active: true },
+  { href: "/inheritance-tax", label: "遺產稅" },
+  { href: "/gift-tax", label: "贈與稅" },
   { href: "/overtime-calculator", label: "加班費" },
   { href: "/severance-calculator", label: "資遣費" },
   { href: "/salary-calculator", label: "月薪試算" },
