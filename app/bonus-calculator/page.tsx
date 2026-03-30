@@ -280,6 +280,12 @@ export default function BonusCalculatorPage() {
         >
           股利申報
         </Link>
+        <Link
+          href="/mortgage-full-cost"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          買房費用
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">

@@ -27,6 +27,7 @@ const NAV_LINKS = [
   { href: "/salary-vs-freelancer", label: "薪資vs接案" },
   { href: "/tax-filing-guide", label: "報稅攻略" },
   { href: "/dividend-tax", label: "股利申報", active: true },
+  { href: "/mortgage-full-cost", label: "買房費用" },
 ];
 
 // ── 114年度稅率表（累進差額法）

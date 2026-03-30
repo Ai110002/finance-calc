@@ -62,6 +62,7 @@ const NAV_LINKS = [
   { href: "/salary-vs-freelancer", label: "薪資vs接案" },
   { href: "/tax-filing-guide", label: "報稅攻略" },
   { href: "/dividend-tax", label: "股利申報" },
+  { href: "/mortgage-full-cost", label: "買房費用" },
 ];
 
 export default function BasicLivingDeductionPage() {

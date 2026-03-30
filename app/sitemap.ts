@@ -108,5 +108,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.9,
     },
+    {
+      url: `${base}/margin-ratio`,
+      lastModified: new Date("2026-03-30T12:00:00Z"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/liquidation-sim`,
+      lastModified: new Date("2026-03-30T12:00:00Z"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/mortgage-full-cost`,
+      lastModified: new Date("2026-03-30T14:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 0.9,
+    },
   ];
 }
