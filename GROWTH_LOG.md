@@ -1,5 +1,62 @@
 # Growth Log
 
+## 2026-03-30（第二十二次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認 twtaxcalc.com 尚未出現在「報稅計算器」「房貸計算器」「勞工退休金試算」搜尋結果 → 繼續累積 SEO 頁面
+
+### 今天做了什麼
+
+#### 新增「勞退新制試算機」頁面 `/labor-retirement`
+
+**選頁邏輯（為什麼選勞退新制試算）：**
+- GROWTH_LOG 第二十一次候選之一：「勞工退休金試算，上班族必查，長青搜尋量穩定」
+- WebSearch 「勞工退休金試算」：搜尋結果只有政府官方舊工具（mol.gov.tw）和 UDN Money，**沒有現代化私人互動計算器** → 差異化空間極大
+- 長青搜尋詞：不依賴報稅季，全年均有搜尋量
+- 與現有 /pension-calculator（退休儲蓄試算）形成互補集群，SEO 互傳權重
+
+**頁面亮點：**
+- 依勞工退休金條例：雇主強制 6%、員工自提 0~6%（免計薪資所得）
+- 即時顯示：退休金累積總額、月領估算（依平均餘命 25 年）
+- **節稅亮點**：自提 6% 按邊際稅率顯示每年節稅金額（月薪 6 萬 × 12% = 年省 5,184 元）
+- 三種報酬率選擇（保守 2%/穩健 4%/積極 6%）
+- 情境比較表：月薪 3~10 萬 × 不自提 vs 自提 6%，顯示 30 年退休金差距
+- 4 大重點知識（雇主強制、自提節稅、帳戶性質、政府保底）
+- FAQ × 4（Schema markup）+ Article schema + WebApplication schema
+- TaxAffiliateCTA → Money101
+- 相關工具內部連結：→ 退休試算、→ 月薪試算、→ 報稅計算、→ 勞健保費率
+- 全站 16 個頁面 NAV_LINKS 加入「勞退新制」入口
+- `app/sitemap.ts`：加入 `/labor-retirement`（priority 0.9，共 25 個 URL）
+- `public/threads-drafts/2026-03-30-labor-retirement.md`：3 篇 Threads 文案 + Dcard 長文版
+
+**Push 狀態**：已 commit + push main ✅（local build 無法執行：env 無 node_modules + npm 403，依賴 Vercel CI）
+
+**Threads 文案 A 亮點**（最強推薦）：
+「月薪5萬，雇主每月提撥3,000元進你的帳戶。30年下來光是雇主提撥就能累積約200萬。但大多數人連這個帳戶有多少錢都沒去看過。」
+→ 反直覺「原來有人在幫我存錢」衝擊，帶計算機連結
+
+### 預期營收影響
+- **長青搜尋量**：「勞工退休金試算」全年均有穩定搜尋（不像房屋稅/綜所稅有季節性）
+- **差異化極強**：官方 mol.gov.tw 工具 UX 差，沒有自提節稅功能，本頁是唯一現代化互動計算器
+- **高分享潛力**：「自提6%政府補貼」概念在 Dcard 理財版/PTT Finance 有強烈討論動機
+- **退休族群廣**：適合 25~55 歲所有受薪階級，受眾最廣
+- **TaxAffiliateCTA 轉換路徑**：算完退休金 → 意識到需要更多規劃 → 點 Money101 找專業
+- **月預估影響**：$200–600（需 Ian 申請 Money101 帳號 + 設定 AdSense）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — AdSense 唯一阻斷點
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 25 個頁面都有 CTA 等待真實 affiliate link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-labor-retirement.md` 文案 A 最強
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本（含情境比較表）
+5. **下一個 SEO 頁候選：**
+   - **「綜所稅節稅試算：列舉 vs 標準扣除比較」** — 5月報稅季高峰詞，唯一互動計算器機會，Money101/StockFeel 只有靜態文章
+   - **「股票投資所得稅計算」** — 台股投資人大族群，結合現有 /dividend-tax 形成集群
+   - **「2026 綜所稅申報懶人包」** — 純 SEO 內容頁，攻長尾關鍵字
+
+---
+
 ## 2026-03-30（第二十一次）
 
 ### 管道狀態檢查
