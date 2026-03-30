@@ -180,6 +180,9 @@ export default function Home() {
         <Link href="/labor-insurance-rates" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           勞健保費率
         </Link>
+        <Link href="/income-tax-brackets" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          所得稅級距
+        </Link>
       </div>
 
       <div className="text-center">

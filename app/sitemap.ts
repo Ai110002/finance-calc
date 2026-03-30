@@ -66,5 +66,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${base}/income-tax-brackets`,
+      lastModified: new Date("2026-03-30T08:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 0.9,
+    },
   ];
 }

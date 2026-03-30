@@ -80,6 +80,9 @@ export default function MortgagePage() {
         <Link href="/labor-insurance-rates" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
           勞健保費率
         </Link>
+        <Link href="/income-tax-brackets" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          所得稅級距
+        </Link>
       </div>
 
       {/* Hero */}

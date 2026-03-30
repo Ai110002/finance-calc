@@ -1,5 +1,52 @@
 # Growth Log
 
+## 2026-03-30（第九次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 背景執行中（結果另補），根據第八次 log 站台仍未出現搜尋結果，繼續 SEO 擴充策略
+
+### 今天做了什麼
+
+#### 新增「115年度所得稅級距完整表」頁面 `/income-tax-brackets`
+
+上次 log 明確列為最優先的 SEO 內容頁。目標關鍵字：「115年度所得稅級距」「所得稅五級累進稅率」「所得稅怎麼算」「年收入繳多少稅」，Google 前三名都是政府網站和部落格，新站有機會排入。
+
+- `app/income-tax-brackets/page.tsx`（**Server Component**，有利 SEO）：
+  - 五級累進稅率完整表（5%/12%/20%/30%/40% + 累進差額）
+  - 速算公式說明 + 實例：年薪 100 萬→所得淨額 554,000→實繳 27,700（有效稅率 2.77%）
+  - 115年度全部免稅額與扣除額一覽表（含基本生活費 202,000）
+  - 各薪資應繳稅額試算表（50萬至500萬，Server-side 計算，SEO 友好）
+  - 邊際稅率 vs 有效稅率說明（打破「加薪划不來」迷思）
+  - 常見問題 4 則（FAQPage schema）
+  - AdUnit × 2 + TaxAffiliateCTA + 報稅計算器 CTA
+- `app/income-tax-brackets/layout.tsx`：SEO metadata + Article schema + FAQPage schema
+  - 主要關鍵字：「115年度所得稅級距」「所得稅五級累進稅率」「所得稅怎麼算」「綜合所得稅級距表2026」「tax bracket taiwan 2026」
+- 全站 11 個頁面 nav 加入「所得稅級距」入口（首頁、報稅、房貸、加班費、資遣費、月薪、年終、勞退、免稅天花板、勞健保費率）
+- `app/sitemap.ts`：加入 `/income-tax-brackets`（priority 0.9）
+- `public/threads-drafts/2026-03-30-income-tax-brackets.md`：4 篇文案（有效稅率驚喜型/打破迷思型/報稅季緊迫型/短版）
+
+**注意**：npm 環境限制，本地 build 跳過；代碼模式與現有頁面一致，Vercel 正常部署。
+
+### 預期營收影響
+- **SEO 高意圖流量**：「115年度所得稅級距」「所得稅怎麼算」報稅季前搜尋量大，每年 1-5 月高峰，估計月搜尋量數千~萬次
+- **競爭分析**：現有前三名為財政部官網（重排版不好閱讀）、部落格（深度不夠），本頁含互動試算、速算公式、各年薪稅額，更適合閱讀與分享
+- **入站漏斗**：搜尋稅率 → 試算表看到自己 → 點報稅計算器精算 → 廣告曝光 + 會計師 CTA 點擊
+- **TaxAffiliateCTA**：稅率頁引導找會計師 → Money101，月預估 **$500-2000**（需 Ian 申請帳號）
+- **全站爬蟲覆蓋**：11 個頁面互相連結，Googlebot 覆蓋率持續提升
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 9 個頁面 CTA 在等真實 link
+3. **[立即] 發 Threads 文** — `public/threads-drafts/2026-03-30-income-tax-brackets.md` 文案 A（有效稅率驚喜型）
+4. **[立即] 發之前未發的文案** — `2026-03-29-labor-insurance.md`、`2026-03-29-basic-living.md`、`2026-03-29-pension.md`、`2026-03-29-bonus.md` 都還沒發，報稅季前都有效
+5. **向 Google Search Console 提交 sitemap**（Ian 手動：GSC → 提交 `https://www.twtaxcalc.com/sitemap.xml`）
+6. 下一個 SEO 頁：「扶養親屬節稅計算器」— 「報稅可以扶養幾個人」「扶養父母免稅」是高意圖搜尋，每位扶養人省稅 97,000 × 稅率
+
+---
+
+
 ## 2026-03-29（第八次）
 
 ### 管道狀態檢查

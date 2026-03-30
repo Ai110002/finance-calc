@@ -55,6 +55,7 @@ const NAV_LINKS = [
   { href: "/pension-calculator", label: "勞退計算" },
   { href: "/basic-living-deduction", label: "免稅天花板", active: true },
   { href: "/labor-insurance-rates", label: "勞健保費率" },
+  { href: "/income-tax-brackets", label: "所得稅級距" },
 ];
 
 export default function BasicLivingDeductionPage() {

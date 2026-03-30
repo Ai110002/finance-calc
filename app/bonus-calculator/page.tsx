@@ -238,6 +238,12 @@ export default function BonusCalculatorPage() {
         >
           勞健保費率
         </Link>
+        <Link
+          href="/income-tax-brackets"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          所得稅級距
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">
