@@ -29,6 +29,7 @@ const NAV_LINKS = [
   { href: "/dividend-tax", label: "股利申報", active: true },
   { href: "/mortgage-full-cost", label: "買房費用" },
   { href: "/buy-vs-rent", label: "買vs租" },
+  { href: "/real-estate-tax", label: "房地合一稅" },
 ];
 
 // ── 114年度稅率表（累進差額法）

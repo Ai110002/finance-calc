@@ -119,6 +119,12 @@ export default function MortgagePage() {
         >
           買vs租
         </Link>
+        <Link
+          href="/real-estate-tax"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition"
+        >
+          房地合一稅
+        </Link>
       </div>
 
       {/* Hero */}
