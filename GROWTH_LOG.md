@@ -1,5 +1,58 @@
 # Growth Log
 
+## 2026-03-30（第十六次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認 twtaxcalc.com 仍未出現在「報稅計算器」「房貸計算器」搜尋結果 → 繼續累積 SEO 頁
+
+### 今天做了什麼
+
+#### 1. 修復 SEO 盲點：補 liquidation-sim 和 margin-ratio 的 layout.tsx
+這兩個頁面（融資維持率計算器、斷頭模擬器）一直沒有 metadata + schema，Google 完全看不見。
+- `app/liquidation-sim/layout.tsx`：Title/OG/FAQPage schema × 4（斷頭、追繳、歷史股災）
+- `app/margin-ratio/layout.tsx`：Title/OG/FAQPage schema × 4（維持率計算、追繳門檻、如何提高維持率）
+- `app/sitemap.ts`：加入 `/margin-ratio`（priority 0.8）、`/liquidation-sim`（priority 0.8）
+
+#### 2. 新增「房貸族完整費用指南」頁面 `/mortgage-full-cost`
+
+目標關鍵字：「買房費用」「買房隱藏費用」「買房完整費用」「房屋稅計算」「地價稅計算」「提前還款划算」，全年長青搜尋（不只報稅季），且現有搜尋結果多是靜態文字、無互動試算工具。
+
+**頁面亮點：**
+- 一次性費用完整清單（設定費、代書費、火險、地震險）+ 800萬實際數字
+- 每年持有費用：房屋稅、地價稅（含自住優惠 vs 未申報的 5 倍差距警示）、火險、管理費
+- 6 縣市房屋稅/地價稅稅率比較表（114年度）
+- 3 種貸款金額情境試算（500萬/800萬/1200萬，含第一年總支出）
+- 提前還款決策矩陣（利率 vs 投資報酬率）+ 3 種提前還款效益試算
+- 常犯 4 大錯誤（地價稅未申報自用、房屋稅未申報自住、違約金陷阱、管理費忽略）
+- MortgageAffiliateCTA → Money101 房貸比較（最強變現頁，等 Ian 申請帳號）
+- FAQPage schema × 4 + Article schema
+- `app/sitemap.ts`：加入 `/mortgage-full-cost`（priority 0.9）
+
+#### 3. 全站 17 個頁面 nav 加入「買房費用」入口
+所有有 NAV_LINKS 的頁面都更新了，Google 爬蟲一進任何頁面都能連到新頁面。
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **全年長青流量**：「買房費用」「買房隱藏費用」「房屋稅計算」「地價稅計算」非季節性，全年搜尋量穩定
+- **Money101 最強頁**：房貸比較是 Money101 最高 CPC 的產品（每筆核貸佣金），此頁直接指向房貸比較
+- **差異化**：競爭者多是銀行靜態頁面，本頁的「4 大常犯錯誤」和「提前還款決策矩陣」有轉發潛力
+- **SEO 盲點修復**：liquidation-sim + margin-ratio 現在對 Google 可見，股票相關搜尋可帶入新用戶群
+- **月預估影響**：$1,000-3,000（需 Ian 申請 Money101 + AdSense 帳號）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 唯一阻斷 AdSense 收入的原因
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — mortgage-full-cost 是目前最強的房貸比較落地頁
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-mortgage-full-cost.md` 文案 A（數字衝擊型）最強
+4. **向 Google Search Console 提交 sitemap**（Ian 手動）
+5. 下一個 SEO 頁候選：
+   - **「勞工退休金試算與提領策略」**（勞退帳戶×投報率×退休年齡）→ 有退休儲蓄族群需求
+   - **「買房 vs 租房比較計算機」**（同一筆錢買房或租房+投資，30年後哪個財富多）→ 高分享潛力
+
+---
+
 ## 2026-03-30（第十五次）
 
 ### 管道狀態檢查
