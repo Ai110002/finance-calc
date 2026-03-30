@@ -31,6 +31,7 @@ const NAV_LINKS = [
   { href: "/gift-tax", label: "贈與稅" },
   { href: "/deduction-compare", label: "列舉vs標準" },
   { href: "/preschool-deduction", label: "幼兒學前扣除" },
+  { href: "/foreign-income-tax", label: "海外所得" },
 ];
 
 // ── 一次性費用項目 ────────────────────────────────────────────────────────────
