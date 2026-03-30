@@ -73,6 +73,7 @@ const NAV_LINKS = [
   { href: "/tax-filing-guide", label: "報稅攻略" },
   { href: "/dividend-tax", label: "股利申報" },
   { href: "/deduction-compare", label: "列舉vs標準", active: true },
+  { href: "/preschool-deduction", label: "幼兒學前扣除" },
 ];
 
 export default function DeductionComparePage() {
