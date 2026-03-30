@@ -38,6 +38,7 @@ const NAV_LINKS = [
   { href: "/preschool-deduction", label: "幼兒學前扣除" },
   { href: "/foreign-income-tax", label: "海外所得" },
   { href: "/tax-refund", label: "退稅試算" },
+  { href: "/rent-deduction", label: "租金節稅" },
 ];
 
 // ── 114年度稅率表（累進差額法）

@@ -186,5 +186,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.9,
     },
+    {
+      url: `${base}/rent-deduction`,
+      lastModified: new Date("2026-03-31T01:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 0.9,
+    },
   ];
 }
