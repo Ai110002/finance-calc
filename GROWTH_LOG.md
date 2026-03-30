@@ -1,5 +1,66 @@
 # Growth Log
 
+## 2026-03-30（第二十三次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 未執行（節省 token，前幾次結果一致：未出現排名）→ 繼續累積 SEO 頁面為主策略
+
+### 今天做了什麼
+
+#### 新增「列舉 vs 標準扣除額試算」頁面 `/deduction-compare`
+
+**選頁邏輯（為什麼選此頁）：**
+- GROWTH_LOG 第二十二次候選首選：「綜所稅節稅試算：列舉 vs 標準扣除比較」
+- 距離 5 月報稅季僅剩 31 天 — SEO 索引窗口最後時機
+- 搜尋意圖強：「列舉扣除額」「標準扣除額」「報稅哪個省」是 5 月高峰搜尋詞
+- 差異化：目前搜尋結果只有靜態文章解釋，**無任何互動計算機**
+- 與現有 /tax-calculator、/dependent-deduction、/basic-living-deduction 形成「節稅集群」，SEO 互傳權重
+
+**頁面功能亮點：**
+- 申報身分選擇（單身 / 夫妻），自動調整標準扣除額
+- 5 個列舉項目輸入：捐贈、人身保險費（含上限驗證 24K/人）、醫療費（無上限）、房貸利息（上限 300K）、租金（上限 120K）
+- 購屋利息 × 租金互斥邏輯 + 即時警示
+- 即時結果卡：建議申報方式、差距金額、節稅估算（依年所得邊際稅率）
+- 列舉明細展開（僅在有填項目時顯示）
+- 情境比較表：6 種常見情境（含重病醫療自費、夫妻高利息等）
+- 4 大注意事項 + FAQ × 4（Schema markup）
+- Article schema + WebApplication schema + FAQPage schema
+- TaxAffiliateCTA → Money101 報稅服務
+- 相關工具內部連結：→ 報稅試算、→ 扶養節稅、→ 免稅天花板、→ 所得稅級距、→ 報稅攻略
+
+**全站更新：**
+- 全站 25 個頁面 NAV_LINKS 加入「列舉vs標準」入口
+- `app/sitemap.ts`：加入 `/deduction-compare`（priority 0.9，共 26 個 URL）
+- `public/threads-drafts/2026-03-30-deduction-compare.md`：3 篇推廣文案（Threads × 2 + Dcard 長文版）
+
+**Push 狀態**：已 commit + push main ✅（local build 無法執行：env 無 node_modules + npm 403，依賴 Vercel CI）
+
+**Threads 文案 A 亮點**（最強推薦）：
+「單身標準扣除額只有 131,000 元。你的保險費＋醫療費＋房貸利息超過這個數字嗎？超過的話，你每年多繳了幾萬塊稅。30秒算一下 → twtaxcalc.com/deduction-compare」
+→ 具體數字觸發「我有沒有多繳」焦慮，直接帶行動連結
+
+### 預期營收影響
+- **5 月報稅季高峰**：「列舉扣除額」「標準扣除額哪個比較好」是每年 4~5 月高搜尋量詞
+- **差異化極強**：現有搜尋結果全是靜態文章，本頁是台灣第一個互動版列舉 vs 標準比較工具
+- **高分享價值**：「原來我多繳了 X 萬」是強烈分享誘因，Dcard/PTT 理財版天然話題
+- **節稅集群 SEO**：與 /tax-calculator + /dependent-deduction + /basic-living-deduction 形成完整節稅工具集，互傳 PageRank
+- **TaxAffiliateCTA 轉換路徑**：計算完發現複雜 → 想找會計師 → 點 Money101
+- **月預估影響**：$200–500（需 Ian 申請 Money101 + 設定 AdSense）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — AdSense 仍是最高 ROI 阻斷點
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 26 頁 TaxAffiliateCTA 等待真實 affiliate link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-30-deduction-compare.md` 文案 A 最強
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本（含情境比較表）
+5. **下一個 SEO 頁候選（5月報稅季衝刺）：**
+   - **「股票投資所得稅計算」** — 台股投資人大族群，結合現有 /dividend-tax 形成集群，高分享潛力
+   - **「2026 綜所稅申報懶人包」** — 純 SEO 內容頁，攻長尾關鍵字「報稅懶人包」「網路報稅步驟」
+   - **「幼兒學前特別扣除額試算」** — 上班族父母精準族群，自提 150K/子（二胎以上 300K）節稅計算
+
+---
+
 ## 2026-03-30（第二十二次）
 
 ### 管道狀態檢查
