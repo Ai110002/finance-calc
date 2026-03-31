@@ -228,5 +228,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/side-income-tax`,
+      lastModified: new Date("2026-03-31T16:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }
