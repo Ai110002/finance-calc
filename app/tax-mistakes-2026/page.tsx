@@ -31,6 +31,7 @@ const NAV_LINKS = [
   { href: "/tax-checklist-2026", label: "報稅懶人包" },
   { href: "/tax-mistakes-2026", label: "報稅常見錯誤", active: true },
   { href: "/stock-tax-2026", label: "投資稅務" },
+  { href: "/amt-calculator", label: "最低稅負" },
   { href: "/mortgage", label: "房貸計算" },
   { href: "/mortgage-full-cost", label: "買房費用" },
   { href: "/buy-vs-rent", label: "買vs租" },

@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "/tax-checklist-2026", label: "報稅懶人包" },
   { href: "/tax-mistakes-2026", label: "報稅常見錯誤" },
   { href: "/stock-tax-2026", label: "投資稅務" },
+  { href: "/amt-calculator", label: "最低稅負" },
   { href: "/mortgage", label: "房貸計算" },
   { href: "/overtime-calculator", label: "加班費" },
   { href: "/severance-calculator", label: "資遣費" },
