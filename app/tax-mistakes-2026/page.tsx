@@ -61,6 +61,7 @@ const NAV_LINKS = [
   { href: "/foreign-income-tax", label: "海外所得" },
   { href: "/tax-refund", label: "退稅試算" },
   { href: "/joint-filing", label: "夫妻合併vs分開" },
+  { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
 ];
 
 // ── 5大常見錯誤資料 ───────────────────────────────────────────────────────────
@@ -379,6 +380,7 @@ export default function TaxMistakes2026Page() {
               { href: "/tax-calculator", label: "報稅計算器" },
               { href: "/tax-refund", label: "退稅試算" },
   { href: "/joint-filing", label: "夫妻合併vs分開" },
+  { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
               { href: "/tax-checklist-2026", label: "報稅懶人包" },
               { href: "/dependent-deduction", label: "扶養節稅試算" },
               { href: "/preschool-deduction", label: "幼兒學前扣除" },

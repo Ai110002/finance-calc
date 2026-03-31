@@ -210,6 +210,9 @@ export default function Home() {
         <Link href="/joint-filing" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           夫妻合併vs分開
         </Link>
+        <Link href="/income-tax-guide-2026" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          報稅完整攻略
+        </Link>
       </div>
 
       <div className="text-center">

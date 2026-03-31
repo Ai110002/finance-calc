@@ -63,6 +63,7 @@ const NAV_LINKS = [
   { href: "/foreign-income-tax", label: "海外所得" },
   { href: "/tax-refund", label: "退稅試算" },
   { href: "/joint-filing", label: "夫妻合併vs分開" },
+  { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
 ];
 
 const FAQS = [
@@ -450,6 +451,7 @@ export default function AmtCalculatorPage() {
               { href: "/income-tax-brackets", label: "所得稅級距表" },
               { href: "/tax-refund", label: "退稅試算" },
   { href: "/joint-filing", label: "夫妻合併vs分開" },
+  { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
               { href: "/tax-filing-guide", label: "報稅攻略" },
               { href: "/tax-mistakes-2026", label: "報稅常見錯誤" },
               { href: "/deduction-compare", label: "列舉vs標準扣除" },

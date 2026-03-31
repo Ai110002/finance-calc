@@ -328,6 +328,12 @@ export default function BonusCalculatorPage() {
         >
           夫妻合併vs分開
         </Link>
+        <Link
+          href="/income-tax-guide-2026"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          報稅完整攻略
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">

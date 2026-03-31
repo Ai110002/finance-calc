@@ -36,6 +36,7 @@ const NAV_LINKS = [
   { href: "/stock-tax-2026", label: "投資稅務" },
   { href: "/amt-calculator", label: "最低稅負" },
   { href: "/joint-filing", label: "夫妻合併vs分開", active: true },
+  { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
   { href: "/mortgage", label: "房貸計算" },
   { href: "/mortgage-full-cost", label: "買房費用" },
   { href: "/buy-vs-rent", label: "買vs租" },
