@@ -1,5 +1,65 @@
 # Growth Log
 
+## 2026-03-31（第三十次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：節省 token，跳過 WebSearch → 距5月報稅截止30天，執行第二十九次候選第一名頁面
+
+### 今天做了什麼
+
+#### 新增「2026投資稅務完整攻略」頁面 `/stock-tax-2026`
+
+**選頁邏輯（為什麼選此頁）：**
+- 第二十九次候選第一名：「2026股票投資稅務完整攻略」
+- 投資人受眾最廣：台股/美股/ETF/加密貨幣，幾乎所有30歲以上有收入的人都有投資
+- 非季節性常駐流量（不只報稅季，全年都有人搜「美股稅務」「加密貨幣稅」）
+- 強化現有 `/dividend-tax` 和 `/foreign-income-tax` 的主題權威（內連矩陣補強）
+- Server Component 結構，build risk 最低
+
+**頁面功能亮點：**
+- **4大投資類型完整說明**：台股股利稅、美股/海外所得、ETF配息稅、加密貨幣財產交易所得
+- **台股快速判斷框**：「年收入 < 400萬？→ 選合併計稅幾乎一定更省」→ 直通 `/dividend-tax`
+- **美股決策框**：「海外所得合計 < 100萬？→ 不影響最低稅負」→ 直通 `/foreign-income-tax`
+- **ETF配息說明**：股利課稅 vs 資本利得配發免稅，教讀者如何查明細
+- **加密貨幣稅務**：財產交易所得計算方式，留記錄的重要性
+- **TaxAffiliateCTA × 2**
+- **FAQ × 5**：台股價差免稅？美股vs台股股利不同課稅？雙重課稅扣抵？加密貨幣虧損？申報門檻？
+- **相關工具 8 連結**（強化內連矩陣）
+- Schema markup：Article + FAQPage
+
+**全站更新：**
+- 全站31頁（含新頁面）NAV_LINKS 加入「投資稅務」入口
+- `app/sitemap.ts`：加入 `/stock-tax-2026`（priority 1.0，共33個URL，lastDeploy更新至2026-03-31）
+- `public/threads-drafts/2026-03-31-stock-tax-2026.md`：4篇 Threads 文案 A/B/C/D + Dcard 長文版
+
+**Build 狀態**：node_modules 不存在（本地無法 build）→ Server Component、無 hooks，結構與現有頁面完全一致，push 至 Vercel 遠端 build 驗證
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「台股買賣價差 → 免稅（不用申報）｜台股股利 → 要申報，選合併計稅通常更省｜美股股利 → 算海外所得，超100萬要報最低稅負｜美股價差 → 也算海外所得，超100萬要一起算。一張圖搞懂4種情況 → twtaxcalc.com/stock-tax-2026」
+
+### 預期營收影響
+- **高搜尋量常駐關鍵詞**：「美股報稅」「加密貨幣稅台灣」「ETF配息稅」全年有穩定搜尋量，非季節性
+- **強化現有頁面**：`/dividend-tax` + `/foreign-income-tax` 互連強化，兩頁排名雙贏
+- **投資人轉換率高**：投資人對稅務節省高度敏感，TaxAffiliateCTA 點擊意圖強
+- **月預估影響**：$300–600（AdSense + 聯盟，需 Ian 完成阻斷項）
+- **長期價值**：常駐流量頁面，報稅季後仍持續帶流量
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 33頁都在等廣告
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 33頁 TaxAffiliateCTA 等待真實 affiliate link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-03-31-stock-tax-2026.md` 文案 A 最強（4種投資對比，清晰有衝擊感）
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本（台股/美股/ETF/加密完整攻略）
+5. **下一個 SEO 頁候選（5月報稅季最後衝刺）：**
+   - **「2026最低稅負制（AMT）試算」**（`/amt-calculator`）— 海外所得高的族群，高收入高意圖，與新建的 `/stock-tax-2026` 直接相連
+   - **「退休金規劃試算：勞退二代提撥 + 自提試算」**（`/labor-retirement-2026`）— 長青搜尋詞，非季節性
+   - **「薪資外的副業所得申報」**（`/side-income-tax`）— 副業/斜槓族群，接案之外的各類副業
+
+---
+
 ## 2026-03-30（第二十九次）
 
 ### 管道狀態檢查

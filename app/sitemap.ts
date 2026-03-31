@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.twtaxcalc.com";
   // Use a fixed date per deploy rather than new Date() on every request
-  const lastDeploy = new Date("2026-03-29T19:00:00Z");
+  const lastDeploy = new Date("2026-03-31T08:00:00Z");
 
   return [
     {
@@ -201,6 +201,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${base}/expense-deduction-compare`,
       lastModified: new Date("2026-03-30T23:59:58Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
+    {
+      url: `${base}/stock-tax-2026`,
+      lastModified: new Date("2026-03-31T08:00:00Z"),
       changeFrequency: "yearly",
       priority: 1.0,
     },

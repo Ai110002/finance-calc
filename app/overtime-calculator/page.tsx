@@ -284,6 +284,12 @@ export default function OvertimeCalculatorPage() {
         >
           贈與稅
         </Link>
+        <Link
+          href="/stock-tax-2026"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          投資稅務
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">
