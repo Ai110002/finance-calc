@@ -201,6 +201,15 @@ export default function Home() {
         <Link href="/gift-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           贈與稅
         </Link>
+        <Link href="/stock-tax-2026" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          投資稅務
+        </Link>
+        <Link href="/amt-calculator" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          最低稅負
+        </Link>
+        <Link href="/joint-filing" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          夫妻合併vs分開
+        </Link>
       </div>
 
       <div className="text-center">

@@ -146,6 +146,12 @@ export default function MortgagePage() {
         >
           投資稅務
         </Link>
+        <Link
+          href="/joint-filing"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          夫妻合併vs分開
+        </Link>
       </div>
 
       {/* Hero */}
