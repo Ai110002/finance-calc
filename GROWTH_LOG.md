@@ -1,5 +1,67 @@
 # Growth Log
 
+## 2026-04-01（第三十九次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 尚未出現在搜尋結果 → 持續 SEO 入口累積，現已達 42 頁
+
+### 今天做了什麼
+
+#### 新增「台股當沖稅費計算器」頁面 `/day-trading-tax`
+
+**選頁邏輯：**
+- 上次 GROWTH_LOG 候選清單第三項（「股票當沖稅計算器」）
+- 當沖交易者是高意圖搜尋族群：「當沖稅率」「當沖幾%」「當沖損益平衡」全年穩定搜尋
+- 與現有 `/stock-tax-2026`、`/dividend-tax`、`/amt-calculator` 互補，補齊投資稅務全線
+- 受眾重疊 AdSense 金融廣告高 CPM 區間（券商、投資平台廣告）
+- 4月起散戶投資活動通常回升（Q2 財報季前），搜尋量上升
+
+**頁面功能（靜態 Server Component，所有計算預先computed）：**
+- **快速事實卡**：當沖稅率 0.15% / 資本利得免稅 / 補充保費不適用（三大常見誤解直接破解）
+- **費用結構說明**：手續費（無折扣/6折/3折/1折）＋ 交易稅拆解
+- **各股價費用試算表**：20/50/100/200/500元 × 1張，含總費用與損益平衡跳數
+- **當沖 vs 普通交易費用比較表**
+- **5大常見迷思澄清**：所得稅 / 補充保費 / 申報義務 等
+- **TaxAffiliateCTA × 2**、**相關工具 9 連結**、**FAQ × 5**
+- Schema markup：Article + FAQPage
+
+**全站更新：**
+- 全站 40 頁 NAV_LINKS 加入「當沖稅費」入口
+  - 37 頁：Python 批量更新（在第一個 `\n];` 前插入）
+  - 2 頁（overtime, severance）：手動更新
+  - 2 頁（margin-ratio, liquidation-sim）：無 NAV_LINKS，跳過
+- `app/sitemap.ts`：加入 `/day-trading-tax`（priority 1.0，共 42 個 URL）
+- `public/threads-drafts/2026-04-01-day-trading-tax.md`：文案 A/B/C/D + Dcard 長文
+
+**Build 狀態**：Server Component、無 hooks，結構與現有頁面完全一致，push 至 Vercel 遠端 build 驗證
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「當沖被課的那筆稅，不是所得稅。台灣上市股票買賣差價是免稅的（資本利得停徵）。當沖被扣的是「證券交易稅」——賣出金額的 0.15%。完整費用試算表 → twtaxcalc.com/day-trading-tax」
+
+### 預期營收影響
+- **高意圖受眾**：搜尋「當沖稅率」「當沖幾%」「當沖損益平衡」的人，是活躍交易者，AdSense 金融廣告 CPM 高
+- **常駐搜尋**：不受報稅季限制，全年穩定搜尋量
+- **誤解破解內容高分享性**：「當沖不用繳所得稅」「補充保費不適用」是很多人不清楚的，分享動機強
+- **投資生態互連**：/stock-tax-2026 + /dividend-tax + /amt-calculator + /day-trading-tax = 完整投資稅務四件組
+- **月預估影響**：$100–300（AdSense，需 Ian 完成阻斷項）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 42 頁等廣告，每天損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 42 頁 TaxAffiliateCTA 等真實 link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-04-01-day-trading-tax.md` 文案 A（「當沖不是所得稅」）
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本
+5. **[立即] Ian 向 GSC 提交 sitemap** — `https://www.twtaxcalc.com/sitemap.xml`（42 個 URL）
+6. **下一個 SEO 頁候選：**
+   - **「勞退自提 vs 自己買ETF：哪個划算？」**（`/ira-vs-labor-retirement`）— 長青理財需求，節稅效果可量化
+   - **「2026年報稅QA50題」**（`/tax-faq-2026`）— FAQ頁面 schema 命中率高，長尾流量廣
+   - **「ETF vs 股票股利稅比較」**（`/etf-vs-stock-tax`）— 補齊投資族群稅務知識
+
+---
+
 ## 2026-04-01（第三十八次）
 
 ### 管道狀態檢查

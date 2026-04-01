@@ -21,6 +21,7 @@ const TAX_BRACKETS = [
   { max: 4_980_000, rate: 0.30 },
   { max: Infinity,  rate: 0.40 },
   { href: "/tax-refund-timeline", label: "退稅時程" },
+  { href: "/day-trading-tax", label: "當沖稅費" },
 ];
 
 // 114年度扣除額常數（用於估算邊際稅率）

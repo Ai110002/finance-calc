@@ -44,6 +44,7 @@ const NAV_LINKS = [
   { href: "/side-income-tax", label: "副業所得申報" },
   { href: "/tax-strategy-2026", label: "省稅策略" },
   { href: "/tax-refund-timeline", label: "退稅時程" },
+  { href: "/day-trading-tax", label: "當沖稅費" },
 ];
 
 // ── 115年度（114年所得，2026年5月申報）─────────────────────────────────

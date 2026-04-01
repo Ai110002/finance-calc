@@ -23,6 +23,7 @@ const STEPS = [
   { id: "deduction", label: "扣除額", icon: "📋" },
   { id: "result", label: "結果", icon: "📊" },
   { id: "tips", label: "建議", icon: "💡" },
+  { href: "/day-trading-tax", label: "當沖稅費" },
 ];
 
 export default function TaxCalculatorPage() {

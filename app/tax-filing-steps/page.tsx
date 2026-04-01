@@ -70,6 +70,7 @@ const NAV_LINKS = [
   { href: "/tax-refund", label: "退稅試算" },
   { href: "/tax-filing-steps", label: "報稅流程", active: true },
   { href: "/tax-refund-timeline", label: "退稅時程" },
+  { href: "/day-trading-tax", label: "當沖稅費" },
 ];
 
 const STEPS = [

@@ -54,6 +54,7 @@ const NAV_LINKS = [
   { href: "/preschool-deduction", label: "幼兒學前扣除" },
   { href: "/foreign-income-tax", label: "海外所得" },
   { href: "/tax-refund-timeline", label: "退稅時程" },
+  { href: "/day-trading-tax", label: "當沖稅費" },
 ];
 
 // ── Checklist 步驟定義 ────────────────────────────────────────────────────────

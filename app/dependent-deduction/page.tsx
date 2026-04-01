@@ -44,6 +44,7 @@ const NAV_LINKS = [
   { href: "/joint-filing", label: "夫妻合併vs分開" },
   { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
   { href: "/tax-refund-timeline", label: "退稅時程" },
+  { href: "/day-trading-tax", label: "當沖稅費" },
 ];
 
 // ── 115年度（2026年5月申報）扶養免稅額 ──────────────────────────────

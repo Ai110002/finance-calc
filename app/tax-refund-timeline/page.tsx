@@ -71,6 +71,7 @@ const NAV_LINKS = [
   { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
   { href: "/tax-filing-steps", label: "報稅流程" },
   { href: "/tax-refund-timeline", label: "退稅時程", active: true },
+  { href: "/day-trading-tax", label: "當沖稅費" },
 ];
 
 const BATCHES = [
