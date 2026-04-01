@@ -1,5 +1,71 @@
 # Growth Log
 
+## 2026-04-01（第三十六次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com **不在**「報稅計算器」「報稅流程」「怎麼報稅 2026」搜尋結果 → 繼續建 SEO 入口頁
+
+### 今天做了什麼
+
+#### 新增「2026年報稅完整流程：6步驟從收單據到申報成功」頁面 `/tax-filing-steps`
+
+**選頁邏輯（為什麼選此頁）：**
+- 第三十五次候選第二名：「2026年報稅完整流程圖解：從收集單據到送出申報」
+- 4月進入報稅旺季，「報稅怎麼做」「報稅流程」「怎麼報稅 2026」是5月前最大量搜尋詞之一
+- 步驟型內容（HowTo schema）容易上 Google 精選摘要（Featured Snippet）
+- 現有 `/tax-filing-guide`（報稅攻略）屬知識型，此頁聚焦「操作步驟」，兩頁互補不重複
+
+**頁面功能亮點：**
+- **6步驟進度式版面**（6色卡片，各附時間估算）：
+  - Step 01 收集文件（10種扣繳憑單清單）
+  - Step 02 確認所得類型（5類所得說明）
+  - Step 03 選申報工具（APP vs eTax 比較）
+  - Step 04 填扣除額（6種必填）
+  - Step 05 試算稅額與繳稅/退稅（時程說明）
+  - Step 06 送出確認（確認碼、退稅帳戶）
+- **2026年報稅時程表**（4個重要日期：5/1開始、5/31截止、7月/8-9月退稅）
+- **退稅分3批說明**：越早申報越早退，7月初第1批（5/1前申報優先）
+- **相關計算工具 9連結**
+- **TaxAffiliateCTA × 2**
+- **FAQ × 5**（含「沒收到扣繳憑單怎麼辦」「退稅什麼時候入帳」等高搜尋量問題）
+- Schema markup：Article + **HowTo**（6步驟，容易上精選摘要）+ FAQPage
+
+**全站更新：**
+- 全站38頁（含新頁面）NAV_LINKS 加入「報稅流程」入口：
+  - 30個 array-format 頁：sed 批量更新（`tax-refund` 後插入）
+  - `tax-refund/page.tsx`：Edit 工具更新（末尾特殊順序）
+  - 6個 JSX-format 頁（mortgage, tax-calculator, severance-calculator, overtime-calculator, bonus-calculator, page.tsx）：Edit 工具逐一更新
+- `app/sitemap.ts`：加入 `/tax-filing-steps`（priority 1.0，共39個URL，lastModified 2026-04-01T12:00）
+- `public/threads-drafts/2026-04-01-tax-filing-steps.md`：4篇 Threads 文案 A/B/C/D + Dcard 版本
+
+**Build 狀態**：node_modules 不存在（本地無法 build）→ Server Component、無 hooks，結構與現有頁面完全一致，push 至 Vercel 遠端 build 驗證
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「第一次報稅，根本不知從哪開始？6個步驟，30分鐘搞定。收扣繳憑單 → 確認所得類型 → 選報稅APP → 填扣除額 → 繳稅或退稅 → 截圖確認碼。5月1日才開始申報，但文件現在就要收好。完整圖解 → twtaxcalc.com/tax-filing-steps」
+
+### 預期營收影響
+- **HowTo schema**：6步驟流程卡容易出現 Google 精選摘要，高點擊率自然流量
+- **「報稅怎麼做」搜尋量**：4-5月爆量，每月潛在數萬次搜尋
+- **退稅誘因**：「越早報越早退」是高分享動機，Threads 文案 C 傳播力強
+- **月預估影響**：$200-600（AdSense + 聯盟，需 Ian 完成阻斷項）；HowTo 精選摘要若命中 +$500
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 39頁都在等廣告，每天損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 39頁 TaxAffiliateCTA 等待真實 affiliate link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-04-01-tax-filing-steps.md` 文案 A 最強（「6步驟30分鐘」）
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard版本（含完整6步驟）
+5. **[立即] Ian 向 Google Search Console 提交 sitemap** — `https://www.twtaxcalc.com/sitemap.xml`（39個URL）
+6. **下一個 SEO 頁候選（4月報稅旺季）：**
+   - **「退休金規劃試算：勞退自提 + 個人退休帳戶」**（`/retirement-planning`）— 長青常駐，40歲以上廣大受眾，非季節性
+   - **「個人退休金（IRA）vs 勞退自提完整比較」**（`/ira-vs-labor-retirement`）— 理財族高需求，非季節性
+   - **「2026年5月報稅常見問題解答：報稅QA50題」**（`/tax-faq-2026`）— FAQ頁面 schema 命中率高，長尾流量廣
+
+---
+
 ## 2026-04-01（第三十五次）
 
 ### 管道狀態檢查

@@ -68,6 +68,7 @@ const NAV_LINKS = [
   { href: "/preschool-deduction", label: "幼兒學前扣除" },
   { href: "/foreign-income-tax", label: "海外所得" },
   { href: "/tax-refund", label: "退稅試算" },
+  { href: "/tax-filing-steps", label: "報稅流程" },
 ];
 
 const FAQS = [
@@ -381,6 +382,7 @@ export default function IncomeTaxGuide2026Page() {
                 { href: "/preschool-deduction", label: "幼兒學前扣除" },
                 { href: "/joint-filing", label: "夫妻合併vs分開" },
                 { href: "/tax-refund", label: "退稅試算" },
+  { href: "/tax-filing-steps", label: "報稅流程" },
                 { href: "/expense-deduction-compare", label: "費用核實試算" },
               ].map((tool) => (
                 <Link

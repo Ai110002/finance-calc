@@ -87,6 +87,7 @@ const NAV_LINKS = [
   { href: "/tax-refund", label: "退稅試算", active: true },
   { href: "/joint-filing", label: "夫妻合併vs分開" },
   { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
+  { href: "/tax-filing-steps", label: "報稅流程" },
 ];
 
 // ── 常見情境比較表 ────────────────────────────────────────────────────────────

@@ -219,6 +219,9 @@ export default function Home() {
         <Link href="/income-tax-guide-2026" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           報稅完整攻略
         </Link>
+        <Link href="/tax-filing-steps" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          報稅流程
+        </Link>
       </div>
 
       <div className="text-center">
