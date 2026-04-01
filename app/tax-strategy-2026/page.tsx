@@ -71,6 +71,7 @@ const NAV_LINKS = [
   { href: "/foreign-income-tax", label: "海外所得" },
   { href: "/tax-refund", label: "退稅試算" },
   { href: "/tax-filing-steps", label: "報稅流程" },
+  { href: "/tax-refund-timeline", label: "退稅時程" },
 ];
 
 const FAQS = [

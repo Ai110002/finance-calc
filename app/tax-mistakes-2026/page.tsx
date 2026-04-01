@@ -66,6 +66,7 @@ const NAV_LINKS = [
   { href: "/tax-filing-steps", label: "報稅流程" },
   { href: "/joint-filing", label: "夫妻合併vs分開" },
   { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
+  { href: "/tax-refund-timeline", label: "退稅時程" },
 ];
 
 // ── 5大常見錯誤資料 ───────────────────────────────────────────────────────────

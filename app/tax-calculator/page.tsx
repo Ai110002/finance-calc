@@ -174,6 +174,12 @@ export default function TaxCalculatorPage() {
         >
           報稅流程
         </Link>
+        <Link
+          href="/tax-refund-timeline"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          退稅時程
+        </Link>
       </div>
 
       {/* Hero */}

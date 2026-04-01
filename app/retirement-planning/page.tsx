@@ -48,6 +48,7 @@ const RETURN_OPTIONS = [
   { label: "保守 2%", value: 0.02 },
   { label: "穩健 4%", value: 0.04 },
   { label: "積極 6%", value: 0.06 },
+  { href: "/tax-refund-timeline", label: "退稅時程" },
 ];
 
 const NAV_LINKS = [

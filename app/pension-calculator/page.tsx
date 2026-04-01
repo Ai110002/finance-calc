@@ -25,6 +25,7 @@ const TAX_BRACKETS = [
   { max: 2_660_000, rate: 0.20, deduction: 147_700 },
   { max: 4_980_000, rate: 0.30, deduction: 413_700 },
   { max: Infinity,  rate: 0.40, deduction: 911_700 },
+  { href: "/tax-refund-timeline", label: "退稅時程" },
 ];
 
 const STANDARD_DEDUCTION_SINGLE = 131_000;

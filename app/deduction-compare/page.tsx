@@ -30,6 +30,7 @@ const TAX_BRACKETS = [
   { max: 2_660_000, rate: 0.20 },
   { max: 4_980_000, rate: 0.30 },
   { max: Infinity, rate: 0.40 },
+  { href: "/tax-refund-timeline", label: "退稅時程" },
 ];
 
 const EXEMPTION = 97_000;
