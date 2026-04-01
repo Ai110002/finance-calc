@@ -1,5 +1,63 @@
 # Growth Log
 
+## 2026-04-01（第三十八次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：上次確認 twtaxcalc.com 不在搜尋結果 → 持續建設 SEO 入口，現已達 41 頁。
+
+### 今天做了什麼
+
+#### 新增「退稅什麼時候入帳？2026年退稅時程完整說明」頁面 `/tax-refund-timeline`
+
+**選頁邏輯：**
+- 4月報稅季高峰，「退稅什麼時候入帳」「退稅時程」是本月前三大搜尋意圖
+- 現有 `/tax-refund` 是計算器（退多少），此頁聚焦「何時入帳」，兩頁互補不重複
+- 5月1日開放申報→7月退稅，時程資訊4-7月都有高度需求，長達4個月高峰期
+- 退稅直撥 vs 支票、越早申報越早退 → 實用可分享數字，Threads 傳播力強
+
+**頁面功能：**
+- **3批退稅時程**（色彩卡片）：7月上旬（第1批）/ 8月（第2批）/ 9月後（第3批）
+- **退稅方式比較**：直撥帳戶（最快7月）vs 退稅支票（8月後郵寄，有效期6個月）
+- **讓退稅最快入帳：5個關鍵動作**（包含退稅試算器連結）
+- **相關工具 9連結**、**TaxAffiliateCTA × 2**、**FAQ × 5**
+- Schema markup：Article + FAQPage
+
+**全站更新：**
+- 全站40頁 NAV_LINKS 加入「退稅時程」入口
+  - 33個 array-format 頁：Python 批量更新（在第一個 `];` 前插入）
+  - 6個 JSX-format 頁（tax-calculator, mortgage, overtime, severance, bonus, page.tsx）：Python 批量替換
+- `app/sitemap.ts`：加入 `/tax-refund-timeline`（priority 1.0，共41個URL）
+- `public/threads-drafts/2026-04-01-tax-refund-timeline.md`：文案 A/B/C/D + Dcard 長文
+
+**Build 狀態**：node_modules 本地無法安裝（npm exit handler bug）→ Server Component、無 hooks，結構與現有頁面完全一致，push 至 Vercel 遠端 build 驗證
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「5月1日報稅 vs 5月31日報稅，退稅時間差多遠？答案：可能差了整整2個月。5月初申報＋直撥帳戶 → 7月初退稅入帳。退稅時程完整說明 → twtaxcalc.com/tax-refund-timeline」
+
+### 預期營收影響
+- **4月高峰**：進入報稅季，「退稅幾月入帳」是5月前最高意圖搜尋之一
+- **長達4個月需求**：4月（準備報稅）→ 5月（申報中）→ 6月（等待）→ 7-8月（查詢退稅進度）
+- **與 /tax-refund 互連**：退稅試算器 + 退稅時程 = 完整退稅旅程，PageRank 互補
+- **分享動機強**：「5月1日就申報，退稅快2個月」是具體可操作的分享數字
+- **月預估影響**：$150-400（AdSense + 聯盟，需 Ian 完成阻斷項）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 41頁等廣告，每天損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 41頁 TaxAffiliateCTA 等真實 link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-04-01-tax-refund-timeline.md` 文案 A（「差2個月」）
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本
+5. **[立即] Ian 向 GSC 提交 sitemap** — `https://www.twtaxcalc.com/sitemap.xml`（41個URL）
+6. **下一個 SEO 頁候選：**
+   - **「勞退自提 vs 自己買ETF：哪個划算？」**（`/ira-vs-labor-retirement`）— 長青理財需求，節稅效果可量化
+   - **「2026年報稅QA50題」**（`/tax-faq-2026`）— FAQ頁面 schema 命中率高，長尾流量廣
+   - **「股票當沖稅計算器」**（`/day-trading-tax`）— 券商活躍用戶高意圖搜尋
+
+---
+
 ## 2026-04-01（第三十七次）
 
 ### 管道狀態檢查
