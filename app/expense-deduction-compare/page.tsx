@@ -35,6 +35,7 @@ const NAV_LINKS = [
   { href: "/dependent-deduction", label: "扶養節稅" },
   { href: "/freelancer-tax-guide", label: "接案報稅" },
   { href: "/side-income-tax", label: "副業所得申報" },
+  { href: "/tax-strategy-2026", label: "省稅策略" },
   {
     href: "/expense-deduction-compare",
     label: "費用核實試算",

@@ -92,6 +92,9 @@ export default function MortgagePage() {
         <Link href="/side-income-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
           副業所得申報
         </Link>
+        <Link href="/tax-strategy-2026" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition">
+          省稅策略
+        </Link>
         <Link href="/expense-deduction-compare" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           費用核實試算
         </Link>

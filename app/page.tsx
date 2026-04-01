@@ -192,6 +192,9 @@ export default function Home() {
         <Link href="/side-income-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           副業所得申報
         </Link>
+        <Link href="/tax-strategy-2026" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          省稅策略
+        </Link>
         <Link href="/supplement-premium" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           二代健保
         </Link>
