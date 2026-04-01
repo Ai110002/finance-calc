@@ -1,5 +1,53 @@
 # Growth Log
 
+## 2026-04-01（第三十七次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：第三十五次 WebSearch 確認未出現搜尋結果。40頁持續累積SEO入口，繼續建設。
+
+### 今天做了什麼
+
+#### 新增「退休金缺口試算器」頁面 `/retirement-planning`
+
+**選頁邏輯：**
+- 第三十六次（tax-filing-steps）建完後，本次執行 /retirement-planning
+- 長青常駐流量：「退休金缺口」「退休需要多少錢」全年穩定搜尋，不限報稅季
+- 補齊退休三件組：`/labor-retirement`（自提節稅）+ `/pension-calculator`（節稅估算）+ `/retirement-planning`（缺口規劃）
+
+**頁面功能：**
+- 輸入年齡/退休年齡/目標月支出/月薪/自提%/現有儲蓄/報酬率
+- 計算勞退新制月領 + 勞保年金月領（方式二）+ 現有儲蓄複利終值
+- 缺口視覺化（紅框）+ 每月需額外儲蓄（多報酬率情境）
+- 情境比較表 × 5、退休規劃三步驟、AdUnit × 2、TaxAffiliateCTA × 2、FAQ × 5
+- Schema markup：WebApplication + Article + FAQPage
+
+**全站更新：**
+- 全站40頁 NAV_LINKS 加入「退休規劃」入口（sed 批量 + JSX 逐一）
+- `app/sitemap.ts`：加入 `/retirement-planning`（priority 1.0，共40個URL）
+- `public/threads-drafts/2026-04-01-retirement-planning.md`：4篇文案 + Dcard長文
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**：
+「月薪5萬，存到60歲退休，勞退帳戶約450萬。退休後活到85歲，450萬÷300個月=每月1萬5。加上勞保年金7,000，合計月收入：2萬2。你退休後想花多少？→ twtaxcalc.com/retirement-planning」
+
+### 預期營收影響
+- **長青常駐**：退休規劃搜尋全年穩定，不受報稅截止日影響
+- **受眾消費力**：30~50歲規劃退休族群，TaxAffiliateCTA 轉換率高
+- **退休三件組互連**：勞退+節稅+缺口三頁互連，PageRank 互補
+- **月預估影響**：$200–500（需 Ian 完成阻斷項）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 40頁等廣告
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 40頁 TaxAffiliateCTA 等真實 link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-04-01-retirement-planning.md` 文案 A
+4. **[立即] Ian 向 GSC 提交 sitemap** — `https://www.twtaxcalc.com/sitemap.xml`（40個URL）
+5. **下一個 SEO 頁**：`/ira-vs-labor-retirement`（勞退自提 vs 自己買ETF比較）或 `/tax-refund-timeline`（退稅什麼時候到帳）
+
+---
+
 ## 2026-04-01（第三十六次）
 
 ### 管道狀態檢查

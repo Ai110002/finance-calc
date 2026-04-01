@@ -67,6 +67,7 @@ const NAV_LINKS = [
   { href: "/bonus-calculator", label: "年終獎金" },
   { href: "/pension-calculator", label: "退休試算" },
   { href: "/labor-retirement", label: "勞退新制" },
+  { href: "/retirement-planning", label: "退休規劃" },
   { href: "/basic-living-deduction", label: "免稅天花板" },
   { href: "/labor-insurance-rates", label: "勞健保費率" },
   { href: "/income-tax-brackets", label: "所得稅級距" },

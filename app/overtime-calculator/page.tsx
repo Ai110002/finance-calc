@@ -195,6 +195,12 @@ export default function OvertimeCalculatorPage() {
           勞退計算
         </Link>
         <Link
+          href="/retirement-planning"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600"
+        >
+          退休規劃
+        </Link>
+        <Link
           href="/basic-living-deduction"
           className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600"
         >
