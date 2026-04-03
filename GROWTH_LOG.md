@@ -1,5 +1,62 @@
 # Growth Log
 
+## 2026-04-03（第四十次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認 twtaxcalc.com 仍未出現在「報稅計算器 2026 台灣」搜尋結果；持續建設 SEO 入口，現已達 43 頁
+- **搜尋結論**：「勞退自提 vs ETF」關鍵字有 ETtoday 新聞報導、advisers.com.tw 文章，但無互動式計算器 → 機會空缺
+
+### 今天做了什麼
+
+#### 新增「勞退自提 vs 自己買ETF」比較頁面 `/ira-vs-labor-retirement`
+
+**選頁邏輯：**
+- WebSearch 確認「勞退自提計算 ETF 划算」搜尋結果：ETtoday「勞退基金績效還不如0050、多55%價值」等文章有流量，但無專頁計算器
+- 年-round 長青流量（不限報稅季），理財受眾 = AdSense 金融廣告高 CPM
+- 補齊退休四件組：`/labor-retirement`（自提節稅）+ `/pension-calculator`（退休估算）+ `/retirement-planning`（缺口規劃）+ `/ira-vs-labor-retirement`（vs ETF比較）
+- 4月報稅季也是「整理財務規劃」的高意圖時間點
+
+**頁面功能（靜態 Server Component）：**
+- **核心觀念 3張卡片**：確定優勢（節稅）/ 潛在優勢（ETF報酬率）/ 最佳策略（兩者兼得）
+- **節稅試算表**（表1）：月薪3-10萬 × 稅率5/12/20/30/40% → 月自提額、月節稅、月淨成本、相當折扣
+- **30年複利終值表**（表2）：月投3,000元 × 7種報酬率（3%-10%）→ 終值金額，勞退4%行與ETF8%行分別標色
+- **6大維度質性比較表**：節稅/保本/靈活性/報酬率/政府配合/帳戶安全
+- **四種情況決策建議**（稅率12%以上/5%族群/高薪高稅/近退休）
+- **TaxAffiliateCTA × 2**、**相關工具 9連結**、**FAQ × 5**
+- Schema markup：Article + FAQPage
+
+**全站更新：**
+- 全站40頁 NAV_LINKS 加入「勞退vs ETF」入口（Python批量替換 day-trading-tax 後面）
+- `app/sitemap.ts`：加入 `/ira-vs-labor-retirement`（priority 1.0，共43個URL）
+- `public/threads-drafts/2026-04-03-ira-vs-labor-retirement.md`：文案 A/B/C/D + Dcard長文
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「月薪5萬、稅率20%的人，勞退自提6% = 每月用2,400元存入3,000元的退休帳戶。立即省下的600元，你可以再去買ETF。這不是選勞退還是ETF，是先把折扣拿了，再去買ETF。試算你的節稅金額 → twtaxcalc.com/ira-vs-labor-retirement」
+
+### 預期營收影響
+- **長青受眾**：「勞退自提划算嗎」全年搜尋穩定，不限報稅季，與退休、ETF族群高度重疊
+- **高 CPM**：退休金規劃 + 投資類廣告是金融廣告最高 CPM 區段之一
+- **互動式優勢**：搜尋結果中同類競爭是文章，我們是可查表的計算工具，停留時間更長
+- **分享動機強**：「8折存退休金」「先拿折扣再買ETF」是具體可操作觀念，轉傳動機強
+- **月預估影響**：$100-250（AdSense，需 Ian 完成阻斷項）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 43 頁等廣告，每天損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 43 頁 TaxAffiliateCTA 等真實 link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-04-03-ira-vs-labor-retirement.md` 文案 A（「先把折扣拿了，再去買ETF」）
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本
+5. **[立即] Ian 向 GSC 提交 sitemap** — `https://www.twtaxcalc.com/sitemap.xml`（43個URL）
+6. **下一個 SEO 頁候選：**
+   - **「2026年報稅QA50題」**（`/tax-faq-2026`）— FAQ頁面 schema 命中率高，長尾流量廣
+   - **「ETF vs 股票股利稅比較」**（`/etf-vs-stock-tax`）— 補齊投資族群稅務知識
+   - **「2026年省稅10個合法方法」**（`/legal-tax-savings-2026`）— 高分享性清單文
+
+---
+
 ## 2026-04-01（第三十九次）
 
 ### 管道狀態檢查
