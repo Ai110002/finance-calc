@@ -31,6 +31,7 @@ const LABOR_BRACKETS = [
   126300, 131700, 137100, 142500, 147900,
   { href: "/tax-refund-timeline", label: "退稅時程" },
   { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
 ];
 
 // 健保投保薪資分級表（114年）— 最低 28,590、最高 219,500

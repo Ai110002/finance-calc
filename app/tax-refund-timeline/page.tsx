@@ -72,6 +72,7 @@ const NAV_LINKS = [
   { href: "/tax-filing-steps", label: "報稅流程" },
   { href: "/tax-refund-timeline", label: "退稅時程", active: true },
   { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
 ];
 
 const BATCHES = [

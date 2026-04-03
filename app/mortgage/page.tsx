@@ -15,6 +15,7 @@ const PRESETS = [
   { label: "首購族", rate: 2.35, years: 30, grace: 2 },
   { label: "一般房貸", rate: 2.6, years: 30, grace: 0 },
   { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
 ];
 
 const BANK_RATES = [

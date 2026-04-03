@@ -32,6 +32,7 @@ const TAX_BRACKETS = [
   { max: Infinity, rate: 0.40 },
   { href: "/tax-refund-timeline", label: "退稅時程" },
   { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
 ];
 
 const EXEMPTION = 97_000;

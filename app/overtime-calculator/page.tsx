@@ -338,6 +338,12 @@ export default function OvertimeCalculatorPage() {
         >
           當沖稅費
         </Link>
+        <Link
+          href="/ira-vs-labor-retirement"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          勞退vs ETF
+        </Link>
       </div>
 
       <div className="px-4 pt-5 space-y-5">

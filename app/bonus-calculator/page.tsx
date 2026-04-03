@@ -27,6 +27,7 @@ const TAX_BRACKETS = [
   { max: 4_980_000, rate: 0.30, deduction: 413_700 },
   { max: Infinity,  rate: 0.40, deduction: 911_700 },
   { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
 ];
 
 const STANDARD_DEDUCTION_SINGLE = 131_000;

@@ -55,6 +55,7 @@ const NAV_LINKS = [
   { href: "/foreign-income-tax", label: "海外所得" },
   { href: "/tax-refund-timeline", label: "退稅時程" },
   { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
 ];
 
 // ── Checklist 步驟定義 ────────────────────────────────────────────────────────

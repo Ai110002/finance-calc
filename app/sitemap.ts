@@ -264,5 +264,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/ira-vs-labor-retirement`,
+      lastModified: new Date("2026-04-03T10:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }

@@ -50,6 +50,7 @@ const RETURN_OPTIONS = [
   { label: "積極 6%", value: 0.06 },
   { href: "/tax-refund-timeline", label: "退稅時程" },
   { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
 ];
 
 const NAV_LINKS = [
