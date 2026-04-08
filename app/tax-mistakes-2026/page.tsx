@@ -70,6 +70,7 @@ const NAV_LINKS = [
   { href: "/day-trading-tax", label: "當沖稅費" },
   { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
   { href: "/legal-tax-savings-2026", label: "省稅10招" },
+  { href: "/rental-income-tax-2026", label: "出租報稅" },
 ];
 
 // ── 5大常見錯誤資料 ───────────────────────────────────────────────────────────

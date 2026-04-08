@@ -77,6 +77,7 @@ const NAV_LINKS = [
   { href: "/day-trading-tax", label: "當沖稅費", active: true },
   { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
   { href: "/legal-tax-savings-2026", label: "省稅10招" },
+  { href: "/rental-income-tax-2026", label: "出租報稅" },
 ];
 
 // Pre-computed scenarios: price × 1張 (1000 shares)

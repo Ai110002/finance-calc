@@ -29,10 +29,6 @@ const LABOR_BRACKETS = [
   60800, 63800, 66800, 69800, 72800, 76500, 80200, 83900,
   87600, 92100, 96600, 101100, 105600, 110100, 115500, 120900,
   126300, 131700, 137100, 142500, 147900,
-  { href: "/tax-refund-timeline", label: "退稅時程" },
-  { href: "/day-trading-tax", label: "當沖稅費" },
-  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
-  { href: "/legal-tax-savings-2026", label: "省稅10招" },
 ];
 
 // 健保投保薪資分級表（114年）— 最低 28,590、最高 219,500
@@ -165,6 +161,11 @@ const NAV_LINKS = [
   { href: "/tax-filing-steps", label: "報稅流程" },
   { href: "/joint-filing", label: "夫妻合併vs分開" },
   { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
+  { href: "/tax-refund-timeline", label: "退稅時程" },
+  { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
+  { href: "/legal-tax-savings-2026", label: "省稅10招" },
+  { href: "/rental-income-tax-2026", label: "出租報稅" },
 ];
 
 export default function SalaryCalculatorPage() {

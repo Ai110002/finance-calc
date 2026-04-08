@@ -48,10 +48,6 @@ const RETURN_OPTIONS = [
   { label: "保守 2%", value: 0.02 },
   { label: "穩健 4%", value: 0.04 },
   { label: "積極 6%", value: 0.06 },
-  { href: "/tax-refund-timeline", label: "退稅時程" },
-  { href: "/day-trading-tax", label: "當沖稅費" },
-  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
-  { href: "/legal-tax-savings-2026", label: "省稅10招" },
 ];
 
 const NAV_LINKS = [
@@ -93,6 +89,13 @@ const NAV_LINKS = [
   { href: "/tax-refund", label: "退稅試算" },
   { href: "/joint-filing", label: "夫妻合併vs分開" },
   { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
+  { href: "/side-income-tax", label: "副業所得申報" },
+  { href: "/tax-strategy-2026", label: "省稅策略" },
+  { href: "/tax-refund-timeline", label: "退稅時程" },
+  { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
+  { href: "/legal-tax-savings-2026", label: "省稅10招" },
+  { href: "/rental-income-tax-2026", label: "出租報稅" },
 ];
 
 const FAQS = [

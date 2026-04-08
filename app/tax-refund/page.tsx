@@ -22,10 +22,6 @@ const TAX_BRACKETS = [
   { max: 2_660_000, rate: 0.20, diff: 147_700 },
   { max: 4_980_000, rate: 0.30, diff: 413_700 },
   { max: Infinity,  rate: 0.40, diff: 911_700 },
-  { href: "/tax-refund-timeline", label: "退稅時程" },
-  { href: "/day-trading-tax", label: "當沖稅費" },
-  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
-  { href: "/legal-tax-savings-2026", label: "省稅10招" },
 ];
 
 function calcTax(netIncome: number): number {
@@ -93,6 +89,13 @@ const NAV_LINKS = [
   { href: "/joint-filing", label: "夫妻合併vs分開" },
   { href: "/income-tax-guide-2026", label: "報稅完整攻略" },
   { href: "/tax-filing-steps", label: "報稅流程" },
+  { href: "/side-income-tax", label: "副業所得申報" },
+  { href: "/tax-strategy-2026", label: "省稅策略" },
+  { href: "/tax-refund-timeline", label: "退稅時程" },
+  { href: "/day-trading-tax", label: "當沖稅費" },
+  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
+  { href: "/legal-tax-savings-2026", label: "省稅10招" },
+  { href: "/rental-income-tax-2026", label: "出租報稅" },
 ];
 
 // ── 常見情境比較表 ────────────────────────────────────────────────────────────

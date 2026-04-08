@@ -26,9 +26,6 @@ const TAX_BRACKETS = [
   { max: 2_660_000, rate: 0.20, deduction: 147_700 },
   { max: 4_980_000, rate: 0.30, deduction: 413_700 },
   { max: Infinity,  rate: 0.40, deduction: 911_700 },
-  { href: "/day-trading-tax", label: "當沖稅費" },
-  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
-  { href: "/legal-tax-savings-2026", label: "省稅10招" },
 ];
 
 const STANDARD_DEDUCTION_SINGLE = 131_000;
@@ -366,6 +363,30 @@ export default function BonusCalculatorPage() {
           className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
         >
           退稅時程
+        </Link>
+        <Link
+          href="/day-trading-tax"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          當沖稅費
+        </Link>
+        <Link
+          href="/ira-vs-labor-retirement"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          勞退vs ETF
+        </Link>
+        <Link
+          href="/legal-tax-savings-2026"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          省稅10招
+        </Link>
+        <Link
+          href="/rental-income-tax-2026"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          出租報稅
         </Link>
       </div>
 

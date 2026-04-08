@@ -58,6 +58,7 @@ const NAV_LINKS = [
   { href: "/day-trading-tax", label: "當沖稅費" },
   { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
   { href: "/legal-tax-savings-2026", label: "省稅10招" },
+  { href: "/rental-income-tax-2026", label: "出租報稅" },
 ];
 
 // ── 114年度 費用率標準（財政部公告）───────────────────────────────────────
