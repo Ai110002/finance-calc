@@ -258,6 +258,33 @@ export default function Home() {
         <Link href="/foreign-income-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
           海外所得
         </Link>
+        <Link href="/house-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          房屋稅
+        </Link>
+        <Link href="/labor-retirement" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          勞退新制
+        </Link>
+        <Link href="/deduction-compare" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          列舉vs標準
+        </Link>
+        <Link href="/preschool-deduction" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          幼兒學前扣除
+        </Link>
+        <Link href="/real-estate-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          房地合一稅
+        </Link>
+        <Link href="/mortgage-full-cost" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          買房費用
+        </Link>
+        <Link href="/buy-vs-rent" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          買vs租
+        </Link>
+        <Link href="/expense-deduction-compare" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          費用核實試算
+        </Link>
+        <Link href="/tax-refund" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          退稅試算
+        </Link>
       </div>
 
       <div className="text-center">
