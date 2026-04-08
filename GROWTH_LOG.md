@@ -1,5 +1,62 @@
 # Growth Log
 
+## 2026-04-08（第四十五次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現主要關鍵字搜尋結果；4月報稅季剩不到 3 週，論壇文導流是現階段最高 ROI 動作
+- **前次備注確認**：session 44 指定「[下次 agent] 補寫 supplement-premium、preschool-deduction、side-income-tax 論壇文」→ **本次執行**
+
+### 今天做了什麼
+
+#### 補寫 3 篇高潛力頁面論壇文（導流）
+
+session 44 識別出以下 3 個頁面有 Threads 草稿但無論壇文，本次補齊：
+
+| 文件 | 對應頁面 | 目標板 | 核心鉤子 |
+|---|---|---|---|
+| `2026-04-08-supplement-premium-ptt.md` | /supplement-premium | PTT Salary、PTT WorkLife | 「年終15萬只扣NT$101，不是全額扣2.11%」＋六種情況完整對照表 |
+| `2026-04-08-preschool-deduction-ptt.md` | /preschool-deduction | PTT BabyMother、Dcard 親子板 | 「一個幼兒省NT$18,000，兩個省NT$36,000，很多人忘了申報」＋疊加算法 |
+| `2026-04-08-side-income-tax-ptt.md` | /side-income-tax | PTT Salary、Dcard 理財版 | 「副業30萬只多繳NT$8,250，費用率制度讓有效稅率不到3%」＋三種族群試算 |
+
+**選頁邏輯：**
+- `supplement-premium`：年終季剛過、5月報稅前，「為什麼扣那麼少/那麼多」是 Salary 板常見問題；門檻計算是反直覺知識，分享動機強
+- `preschool-deduction`：4月是「有孩子的家庭」主動搜尋報稅資訊的高峰；「省NT$36,000 卻漏申報」的衝擊感強，BabyMother 板轉傳率高
+- `side-income-tax`：斜槓族/接案族族群大，且「副業要不要申報」是常見焦慮話題；費用率是知識差異點，高分享潛力
+
+**每篇文章均含：**
+- PTT 完整版 + 懶人精簡版
+- 具體計算數字（114年度資料）
+- 判斷原則表格
+- 計算器 CTA + 完整 URL
+
+**論壇文總計：19 篇（+3 篇）**
+
+**Push 狀態**：markdown 文件，無 TypeScript 結構變動，不影響 build → commit + push main ✅
+
+### 預期營收影響
+- **supplement-premium 論壇文**（PTT Salary/WorkLife）：「年終只扣NT$101」是反直覺數字，分享動機強；此頁有 TaxAffiliateCTA；預估每篇 500-2,000 閱讀，帶入 50-200 訪客
+- **preschool-deduction 論壇文**（PTT BabyMother）：育兒板受眾精準（有幼兒即有需求），省NT$36,000 的數字衝擊強；此頁有 TaxAffiliateCTA；預估 1,000-3,000 閱讀
+- **side-income-tax 論壇文**（PTT Salary + Dcard 理財版）：斜槓族受眾廣，「有效稅率不到3%」解除恐懼、「漏報罰40%」製造危機感，雙重動機驅動分享；此頁有 TaxAffiliateCTA；預估 500-3,000 閱讀
+- **三篇合計**：配合現有 TaxAffiliateCTA，預估每月帶入 150-600 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 45頁等廣告，每天延誤是損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 45頁 TaxAffiliateCTA + MortgageAffiliateCTA 等真實連結
+3. **[立即] Ian 發論壇文（報稅季窗口 < 3 週）**：
+   - `2026-04-08-side-income-tax-ptt.md` → PTT Salary板（副業族廣，費用率知識稀缺，最高分享潛力）
+   - `2026-04-08-preschool-deduction-ptt.md` → PTT BabyMother板（精準受眾，省稅金額大）
+   - `2026-04-08-supplement-premium-ptt.md` → PTT Salary板（反直覺數字，門檻知識）
+   - 之前未發的：`2026-04-08-dividend-tax-ptt.md`、`2026-04-08-deduction-compare-ptt.md`、`2026-04-08-tax-calculator-ptt.md`
+4. **[立即] Ian 發 Threads 文**：
+   - `2026-04-08-tax-calculator.md` 文案 B（數字鉤子）
+   - `2026-03-31-side-income-tax.md` 文案 A（數字衝擊）
+   - `2026-03-30-preschool-deduction.md` 文案 C（數字刺激）
+5. **[下次 agent]** 評估是否需要補寫 `amt-calculator`、`foreign-income-tax` 頁面的論壇文，或轉向 SEO 文章強化內部連結
+
+---
+
 ## 2026-04-08（第四十四次）
 
 ### 管道狀態檢查
