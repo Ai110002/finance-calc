@@ -1,5 +1,63 @@
 # Growth Log
 
+## 2026-04-08（第四十七次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現主要關鍵字搜尋結果；報稅季剩 ≈ 3.5 週，論壇文導流是最高 ROI 動作
+- **前次備注確認**：session 46 指定「[下次 agent] 評估剩餘未有論壇文的頁面優先順序，或轉向 SEO 內部連結強化（amt-calculator、retirement-planning、tax-strategy-2026、ira-vs-labor-retirement 等）」→ **本次執行（選擇補論壇文）**
+
+### 今天做了什麼
+
+#### 補寫 3 篇高潛力頁面論壇文（導流）
+
+評估結論：距 5 月報稅截止仍有 3.5 週，SEO 生效需 4-8 週，論壇文可即時發布即時帶流量。選出以下 3 頁補齊：
+
+| 文件 | 對應頁面 | 目標板 | 核心鉤子 |
+|---|---|---|---|
+| `2026-04-08-amt-calculator-ptt.md` | /amt-calculator | PTT Stock板、Dcard 理財版/投資版 | 「大多數 ETF 投資人 AMT = 0，但不申報才有風險」＋3步驟判斷表格＋實際案例 |
+| `2026-04-08-tax-checklist-2026-ptt.md` | /tax-checklist-2026 | PTT Salary板、Tax板、Dcard 理財版 | 「10分鐘確認清單，漏掉一項少退幾千」＋5類扣除額完整檢查 |
+| `2026-04-08-income-tax-brackets-ptt.md` | /income-tax-brackets | PTT Salary板、Dcard 理財版 | 「加薪跨稅率到底值不值得？數字告訴你」＋各年薪實際稅額試算 |
+
+**選頁邏輯：**
+- `amt-calculator`：session 44-46 均標記為「缺論壇文」的高優先頁面；美股 ETF 族的 AMT 焦慮是 4-5 月最熱議題，「大多數人不用繳但要申報」是反直覺知識，分享動機強；PTT Stock板受眾精準
+- `tax-checklist-2026`：清單型內容在論壇/社群轉傳率最高；「漏掉一項少退幾千」的損失框架觸發行動；覆蓋所有報稅相關頁面流量（內部連結效果）；4月中到5月初是黃金發文時機
+- `income-tax-brackets`：「加薪到底會不會被扣更多稅」是 PTT Salary板長年高頻問題；全年皆宜發文，報稅季搜尋量翻倍；計算器頁面本身有強烈使用動機
+
+**每篇文章均含：**
+- PTT 精簡版 + Dcard 完整版雙格式
+- 具體計算數字（114年度資料）
+- 判斷原則表格
+- 計算器 CTA + 完整 URL
+- Hashtag
+
+**論壇文總計：25 篇（+3 篇）**
+
+**Push 狀態**：markdown 文件，無 TypeScript 結構變動，不影響 build → commit + push main ✅
+
+### 預期營收影響
+- **amt-calculator 論壇文**（PTT Stock板）：美股族 AMT 焦慮是 4-5 月最高搜尋量話題；「大多數人 AMT = 0」的反直覺結論有強烈點擊誘因；此頁計算完成後有 AdUnit；預估 1,000-3,000 閱讀，帶入 100-300 訪客
+- **tax-checklist-2026 論壇文**（PTT Salary/Tax板）：清單型文章是論壇傳播率最高的格式；覆蓋面廣（每個有薪資的人都適用）；此頁計算後連結各專項扣除額計算器（擴大站內流量）；預估 500-2,000 閱讀，帶入 50-200 訪客
+- **income-tax-brackets 論壇文**（PTT Salary板）：「加薪值不值得」是 Salary板長年熱門話題，標題鉤子強；稅率計算器有 AdUnit；全年長尾效果；預估 500-1,500 閱讀，帶入 50-150 訪客
+- **三篇合計**：預估每月帶入 200-650 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 25頁等廣告，每天延誤是損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 25頁 TaxAffiliateCTA + MortgageAffiliateCTA 等真實連結
+3. **[立即] Ian 發論壇文（報稅季窗口 ≈ 3.5 週）**：
+   - `2026-04-08-amt-calculator-ptt.md` → PTT Stock板（美股 AMT，最高焦慮話題）
+   - `2026-04-08-tax-checklist-2026-ptt.md` → PTT Salary/Tax板（清單型，最高轉傳率）
+   - `2026-04-08-income-tax-brackets-ptt.md` → PTT Salary板（加薪稅率，長年熱門）
+   - 之前待發的 6 篇（見 session 46 清單）
+4. **[立即] Ian 發 Threads 文**（見 session 46 清單）
+5. **[下次 agent]** 已補齊所有高優先頁面論壇文，建議轉向：
+   - 評估補寫 `income-tax-guide-2026`、`tax-filing-guide`、`retirement-planning`、`ira-vs-labor-retirement`、`basic-living-deduction` 論壇文（這 5 頁還缺論壇文）
+   - 或檢查各計算器頁面內部連結是否完整（提升 SEO 站內流量）
+   - 報稅季最後 2 週（4月21日後）考慮寫「最後倒數」緊迫感 Threads 文
+
+---
+
 ## 2026-04-08（第四十六次）
 
 ### 管道狀態檢查
