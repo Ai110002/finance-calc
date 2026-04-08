@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AdUnit } from "@/components/ad-unit";
 import { TaxAffiliateCTA } from "@/components/affiliate-cta";
 
 export const metadata: Metadata = {
@@ -427,6 +428,8 @@ export default function LegalTaxSavings2026Page() {
             </div>
           </section>
 
+          <AdUnit />
+
           <TaxAffiliateCTA />
 
           {/* Savings Table by Tax Rate */}
@@ -518,6 +521,8 @@ export default function LegalTaxSavings2026Page() {
               ))}
             </div>
           </section>
+
+          <AdUnit />
 
           <TaxAffiliateCTA />
 

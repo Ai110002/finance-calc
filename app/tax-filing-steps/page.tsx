@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AdUnit } from "@/components/ad-unit";
 import { TaxAffiliateCTA } from "@/components/affiliate-cta";
 
 export const metadata: Metadata = {
@@ -336,6 +337,11 @@ export default function TaxFilingStepsPage() {
             })}
           </div>
 
+          {/* 廣告 1 */}
+          <div className="mt-8">
+            <AdUnit />
+          </div>
+
           {/* Affiliate CTA 1 */}
           <div className="mt-8">
             <TaxAffiliateCTA />
@@ -366,6 +372,11 @@ export default function TaxFilingStepsPage() {
                 </Link>
               ))}
             </div>
+          </div>
+
+          {/* 廣告 2 */}
+          <div className="mt-6">
+            <AdUnit />
           </div>
 
           {/* Affiliate CTA 2 */}

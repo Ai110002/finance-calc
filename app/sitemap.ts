@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.twtaxcalc.com";
   // Use a fixed date per deploy rather than new Date() on every request
-  const lastDeploy = new Date("2026-04-08T19:00:00Z");
+  const lastDeploy = new Date("2026-04-08T21:00:00Z");
 
   return [
     {

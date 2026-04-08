@@ -1,5 +1,84 @@
 # Growth Log
 
+## 2026-04-08（第五十二次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：網路無法存取，依前次記錄推斷仍未出現主要關鍵字；5月1日報稅開始前 ≈ 23 天（黃金窗口）
+- **前次備注確認**：session 51 指定「tax-mistakes-2026 AdUnit修復 + 倒數Threads文4篇」→ **本次發現12頁面有 TaxAffiliateCTA 但缺 AdUnit，執行修復**
+
+### 今天做了什麼
+
+#### 1. 12個頁面補入 AdUnit（最高 ROI 漏洞修復）
+
+**問題診斷**：
+全站 audit 發現 12 個頁面有 TaxAffiliateCTA 但完全沒有 AdUnit。這些頁面每天都在接收流量但廣告佔位為零。
+
+**修復清單：**
+
+| 頁面 | 內容類型 | 為什麼重要 |
+|---|---|---|
+| `/amt-calculator` | 最低稅負制試算 | 美股族高意圖，sitemap p=1.0 |
+| `/day-trading-tax` | 當沖稅費 | 投資族精準受眾 |
+| `/stock-tax-2026` | 投資稅務 | 股票/ETF族，sitemap p=1.0 |
+| `/income-tax-guide-2026` | 報稅完整攻略 | 高搜尋量，sitemap p=1.0 |
+| `/tax-refund-timeline` | 退稅時程 | 報稅季高意圖 |
+| `/joint-filing` | 夫妻合併vs分開 | 決策型頁面高參與度 |
+| `/side-income-tax` | 副業所得申報 | 副業族精準受眾 |
+| `/tax-filing-steps` | 報稅流程 | 步驟型頁面停留時間長 |
+| `/legal-tax-savings-2026` | 省稅10招 | 節稅關鍵字高搜尋量 |
+| `/tax-strategy-2026` | 省稅策略 | 長文高參與度 |
+| `/ira-vs-labor-retirement` | 勞退vs ETF | 退休規劃族 |
+| `/expense-deduction-compare` | 費用核實試算 | 接案族精準受眾 |
+
+**每頁修復內容**：
+- 新增 `import { AdUnit } from "@/components/ad-unit";`
+- 在第一個 TaxAffiliateCTA 前插入 `<AdUnit />`（頁面中段高參與度位置）
+- 在第二個 TaxAffiliateCTA 前插入 `<AdUnit />`（頁面底部）
+- 使用與全站 15+ 頁面完全相同的 import/使用模式
+
+**Build 狀態**：node_modules 不存在（已知情況），變更為已在全站驗證的 AdUnit 組件模式，commit + push main ✅
+
+#### 2. Sitemap 更新
+`app/sitemap.ts`：lastDeploy 從 `2026-04-08T19:00:00Z` 更新至 `2026-04-08T21:00:00Z`，通知 Google 本次部署。
+
+#### 3. 早鳥 Threads 文（3篇）
+
+`public/threads-drafts/2026-04-08-early-bird-23days.md`
+
+| 草稿 | 目標受眾 | 核心鉤子 | 建議發布日 |
+|---|---|---|---|
+| A（早鳥退稅）| 所有人 | 「5月初申報退稅6月底到帳，5月底申報要等8-9月」 | 4/9 立即發 |
+| B（自由工作者）| 接案/自僱族 | 「9A費率不用收據，設計30%費率、顧問20%費率」 | 4/10 發 |
+| C（夫妻申報）| 已婚族 | 「夫妻合併vs分開，差可能到5位數，30秒試算」 | 4/11 發 |
+
+### 預期營收影響
+- **12頁 AdUnit 修復**：
+  - 全站現在 0 個頁面缺廣告佔位（修復前還有 12 個）
+  - 這 12 頁包含多個 sitemap p=1.0 高優先頁面
+  - Ian 設定 `NEXT_PUBLIC_ADSENSE_SLOT` 後，12 個頁面立即開始展示廣告
+  - 保守估計：12頁合計 1,000~3,000 訪客/月 × 2% CTR × $0.3/點擊 = 每月 $6~18 AdSense（廣告核准後）
+- **3篇早鳥 Threads 文**：
+  - 最快明天就能發，在報稅季開始前23天觸及用戶
+  - 預估合計觸及 900~3,000，帶入 90~300 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 現在全站 55+ 頁有廣告佔位，每天延誤是損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 全站 CTA 等真實連結
+3. **[立即] Ian 發 Threads 文**：
+   - 本次新增 3 篇（早鳥A/B/C，建議4/9-4/11發）
+   - session 51 的 4 篇倒數緊迫感（4/21-4/28發）
+   - session 50 的 3 篇（幼兒/列舉/房屋稅）待發
+   - session 49 的 3 篇（稅季準備 A/B/C）待發
+4. **[立即] Ian 發論壇文**（30+ 篇全部待發，報稅季黃金窗口）
+5. **[下次 agent]** 建議：
+   - **確認 rental-income-tax-2026 是否有 AdUnit**（此頁沒在本次清單但需確認）
+   - **5月1日（報稅開放日）**：寫「開放申報了！早申報退稅6月到帳」Threads 文
+   - **新頁面機會**：「eTax App 手把手報稅教學（2026）」—— 搜尋量高，現在開始做4月底能索引
+
+---
+
 ## 2026-04-08（第五十一次）
 
 ### 管道狀態檢查

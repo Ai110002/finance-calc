@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AdUnit } from "@/components/ad-unit";
 import { TaxAffiliateCTA } from "@/components/affiliate-cta";
 
 export const metadata: Metadata = {
@@ -335,6 +336,9 @@ export default function AmtCalculatorPage() {
           </p>
         </section>
 
+        {/* ── 廣告 ── */}
+        <AdUnit />
+
         {/* ── 聯盟 CTA ── */}
         <TaxAffiliateCTA />
 
@@ -426,6 +430,9 @@ export default function AmtCalculatorPage() {
             台灣一般上班族，若沒有美股/境外基金，通常完全不受最低稅負制影響。
           </div>
         </section>
+
+        {/* ── 廣告 2 ── */}
+        <AdUnit />
 
         {/* ── 聯盟 CTA ── */}
         <TaxAffiliateCTA />
