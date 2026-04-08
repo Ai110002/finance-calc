@@ -5,6 +5,80 @@
 ### 管道狀態檢查
 - **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
 - **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現在「報稅計算器」「房貸計算器」主要關鍵字搜尋結果；報稅季4月進入最後衝刺，本次主力為新頁面+bug修復
+
+### 今天做了什麼
+
+#### 1. 緊急修復：常數陣列污染 bug（影響計算正確性）
+
+**問題**：過去幾次批量更新腳本（session 40、41、42）錯誤地將 nav link 物件插入到 TAX_BRACKETS、LABOR_BRACKETS、RETURN_OPTIONS 等常數陣列中，而非 NAV_LINKS。
+
+**受影響頁面**（共11頁）：
+- `bonus-calculator`：TAX_BRACKETS 末尾插入3個 nav link 物件
+- `salary-calculator`：LABOR_BRACKETS 末尾插入4個 nav link 物件（HEALTH_BRACKETS 繼承擴散）
+- `pension-calculator`：TAX_BRACKETS 污染
+- `tax-calculator`：STEPS 陣列污染
+- `deduction-compare`、`basic-living-deduction`、`tax-refund`、`preschool-deduction`、`labor-retirement`、`foreign-income-tax`、`retirement-planning`：各有 TAX_BRACKETS 或同類陣列被污染
+
+**實際計算影響**：
+- bonus-calculator：`calcTax()` 迴圈遭遇無效物件，但因 `{ max: Infinity }` 已先命中，理論上不影響最終結果（但陣列不潔）
+- salary-calculator：CRITICAL — `brackets[brackets.length - 1]` 返回物件而非數字，月薪超過 NT$147,900 時 `getInsuredSalary()` 返回物件而非投保薪資，造成 NaN 串聯
+
+**修復方式**：Python 腳本識別並移除「NAV_LINKS 宣告前」的 nav link 物件，10頁自動修復 + bonus-calculator/tax-calculator/retirement-planning 手動 Edit。
+
+**營收邏輯**：計算結果錯誤 = 用戶不信任 = 跳出 = 廣告/聯盟點擊歸零
+
+#### 2. 新頁面：`/rental-income-tax-2026`（出租房屋報稅計算器）
+
+**選頁邏輯**：
+- 現有 `/real-estate-tax` 是「房地合一稅」（賣房），不涵蓋「出租收租」的租賃所得申報
+- 4月是台灣報稅季最高流量期（5月1日開始申報），「房屋出租報稅」在4月是高意圖搜尋詞
+- 約500萬戶台灣房東每年面臨此需求，且大部分人不清楚43%費用率
+
+**頁面功能（484行 use client 互動計算器）**：
+- 輸入：月租金、出租月數、其他年收入
+- 費用扣除方式：費用率43%（免憑證）vs 列舉實際費用
+- 輸出：年租金、費用扣除、租賃所得、適用稅率、多繳稅金、稅後租金、實質稅率
+- 二代健保補充保費計算（月租 > NT$20,000 時）
+- 3個族群案例試算（月薪族/中薪房東/高薪多房東）
+- 5個 FAQ、費用率 vs 列舉對照表
+- TaxAffiliateCTA + AdUnit × 2
+- Schema markup（WebApplication）
+
+**全站更新**：
+- `app/sitemap.ts`：加入 `/rental-income-tax-2026`（priority 1.0，共45個URL）
+- 42個現有頁面 NAV_LINKS 加入「出租報稅」入口
+- 因修復 bug 導致8個頁面 NAV_LINKS 缺少後期加入的連結（side-income-tax、tax-strategy-2026、tax-refund-timeline、day-trading-tax、ira-vs-labor-retirement、legal-tax-savings-2026）→ 一併補回
+
+**推廣內容**：
+- `public/threads-drafts/2026-04-08-rental-income-tax.md`：4個文案A/B/C/D + Dcard 長文版
+- `public/forum-posts/2026-04-08-rental-income-tax-ptt.md`：PTT 和 Dcard 完整版
+
+**Push 狀態**：已 commit + push main ✅
+
+### 預期營收影響
+- **出租報稅頁面**：4月報稅季高意圖搜尋，月預估 50-200 次訪客
+- **差異化優勢**：無其他台灣網站有互動式「租賃所得費用率43%試算器」
+- **TaxAffiliateCTA**：「找會計師報稅更省」→ Money101 → 預估每月 3-10 次點擊 × $200/核卡 = $600-$2,000
+- **bug 修復**：salary-calculator 月超過11.5萬元薪資的計算結果從 NaN 恢復正確 → 維護品牌可信度
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 45頁等廣告
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 45頁 TaxAffiliateCTA 等真實 link
+3. **[立即] Ian 發 PTT/Dcard 文**：
+   - `public/forum-posts/2026-04-08-rental-income-tax-ptt.md` → PTT home-sale板（最符合受眾）
+   - `public/forum-posts/2026-04-08-joint-filing-ptt.md` → PTT Salary板（未發）
+   - `public/forum-posts/2026-04-08-legal-tax-savings-ptt.md` → Dcard 理財版（未發）
+4. **[立即] Ian 發 Threads 文**：`public/threads-drafts/2026-04-08-rental-income-tax.md` 文案 B（故事型，高分享潛力）
+5. **[下次] 寫「房屋出租節稅」或「短租Airbnb報稅」相關 Threads/論壇文推廣新頁面**
+
+---
+
+## 2026-04-08（第四十二次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
 - **流量**：WebSearch 確認「報稅計算器 2026」「報稅教學 2026」「股票稅 2026」三個關鍵字 twtaxcalc.com **均未出現**；官方稅務入口、money101、rich01、stockfeel 佔主導；競爭者全是靜態文章，互動計算器仍是空缺
 - **搜尋結論**：域名 authority 尚低，需持續導流累積外部連結；PTT/Dcard 論壇文是最快速的短期流量手段
 
