@@ -231,6 +231,33 @@ export default function Home() {
         >
           退稅時程
         </Link>
+        <Link href="/tax-checklist-2026" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          報稅懶人包
+        </Link>
+        <Link href="/tax-mistakes-2026" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          報稅常見錯誤
+        </Link>
+        <Link href="/tax-filing-guide" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          報稅攻略
+        </Link>
+        <Link href="/day-trading-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          當沖稅費
+        </Link>
+        <Link href="/ira-vs-labor-retirement" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          勞退vs ETF
+        </Link>
+        <Link href="/legal-tax-savings-2026" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          省稅10招
+        </Link>
+        <Link href="/rental-income-tax-2026" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          出租報稅
+        </Link>
+        <Link href="/dividend-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          股利申報
+        </Link>
+        <Link href="/foreign-income-tax" className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition">
+          海外所得
+        </Link>
       </div>
 
       <div className="text-center">

@@ -204,6 +204,30 @@ export default function TaxCalculatorPage() {
         >
           出租報稅
         </Link>
+        <Link
+          href="/tax-checklist-2026"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          報稅懶人包
+        </Link>
+        <Link
+          href="/tax-mistakes-2026"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          報稅常見錯誤
+        </Link>
+        <Link
+          href="/amt-calculator"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          最低稅負
+        </Link>
+        <Link
+          href="/foreign-income-tax"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          海外所得
+        </Link>
       </div>
 
       {/* Hero */}
