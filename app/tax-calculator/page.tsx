@@ -25,6 +25,7 @@ const STEPS = [
   { id: "tips", label: "建議", icon: "💡" },
   { href: "/day-trading-tax", label: "當沖稅費" },
   { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
+  { href: "/legal-tax-savings-2026", label: "省稅10招" },
 ];
 
 export default function TaxCalculatorPage() {

@@ -73,6 +73,7 @@ const NAV_LINKS = [
   { href: "/tax-refund-timeline", label: "退稅時程" },
   { href: "/day-trading-tax", label: "當沖稅費" },
   { href: "/ira-vs-labor-retirement", label: "勞退vs ETF", active: true },
+  { href: "/legal-tax-savings-2026", label: "省稅10招" },
 ];
 
 // 表1: 各月薪自提6%節稅試算

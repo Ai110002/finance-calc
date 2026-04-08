@@ -49,6 +49,7 @@ const NAV_LINKS = [
   { href: "/tax-refund-timeline", label: "退稅時程" },
   { href: "/day-trading-tax", label: "當沖稅費" },
   { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
+  { href: "/legal-tax-savings-2026", label: "省稅10招" },
 ];
 
 // ── 月供計算（等額本息）──────────────────────────────────────────────────────

@@ -270,5 +270,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/legal-tax-savings-2026`,
+      lastModified: new Date("2026-04-08T10:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }
