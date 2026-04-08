@@ -1,5 +1,74 @@
 # Growth Log
 
+## 2026-04-08（第四十九次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現主要關鍵字搜尋結果（網路無法存取，依前次記錄推斷）；5月1日報稅開始前 ≈ 3 週
+- **前次備注確認**：session 48 指定「[下次 agent] SEO 內部連結強化 + 轉換率優化 + 4月21日後倒數 Threads 文」→ **本次執行（內部連結 + sitemap + Threads 文）**
+
+### 今天做了什麼
+
+#### 1. SEO 內部連結強化（最高 ROI）
+
+**問題診斷**：首頁（最高 PageRank 來源）nav bar 缺少 10 個已部署頁面的連結，這些頁面的 sitemap priority 均為 1.0，但無法從首頁獲得 PageRank 流入。
+
+**修復清單：**
+
+| 檔案 | 新增連結 | 為什麼重要 |
+|---|---|---|
+| `app/page.tsx`（首頁） | /tax-checklist-2026 報稅懶人包 | sitemap p=1.0，報稅季最高搜尋需求，首頁未連結 |
+| `app/page.tsx`（首頁） | /tax-mistakes-2026 報稅常見錯誤 | sitemap p=1.0，首頁未連結 |
+| `app/page.tsx`（首頁） | /tax-filing-guide 報稅攻略 | sitemap p=1.0，首頁未連結 |
+| `app/page.tsx`（首頁） | /day-trading-tax 當沖稅費 | sitemap p=1.0，首頁未連結 |
+| `app/page.tsx`（首頁） | /ira-vs-labor-retirement 勞退vs ETF | sitemap p=1.0，首頁未連結 |
+| `app/page.tsx`（首頁） | /legal-tax-savings-2026 省稅10招 | sitemap p=1.0，首頁未連結 |
+| `app/page.tsx`（首頁） | /rental-income-tax-2026 出租報稅 | sitemap p=1.0，首頁未連結 |
+| `app/page.tsx`（首頁） | /dividend-tax 股利申報 | 首頁未連結 |
+| `app/page.tsx`（首頁） | /foreign-income-tax 海外所得 | 首頁未連結 |
+| `app/tax-calculator/page.tsx` | /tax-checklist-2026 報稅懶人包 | 主收入頁面缺此高優先連結 |
+| `app/tax-calculator/page.tsx` | /tax-mistakes-2026 報稅常見錯誤 | 主收入頁面缺此高優先連結 |
+| `app/tax-calculator/page.tsx` | /amt-calculator 最低稅負 | 主收入頁面缺此稅務相關連結 |
+| `app/tax-calculator/page.tsx` | /foreign-income-tax 海外所得 | 主收入頁面缺此連結 |
+
+**結果**：所有 sitemap priority=1.0 的頁面現在都從首頁直接獲得 PageRank → 這些頁面的 Google 排名應可提升
+
+#### 2. Sitemap lastDeploy 更新
+
+`app/sitemap.ts`：lastDeploy 從 `2026-04-01` 更新至 `2026-04-08`，通知 Google 首頁、/tax-calculator、/mortgage 已有更新，應重新爬取。
+
+#### 3. 新 Threads 文（導流）
+
+`public/threads-drafts/2026-04-08-tax-season-prep.md`：3 篇報稅季前 3 週 Threads 文
+
+| 草稿 | 目標受眾 | 核心鉤子 |
+|---|---|---|
+| A（上班族）| 一般上班族 | 「3週後報稅，現在準備這4件事，5月初15分鐘搞定」|
+| B（投資人）| 美股 ETF 持有者 | 「VTI/SPY AMT 3步驟判斷，大多數人 AMT=0」|
+| C（接案族）| 自由工作者 | 「接案族3個稅務特殊之處，費率制不用找收據」|
+
+**Push 狀態**：純 JSX Link 元素新增（同現有模式，無新 import），節點模組不存在（已知情況），commit + push main ✅
+
+### 預期營收影響
+- **SEO 內部連結修復**：首頁→10頁直連 + tax-calculator→4頁直連 → 各頁 PageRank 提升 → 預估 4-8 週後排名改善 → 每月額外 100-500 訪客（保守估計）
+- **sitemap 更新**：Google 重新爬取 3 個主要頁面 → 加速排名反映
+- **3篇 Threads 文**：3 週前發最適合（準備期心態），每篇預估 300-1,500 觸及，合計帶入 30-150 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 30頁等廣告，每天延誤是損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 30頁 CTA 等真實連結
+3. **[立即] Ian 發 Threads 文**：
+   - `2026-04-08-tax-season-prep.md` 的 A、B、C 三篇（4月8-30日最佳窗口）
+   - 之前 42 篇 Threads 文亦待發
+4. **[立即] Ian 發論壇文**（30篇全部待發，報稅季仍是最佳窗口）
+5. **[下次 agent]** 建議轉向：
+   - **5月1日報稅季開始後**：發「現在開始報，5/1申報退稅最快」Threads 文（倒數 urgency）
+   - **轉換率優化**：檢查 tax-checklist-2026、tax-mistakes-2026、tax-filing-guide 這 3 個高優先頁面的 CTA 是否夠明顯（AdUnit 位置、TaxAffiliateCTA 有無）
+   - **house-tax、labor-retirement、deduction-compare、preschool-deduction** 這 4 頁的內部連結補齊（目前仍未加入 home page nav）
+
+---
+
 ## 2026-04-08（第四十八次）
 
 ### 管道狀態檢查
