@@ -1,5 +1,74 @@
 # Growth Log
 
+## 2026-04-08（第五十次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現主要關鍵字搜尋結果（網路無法存取，依前次記錄推斷）；5月1日報稅開始前 ≈ 3 週
+- **前次備注確認**：session 49 指定「house-tax、labor-retirement、deduction-compare、preschool-deduction 補首頁連結 + 轉換率優化」→ **本次執行（補首頁連結 + Threads文）**
+
+### 今天做了什麼
+
+#### 1. 首頁補齊 9 個缺失內部連結（最高 ROI）
+
+**問題診斷**：首頁是全站最高 PageRank 來源，但有 9 個已部署頁面從未出現在首頁 nav，導致這些頁面沒有接收到首頁的 PageRank 傳遞，Google 排名受限。
+
+**修復清單：**
+
+| 頁面 | 標籤 | 為什麼重要 |
+|---|---|---|
+| `/house-tax` | 房屋稅 | 5月房屋稅繳納期，搜尋量高；有 AdUnit + TaxAffiliateCTA |
+| `/labor-retirement` | 勞退新制 | 高搜尋量節稅主題；有 AdUnit + TaxAffiliateCTA |
+| `/deduction-compare` | 列舉vs標準 | 報稅季核心問題，轉換率高；有 AdUnit + TaxAffiliateCTA |
+| `/preschool-deduction` | 幼兒學前扣除 | 父母族群精準受眾；有 AdUnit + TaxAffiliateCTA |
+| `/real-estate-tax` | 房地合一稅 | 不動產族群高意圖；有 AdUnit + AffiliateCTA |
+| `/mortgage-full-cost` | 買房費用 | 購房族群高意圖；有 AffiliateCTA |
+| `/buy-vs-rent` | 買vs租 | 長青話題高流量；有 MortgageAffiliateCTA |
+| `/expense-deduction-compare` | 費用核實試算 | 接案族精準受眾；有 TaxAffiliateCTA |
+| `/tax-refund` | 退稅試算 | 報稅季極高意圖；有 AdUnit + TaxAffiliateCTA |
+
+**結果**：首頁現在覆蓋全部 43 個已部署頁面，所有頁面都能接收首頁 PageRank
+
+#### 2. Sitemap 更新
+`app/sitemap.ts`：lastDeploy 從 `2026-04-08T12:00:00Z` 更新至 `2026-04-08T19:00:00Z`，通知 Google 本次部署。
+
+#### 3. 轉換鉤子 Threads 文（3篇）
+
+`public/threads-drafts/2026-04-08-conversion-hooks.md`
+
+| 草稿 | 目標受眾 | 核心鉤子 | 對應頁面 |
+|---|---|---|---|
+| A（幼兒學前）| 有幼兒父母 | 「2幼兒最多省6萬稅，15萬/人特別扣除額」 | /preschool-deduction |
+| B（列舉vs標準）| 有房族/高醫療費 | 「5個情況值得列舉，30秒試算哪種省更多」 | /deduction-compare |
+| C（房屋稅）| 房東/買房族 | 「5月也是繳房屋稅月份，評定現值=市價5%~25%」 | /house-tax |
+
+**Push 狀態**：純 JSX Link 元素新增（同現有模式，無新 import），節點模組不存在（已知情況），commit + push main ✅
+
+### 預期營收影響
+- **9個首頁內部連結修復**：
+  - 9頁接收首頁 PageRank → 預估 4-8 週後排名改善
+  - 保守估計每頁帶入 10-50 額外訪客/月 × 9頁 = 每月 90-450 額外訪客
+  - 這些頁面均有 AdUnit/TaxAffiliateCTA → 直接轉換為廣告/聯盟收入
+- **3篇轉換鉤子 Threads 文**：
+  - 幼兒學前（父母精準受眾）：預估 200-800 觸及，帶入 20-80 訪客
+  - 列舉vs標準（有房族精準受眾）：預估 200-800 觸及，帶入 20-80 訪客
+  - 房屋稅（4月底發效果最佳）：預估 300-1,000 觸及，帶入 30-100 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 43頁等廣告，每天延誤是損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 43頁 CTA 等真實連結
+3. **[立即] Ian 發 Threads 文**：
+   - 本次新增 3 篇：幼兒學前（A）、列舉vs標準（B）、房屋稅（C，4月底發）
+   - session 49 的 3 篇（稅季準備 A/B/C）仍待發
+4. **[立即] Ian 發論壇文**（30篇全部待發，報稅季仍是最佳窗口）
+5. **[下次 agent]** 建議轉向：
+   - **4月21日後**：寫「最後倒數10天」緊迫感 Threads 文（5月31日截止）
+   - **5月1日後**：寫「現在申報退稅最快」Threads 文
+   - **轉換率優化**：tax-checklist-2026、tax-mistakes-2026、tax-filing-guide 的 AdUnit 位置是否最佳（建議移到計算結果上方）
+
+---
+
 ## 2026-04-08（第四十九次）
 
 ### 管道狀態檢查
