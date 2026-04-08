@@ -1,5 +1,62 @@
 # Growth Log
 
+## 2026-04-08（第四十一次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認 twtaxcalc.com 仍未出現在「2026報稅省稅方法」「ETF股利稅比較」搜尋結果；持續 SEO 入口累積，現已達 44 頁
+- **搜尋結論**：「2026報稅省稅方法」結果全是文章（money101, rich01, stockfeel），無互動計算器 → 機會空缺；本次建立差異化頁面
+
+### 今天做了什麼
+
+#### 新增「2026省稅10個合法方法」頁面 `/legal-tax-savings-2026`
+
+**選頁邏輯：**
+- WebSearch 確認「2026報稅省稅方法 台灣」：money101.com.tw、rich01.com、stockfeel.com.tw 等文章頁面排名靠前，但全部是靜態文章，**無互動計算器**
+- 4月是報稅前最高意圖搜尋期（距 5/1 報稅季僅 3 週），搜尋量正在上升
+- 每個方法都連到站內計算器 → 內部連結強化 SEO + 增加停留時間
+- 高分享性（「合法省稅清單」是高轉傳類型內容）→ Threads/Dcard 自然擴散
+
+**頁面功能（靜態 Server Component）：**
+- **10個合法省稅方法卡片**：薪資特別扣除/夫妻分開申報/扶養親屬/幼兒學前/勞退自提/列舉扣除/儲蓄投資扣除/接案費用率/長期照顧/基本生活費差額
+- 每個方法含：適用對象、省稅估算、具體行動步驟、連結到對應計算器
+- **各稅率省稅金額對照表**（5%/12%/20%/30%）
+- **4種族群省稅範例**：上班族省50,800、雙薪夫妻省155,370、接案者省90,000、投資人省54,000
+- **9個精確試算工具連結**
+- **TaxAffiliateCTA × 2**、**FAQ × 5**
+- Schema markup：Article + FAQPage
+
+**全站更新：**
+- 全站 43 頁 NAV_LINKS 加入「省稅10招」入口（Python 批量替換 + overtime/severance 手動）
+- `app/sitemap.ts`：加入 `/legal-tax-savings-2026`（priority 1.0，共 44 個 URL）
+- `public/threads-drafts/2026-04-08-legal-tax-savings-2026.md`：文案 A/B/C/D + Dcard 長文
+
+**Push 狀態**：已 commit + push main ✅
+
+**Threads 文案 A 亮點**（最強推薦）：
+「報稅前5分鐘做這件事，可能省你幾萬塊。台灣綜所稅有10個合法扣除額，大部分人只用到2-3個。幼兒學前扣除額：5歲以下每個孩子省NT$120,000。夫妻分開申報：各薪50萬的夫妻省NT$67,770。全部試算 → twtaxcalc.com/legal-tax-savings-2026」
+
+### 預期營收影響
+- **報稅季時機**：4月下旬至5月是全年最高意圖搜尋期，本頁直接命中「省稅方法」關鍵字
+- **差異化優勢**：競爭對手是靜態文章，我們連結 9 個計算器，停留時間更長 → CTR 更高
+- **內部連結**：每個方法連到對應計算器，強化全站 SEO 結構
+- **分享動機強**：「合法省 15 萬」是強力標題，Threads/Dcard 高轉傳潛力
+- **月預估影響**：$150-350（AdSense，需 Ian 完成阻斷項）
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 44 頁等廣告，每天損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 44 頁 TaxAffiliateCTA 等真實 link
+3. **[立即] Ian 發 Threads 文** — `public/threads-drafts/2026-04-08-legal-tax-savings-2026.md` 文案 A（「報稅前5分鐘做這件事」）
+4. **[立即] Ian 在 Dcard 理財版發長文** — 同文件末尾 Dcard 版本
+5. **[立即] Ian 向 GSC 提交 sitemap** — `https://www.twtaxcalc.com/sitemap.xml`（44個URL）
+6. **下一個 SEO 頁候選：**
+   - **「2026年報稅QA50題」**（`/tax-faq-2026`）— FAQ頁面 schema 命中率高，長尾流量廣
+   - **「ETF vs 股票股利稅比較」**（`/etf-vs-stock-tax`）— 補齊投資族群，高 CPM
+   - **「2026年最低稅負完整指南」**（`/amt-guide-2026`）— AMT長文，命中高所得搜尋
+
+---
+
 ## 2026-04-03（第四十次）
 
 ### 管道狀態檢查
