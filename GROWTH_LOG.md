@@ -1,5 +1,63 @@
 # Growth Log
 
+## 2026-04-08（第四十六次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現主要關鍵字搜尋結果；4月報稅季剩不到 3 週，論壇文導流是現階段最高 ROI 動作
+- **前次備注確認**：session 45 指定「[下次 agent] 評估是否需要補寫 `amt-calculator`、`foreign-income-tax` 頁面的論壇文，或轉向 SEO 文章強化內部連結」→ **本次執行（選擇補論壇文）**
+
+### 今天做了什麼
+
+#### 補寫 3 篇高潛力頁面論壇文（導流）
+
+評估結論：報稅季剩 < 3 週，論壇文導流 > SEO 文章（SEO 生效需時間，論壇文可即時發布）。選出以下 3 頁補齊：
+
+| 文件 | 對應頁面 | 目標板 | 核心鉤子 |
+|---|---|---|---|
+| `2026-04-08-tax-refund-timeline-ptt.md` | /tax-refund-timeline | PTT Salary板、Tax板、Dcard 理財版 | 「5月1日申報 vs 5月底申報，退稅差最多 2 個月」＋4個進第1批的條件 |
+| `2026-04-08-foreign-income-tax-ptt.md` | /foreign-income-tax | PTT Stock板、Dcard 理財版/投資版 | 「有VTI、SPY大多數人不用繳AMT，3步驟判斷」＋實際案例表格 |
+| `2026-04-08-day-trading-tax-ptt.md` | /day-trading-tax | PTT Stock板、Dcard 理財版 | 「當沖賺的差價不用報所得稅、不用繳補充保費，費用只有2種」＋損益平衡計算表 |
+
+**選頁邏輯：**
+- `tax-refund-timeline`：4月最高意圖問題「退稅什麼時候到」，填直撥帳戶 vs 支票差2個月是反直覺知識，分享動機強；PTT Salary板是此類問題高頻板
+- `foreign-income-tax`：美股持有者5月前AMT申報焦慮最高，「大多數人不用繳」的反直覺結論有強烈點擊誘因；PTT Stock板受眾精準
+- `day-trading-tax`：台股當沖族眾多，「不用繳所得稅」是最常見誤解，教育型知識分享潛力高；非報稅季限定，長尾效果好
+
+**每篇文章均含：**
+- PTT 精簡版 + Dcard 完整版雙格式
+- 具體計算數字（114年度資料）
+- 判斷原則表格
+- 計算器 CTA + 完整 URL
+- Hashtag
+
+**論壇文總計：22 篇（+3 篇）**
+
+**Push 狀態**：markdown 文件，無 TypeScript 結構變動，不影響 build → commit + push main ✅
+
+### 預期營收影響
+- **tax-refund-timeline 論壇文**（PTT Salary/Tax板）：退稅時程是4月搜尋量最高的財稅話題；「直撥 vs 支票差2個月」是反直覺知識，Salary板高分享潛力；此頁有 AdUnit；預估每篇 500-2,000 閱讀，帶入 50-200 訪客
+- **foreign-income-tax 論壇文**（PTT Stock板）：美股族高焦慮話題，「大多數不用繳AMT」解除恐懼，點擊動機強；此頁有 TaxAffiliateCTA；預估 1,000-3,000 閱讀
+- **day-trading-tax 論壇文**（PTT Stock板）：當沖族常態需求，「費用只有2種」的清晰教學分享性強，長尾效果好；此頁有 AdUnit；預估 500-2,000 閱讀
+- **三篇合計**：預估每月帶入 100-500 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 22頁等廣告，每天延誤是損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 22頁 TaxAffiliateCTA + MortgageAffiliateCTA 等真實連結
+3. **[立即] Ian 發論壇文（報稅季窗口 < 3 週）**：
+   - `2026-04-08-tax-refund-timeline-ptt.md` → PTT Salary板（退稅時程，4月最高意圖）
+   - `2026-04-08-foreign-income-tax-ptt.md` → PTT Stock板（美股AMT，5月前高焦慮）
+   - `2026-04-08-day-trading-tax-ptt.md` → PTT Stock板（當沖費用教學，長尾）
+   - 之前未發的：`2026-04-08-side-income-tax-ptt.md`、`2026-04-08-preschool-deduction-ptt.md`、`2026-04-08-supplement-premium-ptt.md`
+4. **[立即] Ian 發 Threads 文**：
+   - `2026-04-08-tax-calculator.md` 文案 B（數字鉤子）
+   - `2026-03-31-amt-calculator.md` 文案 A（恐懼驅動，美股族）
+   - `2026-04-01-tax-refund-timeline.md` 文案 A（懸念型，高分享）
+5. **[下次 agent]** 評估剩餘未有論壇文的頁面優先順序，或轉向 SEO 內部連結強化（`amt-calculator`、`retirement-planning`、`tax-strategy-2026`、`ira-vs-labor-retirement` 等）
+
+---
+
 ## 2026-04-08（第四十五次）
 
 ### 管道狀態檢查
