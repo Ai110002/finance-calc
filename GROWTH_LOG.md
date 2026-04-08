@@ -1,5 +1,62 @@
 # Growth Log
 
+## 2026-04-08（第四十四次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認「薪資計算器 2026 台灣」「年終獎金稅 計算」「綜合所得稅計算 2026」三個關鍵字 twtaxcalc.com **均未出現**；競爭者：pwcpa.one、laneto.co、etax.nat.gov.tw（官方）、money101、stockfeel；所有競爭者皆為靜態文章或政府工具，**互動計算器仍是空缺**
+- **前次備注修正**：session 43 說「下次補 salary-calculator / bonus-calculator 論壇文」，但 `2026-03-29-salary-ptt.md` 和 `2026-03-29-bonus-ptt.md` 早已存在且含正確連結，**不需重複**
+
+### 今天做了什麼
+
+#### 補寫 3 篇高流量頁面論壇文（導流）
+
+論壇文之前有 13 篇，Threads 草稿有 43 篇；比例失衡，且以下 3 個高潛力頁面尚無論壇文：
+
+| 文件 | 對應頁面 | 目標板 | 核心鉤子 |
+|---|---|---|---|
+| `2026-04-08-deduction-compare-ptt.md` | /deduction-compare | PTT Salary、Dcard 理財版 | 「有房貸的人不列舉等於白多繳 NT$2 萬」＋30秒判斷法 |
+| `2026-04-08-dividend-tax-ptt.md` | /dividend-tax | PTT Stock、Dcard 理財版 | 「年薪 100 萬持 50 萬股利，合併比分開省 NT$12.5 萬」 |
+| `2026-04-08-buy-vs-rent-ptt.md` | /buy-vs-rent | PTT home-sale、Dcard 房屋版 | 「台北 1500 萬的房，全成本 NT$56,000/月 vs 租房 NT$13,000/月淨支出」 |
+
+**選頁邏輯：**
+- `deduction-compare`：4月是「我到底要選標準還是列舉？」搜尋量最高的時機，直接帶到決策工具
+- `dividend-tax`：5月申報前股利計稅方式要選定，合併 vs 分開差距可達 NT$10-12.5 萬，衝擊性強，投資人看了會轉發
+- `buy-vs-rent`：PTT home-sale 常態熱門話題；版本 A/B/C 三種切角（完整版/PTT 精簡版/Dcard 故事型），增加觸及廣度
+
+**每篇文章均含：**
+- 具體計算數字（114年度資料）
+- 判斷原則表格
+- 計算器 CTA + 完整 URL
+- PTT 版 + Dcard 版雙格式
+- Hashtag
+
+論壇文總計：**16 篇**（+3 篇）
+
+**Push 狀態**：markdown 文件，無 TypeScript 結構變動，不影響 build → commit + push main ✅
+
+### 預期營收影響
+- **deduction-compare 論壇文**（PTT Salary）：4月報稅季高意圖，「有房貸 + 壽險的人省 NT$2 萬」是分享動機強的話題；預估每篇 500-2,000 閱讀，帶入 50-200 訪客；此頁有 TaxAffiliateCTA
+- **dividend-tax 論壇文**（PTT Stock）：「合併比分開省 NT$12.5 萬」是衝擊性強的數字，投資版轉發潛力高；預估 1,000-5,000 閱讀；此頁有 TaxAffiliateCTA
+- **buy-vs-rent 論壇文**（PTT home-sale）：房地產討論常態熱門，3 個版本覆蓋不同受眾；此頁有 MortgageAffiliateCTA（房貸比較，轉換價值高）
+- **三篇合計**：每篇發出後預估帶入 100-500 訪客，配合現有 TaxAffiliateCTA 和 MortgageAffiliateCTA
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 45頁等廣告，每天延誤是損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 45頁 TaxAffiliateCTA + MortgageAffiliateCTA 等真實連結
+3. **[立即] Ian 發論壇文（報稅季窗口 < 4 週）**：
+   - `2026-04-08-dividend-tax-ptt.md` → PTT Stock板（數字最有衝擊力，最高分享潛力）
+   - `2026-04-08-deduction-compare-ptt.md` → PTT Salary板（4月最高意圖問題）
+   - `2026-04-08-buy-vs-rent-ptt.md` → PTT home-sale板（版本 B 精簡版最適合）
+   - 之前未發的：`2026-04-08-tax-calculator-ptt.md`、`2026-04-08-mortgage-ptt.md`、`2026-04-08-rental-income-tax-ptt.md`
+4. **[立即] Ian 發 Threads 文**（已有 43 篇草稿，建議從以下開始）：
+   - `2026-04-08-tax-calculator.md` 文案 B（數字鉤子）
+   - `2026-04-08-rental-income-tax.md` 文案 B（故事型）
+   - `2026-03-31-joint-filing.md`（雙薪省稅，高分享性）
+5. **[下次 agent] 補寫缺少論壇文的其他高潛力頁面**：`supplement-premium`（二代健保補充保費）、`preschool-deduction`（育兒家庭族群精準）、`side-income-tax`（斜槓族 / 接案族眾多）
+
+---
 ## 2026-04-08（第四十三次）
 
 ### 管道狀態檢查
