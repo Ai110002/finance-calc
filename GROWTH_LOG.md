@@ -1,5 +1,67 @@
 # Growth Log
 
+## 2026-04-08（第五十一次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：網路無法存取，依前次記錄推斷仍未出現主要關鍵字；5月1日報稅開始前 ≈ 23 天（黃金窗口）
+- **前次備注確認**：session 50 指定「轉換率優化 tax-checklist-2026、tax-mistakes-2026、tax-filing-guide AdUnit 位置」→ **本次執行（發現 tax-mistakes-2026 完全沒有 AdUnit，已修復）**
+
+### 今天做了什麼
+
+#### 1. tax-mistakes-2026 補入 AdUnit（轉換率漏洞修復）
+
+**問題診斷**：
+- `tax-checklist-2026`：3 個 AdUnit + TaxAffiliateCTA ✅
+- `tax-filing-guide`：2 個 AdUnit + TaxAffiliateCTA ✅
+- `tax-mistakes-2026`：0 個 AdUnit + TaxAffiliateCTA ❌ **漏洞**
+
+`tax-mistakes-2026` 是 sitemap priority=1.0 的高優先頁面，有完整 5 大錯誤內容、FAQ、相關工具，但完全沒有廣告佔位。
+
+**修復內容**：
+- 加入 `import { AdUnit } from "@/components/ad-unit";`
+- 在「快速自我診斷」之後、5大錯誤列表之前加入 `<AdUnit />`（用戶高參與度區域）
+- 在 FAQ 之後、相關工具之前加入 `<AdUnit />`（頁面底部）
+- 與現有 40+ 頁面完全相同的 import/使用模式，風險極低
+
+#### 2. 倒數緊迫感 Threads 文（4篇）
+
+`public/threads-drafts/2026-04-08-countdown-urgency.md`
+
+| 草稿 | 目標受眾 | 核心鉤子 | 建議發布日 |
+|---|---|---|---|
+| A（上班族倒數）| 一般上班族 | 「距離報稅季開始剩不到10天，30秒確認這4件事」 | 4/21 |
+| B（接案族）| 自由工作者 | 「9A費率不用找收據、預扣10%可能退回來」 | 4/23 |
+| C（投資族）| 股票/ETF/加密貨幣持有者 | 「台股資本利得免稅，但股利/海外所得有眉角」 | 4/25 |
+| D（退稅誘因）| 所有人（最廣受眾）| 「退稅最快6月底到帳，前提是5月初申報」 | 4/28 |
+
+**Push 狀態**：node_modules 不存在（已知情況），變更為已在 40+ 頁面驗證的 AdUnit 組件模式 + markdown 文件，commit + push main ✅
+
+### 預期營收影響
+- **tax-mistakes-2026 AdUnit 修復**：
+  - 此頁有 5 大錯誤詳細內容，平均停留時間較高，AdSense CTR 通常比快速計算器頁面更好
+  - Ian 設定 `NEXT_PUBLIC_ADSENSE_SLOT` 後立即開始顯示廣告
+  - 保守估計：每月 200-500 訪客 × 2% CTR × $0.3/點擊 = 每月 $1.2~3.0 AdSense（廣告核准後）
+- **4篇倒數緊迫感 Threads 文**：
+  - 報稅季前最強轉換期（4/21~4/30），「倒數」框架觸發緊迫行動
+  - 4篇合計預估觸及 1,200~4,000，帶入 120~400 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 43頁等廣告，每天延誤是損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 43頁 CTA 等真實連結
+3. **[立即] Ian 發 Threads 文（倒數緊迫感，4/21起）**：
+   - 本次新增 4 篇：A上班族（4/21）、B接案族（4/23）、C投資族（4/25）、D退稅誘因（4/28）
+   - session 50 的 3 篇（幼兒學前/列舉vs標準/房屋稅）待發
+   - session 49 的 3 篇（稅季準備 A/B/C）待發
+4. **[立即] Ian 發論壇文**（30篇全部待發，報稅季最佳窗口）
+5. **[下次 agent]** 建議：
+   - **5月1日（報稅開放日）**：寫「開放申報了！退稅最快 → 現在就申報」Threads 文
+   - **5月1日後**：寫「你的退稅幾月入帳？5月初申報 vs 5月底申報差多少」Threads 文
+   - **新頁面機會**：「2026 年報稅流程圖解（eTax App 手把手）」—— 搜尋量高、轉換到 /tax-checklist-2026、/tax-filing-guide
+
+---
+
 ## 2026-04-08（第五十次）
 
 ### 管道狀態檢查
