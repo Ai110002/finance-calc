@@ -1,5 +1,86 @@
 # Growth Log
 
+## 2026-04-08（第五十三次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：網路無法存取，依前次記錄推斷仍未出現主要關鍵字；5月1日報稅開始前 ≈ 23 天（黃金窗口）
+- **前次備注確認**：session 52 確認 rental-income-tax-2026 有 AdUnit ✅ → **本次執行：補齊 3 個 "use client" 頁面的 SEO metadata（最大 SEO 漏洞）**
+
+### 今天做了什麼
+
+#### 1. 3個 "use client" 頁面補入 layout.tsx（SEO 漏洞最大修復）
+
+**問題診斷**：
+Next.js "use client" 頁面無法從 page.tsx export metadata，因此這 3 個頁面完全沒有 title/description/OG 標籤。Google 爬蟲看到空白標題，排名必然受損。
+
+**修復清單：**
+
+| 頁面 | 問題 | 修復內容 |
+|---|---|---|
+| `/gift-tax` | "use client"，無 title/description/OG | 新增 layout.tsx：贈與稅試算 metadata + FAQ JSON-LD |
+| `/rental-income-tax-2026` | "use client"，無 title/description/OG | 新增 layout.tsx：出租報稅 metadata + FAQ JSON-LD |
+| `/tax-checklist-2026` | "use client"，無 title/description/OG | 新增 layout.tsx：報稅懶人包 metadata + FAQ JSON-LD |
+
+**每頁修復內容**：
+- `title`：含主關鍵字 + 114年度 + twtaxcalc.com
+- `description`：含核心稅務數字（費用率43%、免稅額244萬等）
+- `keywords`：10~14個精準關鍵字
+- `openGraph`：title + description + canonical URL
+- `twitter card`：summary_large_image
+- `alternates.canonical`：避免重複索引
+- `JSON-LD (FAQPage + Article)`：富文本搜尋結果，提升 CTR
+
+#### 2. Sitemap 更新
+`app/sitemap.ts`：lastDeploy 從 `2026-04-08T21:00:00Z` 更新至 `2026-04-08T23:00:00Z`，通知 Google 本次部署。
+
+#### 3. Threads 推廣文（6篇，2個主題）
+
+**`public/threads-drafts/2026-04-08-rental-income-landlord.md`（3篇）**
+
+| 草稿 | 角度 | 核心鉤子 | 建議發布日 |
+|---|---|---|---|
+| A | 費用率43%教育 | 「政府預設你有43%是成本，不用附收據」 | 4/12 |
+| B | 二代健保實用 | 「月租超過2萬，房客要代扣你2.11%補充保費」 | 4/13 |
+| C | 列舉vs費用率決策 | 「高額貸款利息的房東，列舉可能比43%省」 | 4/14 |
+
+**`public/threads-drafts/2026-04-08-gift-tax-planning.md`（3篇）**
+
+| 草稿 | 角度 | 核心鉤子 | 建議發布日 |
+|---|---|---|---|
+| A | 分年贈與省稅 | 「每年244萬免稅額，10年移轉2440萬完全免稅」 | 4/14 |
+| B | 配偶免稅常識 | 「夫妻互贈完全免贈與稅，但契稅、土增稅還是有」 | 4/15 |
+| C | 稅率澄清 | 「贈與稅不是所有金額×20%，600萬實際稅率10%」 | 4/16 |
+
+### 預期營收影響
+- **3頁 layout.tsx SEO 修復**：
+  - gift-tax：贈與稅是常年關鍵字，補上 metadata 後 Google 才能正確理解頁面主題，預期排名改善
+  - rental-income-tax-2026：報稅季高意圖頁面，「出租報稅」「房東報稅」搜尋量4~5月激增
+  - tax-checklist-2026：「報稅懶人包」是高搜尋量關鍵字，現在補上 metadata 在報稅季前還能累積排名
+  - FAQ JSON-LD：3頁都有 FAQPage schema → 可觸發 Google 富文本搜尋結果，預期 CTR 提升 20~40%
+  - 合計估算：3頁補上 metadata + 富文本 → 保守估計每月帶入額外 500~1,500 訪客
+- **6篇 Threads 推廣文**：
+  - 房東族（4/12-4/14發，報稅季前19-17天）：觸及房東精準受眾，轉換率高
+  - 贈與稅族（4/14-4/16發）：理財族常年需求，帶入高意圖用戶
+  - 合計預估觸及 1,800~6,000，帶入 180~600 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 全站 55+ 頁有廣告佔位等設定
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 全站 CTA 等真實連結
+3. **[立即] Ian 發 Threads 文**：
+   - 本次新增 6 篇（房東族 A/B/C 4/12-4/14，贈與稅 A/B/C 4/14-4/16）
+   - session 52 的 3 篇早鳥（A上班族4/9, B接案4/10, C夫妻4/11）→ **最優先，明天就發**
+   - session 51 的 4 篇倒數緊迫感（4/21-4/28發）
+   - session 50 的 3 篇待發（幼兒/列舉/房屋稅）
+4. **[立即] Ian 發論壇文**（30+ 篇全部待發，報稅季黃金窗口）
+5. **[下次 agent]** 建議：
+   - **SEO 機會**：「eTax App 手把手報稅教學（2026）」— 搜尋量高，現在建頁面4月底能索引
+   - **JSON-LD 補強**：11個 server component 頁面有 metadata 但缺 JSON-LD（amt-calculator、income-tax-guide-2026、joint-filing 等）→ 可加 layout.tsx 補 FAQ schema
+   - **5月1日（報稅開放日）**：寫「開放申報了！早申報退稅6月到帳」Threads 文
+
+---
+
 ## 2026-04-08（第五十二次）
 
 ### 管道狀態檢查
