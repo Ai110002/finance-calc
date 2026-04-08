@@ -1,5 +1,68 @@
 # Growth Log
 
+## 2026-04-08（第四十八次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：twtaxcalc.com 仍未出現主要關鍵字搜尋結果（網路無法存取，依前次記錄推斷）；報稅季剩 ≈ 3.5 週，論壇文導流仍是最高 ROI 動作
+- **前次備注確認**：session 47 指定「補寫 income-tax-guide-2026、tax-filing-guide、retirement-planning、ira-vs-labor-retirement、basic-living-deduction 論壇文」→ **本次執行（全部補齊）**
+
+### 今天做了什麼
+
+#### 補寫 5 篇高優先頁面論壇文（導流）— 全部頁面論壇文補齊
+
+評估結論：報稅季剩 3.5 週，5 個頁面仍缺論壇文；全部補齊後所有主要頁面（30頁）都有對應論壇文，可批量發布衝刺最後窗口。
+
+| 文件 | 對應頁面 | 目標板 | 核心鉤子 |
+|---|---|---|---|
+| `2026-04-08-basic-living-deduction-ptt.md` | /basic-living-deduction | PTT Salary板、Tax板 | 「每人 NT$202,000 底線，比較基礎不足的家庭可額外扣差額」＋適用情境表格 |
+| `2026-04-08-income-tax-guide-2026-ptt.md` | /income-tax-guide-2026 | PTT Salary板、Tax板 | 「年薪60萬 vs 80萬差多少稅？5步驟算完，有效稅率比你想的低」＋各年薪稅額表 |
+| `2026-04-08-retirement-planning-ptt.md` | /retirement-planning | PTT Salary板、Dcard 理財版 | 「30歲 vs 40歲開始存，差距超過 NT$370萬」＋各年齡月存金額需求表 |
+| `2026-04-08-ira-vs-labor-retirement-ptt.md` | /ira-vs-labor-retirement | PTT Salary板、Stock板 | 「月薪10萬稅率20%，自提6%等於打80折存退休金；vs ETF 30年後差 NT$215萬」＋各月薪節稅試算表 |
+| `2026-04-08-tax-filing-guide-ptt.md` | /tax-filing-guide | PTT Salary板、Tax板 | 「5月報稅這一頁就夠：稅率表、扣除額、各類所得申報方式，一次搞定」＋4個常漏扣除額 |
+
+**選頁邏輯：**
+- `basic-living-deduction`：有非薪資所得成員的家庭比較基礎較低，差額扣除額「幾乎沒人知道」是強知識差異點；報稅季是最高搜尋時機
+- `income-tax-guide-2026`：「年薪OO萬到底繳多少」是 PTT Salary板長年高頻問題；5步驟架構清晰，各年薪稅額表格觸發自我代入
+- `retirement-planning`：「差10年累積差一倍」是複利教育最強數字衝擊，全年皆宜發文；Dcard 理財版受眾精準
+- `ira-vs-labor-retirement`：「打折存退休金」框架讓自提節稅直覺化；Stock板的ETF投資族也是目標受眾；30年終值比較數字衝擊強
+- `tax-filing-guide`：報稅季最高需求的整合資訊頁；「這一頁就夠」的價值主張解決搜尋疲勞；4個常漏扣除額是反直覺知識點
+
+**每篇文章均含：**
+- Dcard 完整版 + PTT 精簡版雙格式
+- 具體計算數字（114年度資料）
+- 判斷原則表格或試算表
+- 計算器 CTA + 完整 URL
+- Hashtag
+
+**論壇文總計：30 篇（+5 篇）— 所有主要頁面論壇文全部補齊**
+
+**Push 狀態**：markdown 文件，無 TypeScript 結構變動，不影響 build → commit + push main ✅
+
+### 預期營收影響
+- **basic-living-deduction 論壇文**（PTT Salary/Tax板）：「幾乎沒人知道」的扣除額 → 教育型知識高分享潛力；此頁有 AdUnit；預估 300-1,000 閱讀，帶入 30-100 訪客
+- **income-tax-guide-2026 論壇文**（PTT Salary板）：長年高頻問題，各年薪稅額表自我代入感強；此頁有 TaxAffiliateCTA；預估 500-2,000 閱讀，帶入 50-200 訪客
+- **retirement-planning 論壇文**（Dcard 理財版）：複利差距數字衝擊強，全年皆宜；此頁有 AdUnit；預估 500-2,000 閱讀，帶入 50-200 訪客
+- **ira-vs-labor-retirement 論壇文**（PTT Salary/Stock板）：「打折存退休金」框架新穎，Stock板投資族是精準受眾；此頁有 TaxAffiliateCTA；預估 500-2,000 閱讀，帶入 50-200 訪客
+- **tax-filing-guide 論壇文**（PTT Salary板）：報稅季高需求，「一頁搞定」高實用性；此頁有 AdUnit + TaxAffiliateCTA；預估 300-1,500 閱讀，帶入 30-150 訪客
+- **五篇合計**：預估每月帶入 210-850 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 30頁等廣告，每天延誤是損失
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 30頁 TaxAffiliateCTA + MortgageAffiliateCTA 等真實連結
+3. **[立即] Ian 發論壇文（報稅季窗口 ≈ 3.5 週）**：
+   - 本次新增 5 篇：`income-tax-guide-2026`（Salary板，高頻問題）、`ira-vs-labor-retirement`（Salary/Stock板，ETF投資族精準）、`retirement-planning`（Dcard理財版，複利衝擊）、`tax-filing-guide`（Salary板，報稅季高需求）、`basic-living-deduction`（Tax板，冷知識分享）
+   - session 47 新增 3 篇：`amt-calculator`、`tax-checklist-2026`、`income-tax-brackets` 尚待發布
+   - session 46 新增 3 篇：`tax-refund-timeline`、`foreign-income-tax`、`day-trading-tax`
+4. **[立即] Ian 發 Threads 文**（見 session 46 清單）
+5. **[下次 agent]** 所有 30 個頁面論壇文已補齊，建議轉向：
+   - **報稅季最後衝刺（4月21日後）**：寫「最後倒數 10 天」緊迫感 Threads 文，強調 5月31日截止
+   - **SEO 內部連結強化**：確認各計算器頁面互相連結是否完整（提升站內 PageRank 流量）
+   - **轉換率優化**：檢查計算器頁面 CTA 是否明顯，AdUnit 位置是否合理
+
+---
+
 ## 2026-04-08（第四十七次）
 
 ### 管道狀態檢查
