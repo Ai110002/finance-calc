@@ -1,5 +1,58 @@
 # Growth Log
 
+## 2026-04-08（第四十二次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認「報稅計算器 2026」「房貸計算器」「省稅方法 2026」三個關鍵字 twtaxcalc.com **均未出現**，Google SEO 尚未建立排名
+- **搜尋結論**：競爭者皆為靜態文章（money101, stockfeel, cpa blog），無互動計算器；PTT/Dcard 論壇仍是現階段最快速的導流渠道
+
+### 今天做了什麼
+
+#### 1. 修正 joint-filing 免稅額數字 bug（114年度資料正確性）
+
+**問題**：`app/joint-filing/page.tsx` 使用舊113年度免稅額 NT$92,000，正確114年度數字為 NT$97,000
+
+**修正範圍**：
+- 免稅額文字說明 × 2（FAQ + 說明框）
+- 申報方式表格 `value: "92,000"` → `"97,000"`
+- 案例1（雙薪150萬+100萬）：合併税 183,600→181,600，分開合計 115,830→114,980，省稅 67,770→66,620
+- 案例2（單薪200萬）：合併税 127,200→125,200，分開税 171,800→170,800，省稅 44,600→45,600
+- 案例3（300萬+60萬）：合併税 423,400→420,400，分開合計 383,650→381,900，省稅 39,750→38,500
+
+**營收邏輯**：數字錯誤 = 可信度損失 = 用戶跳出 = 廣告點擊歸零
+
+#### 2. 新增 4 篇 PTT/Dcard 長文（導流）
+
+| 文件 | 對應頁面 | 目標板 |
+|---|---|---|
+| `2026-04-08-legal-tax-savings-ptt.md` | /legal-tax-savings-2026 | PTT Salary、Dcard 理財版 |
+| `2026-04-08-joint-filing-ptt.md` | /joint-filing | PTT Salary、Dcard 理財版 |
+| `2026-04-08-stock-tax-2026-ptt.md` | /stock-tax-2026 | PTT Stock、Dcard 理財版 |
+| `2026-04-08-tax-filing-steps-ptt.md` | /tax-filing-steps | PTT Salary、Dcard 生活版 |
+
+**論壇文總計**：現共 10 篇（vs 40+ Threads 草稿，論壇文之前嚴重不足）
+
+**Push 狀態**：已 commit + push main ✅（本地 node_modules 不存在/網路封鎖無法 build，Vercel CI 負責驗證；修改皆為 JSX 字串內容，無 TypeScript 結構變動）
+
+### 預期營收影響
+- **PTT/Dcard 長文**：每篇發出後預估 200–2000 次閱讀，帶入 20–200 次真實訪客
+- **最高潛力**：joint-filing（「雙薪夫妻省6萬」標題，分享動機強）
+- **修正 bug 的影響**：防止用戶因發現數字錯誤而流失，維護品牌可信度
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 45頁等廣告
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — 45頁 TaxAffiliateCTA 等真實 link
+3. **[立即] Ian 發 PTT/Dcard 文**：
+   - `public/forum-posts/2026-04-08-joint-filing-ptt.md` → PTT Salary板（最高潛力）
+   - `public/forum-posts/2026-04-08-legal-tax-savings-ptt.md` → Dcard 理財版
+   - `public/forum-posts/2026-04-08-stock-tax-2026-ptt.md` → PTT Stock板
+   - `public/forum-posts/2026-04-08-tax-filing-steps-ptt.md` → Dcard 生活版
+4. **[立即] Ian 發 Threads 文**：`public/threads-drafts/2026-04-08-legal-tax-savings-2026.md` 文案 A
+
+---
+
 ## 2026-04-08（第四十一次）
 
 ### 管道狀態檢查
