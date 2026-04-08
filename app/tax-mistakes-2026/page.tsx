@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AdUnit } from "@/components/ad-unit";
 import { TaxAffiliateCTA } from "@/components/affiliate-cta";
 
 export const metadata: Metadata = {
@@ -283,6 +284,8 @@ export default function TaxMistakes2026Page() {
           </p>
         </section>
 
+        <AdUnit />
+
         {/* ── 5大錯誤 ── */}
         {MISTAKES.map((m) => (
           <section
@@ -380,6 +383,8 @@ export default function TaxMistakes2026Page() {
             ))}
           </div>
         </section>
+
+        <AdUnit />
 
         {/* ── 相關工具 ── */}
         <section className="rounded-2xl bg-gray-50 p-5">
