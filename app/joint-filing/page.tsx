@@ -85,7 +85,7 @@ const FAQS = [
   },
   {
     q: "一方無收入的家庭選哪種？",
-    a: "一方無收入或收入極低（薪資 < 約15萬/年）時，「合併申報」通常最省。因為合併後可以使用配偶的免稅額（9.2萬）和標準扣除額（合併26.2萬 vs 單身13.1萬），扣除額合計更多，應稅所得反而更低。",
+    a: "一方無收入或收入極低（薪資 < 約15萬/年）時，「合併申報」通常最省。因為合併後可以使用配偶的免稅額（9.7萬）和標準扣除額（合併26.2萬 vs 單身13.1萬），扣除額合計更多，應稅所得反而更低。",
   },
   {
     q: "「薪資所得分開計算」和「各類所得分開計算」有什麼差別？",
@@ -174,7 +174,7 @@ export default function JointFilingPage() {
                 <div>
                   <p className="font-semibold text-gray-800">配偶無收入或薪資 &lt; 15萬/年</p>
                   <p className="mt-0.5 text-sm text-gray-600">
-                    → <span className="font-bold text-indigo-700">合併申報</span>最省。配偶的免稅額9.2萬＋合併標準扣除額26.2萬，扣完稅更低。
+                    → <span className="font-bold text-indigo-700">合併申報</span>最省。配偶的免稅額9.7萬＋合併標準扣除額26.2萬，扣完稅更低。
                   </p>
                 </div>
               </div>
@@ -211,7 +211,7 @@ export default function JointFilingPage() {
                 </div>
                 <h3 className="mb-2 font-bold text-gray-900">合併申報</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">
-                  夫妻所有所得合計，扣除免稅額（92,000 × 2）、標準扣除額（262,000）及各人特別扣除額後，一起計算稅額。
+                  夫妻所有所得合計，扣除免稅額（97,000 × 2）、標準扣除額（262,000）及各人特別扣除額後，一起計算稅額。
                 </p>
                 <div className="mt-3 rounded-lg bg-green-50 p-2 text-xs text-green-700 font-medium">
                   適合：單薪家庭、配偶無收入
@@ -251,7 +251,7 @@ export default function JointFilingPage() {
             </h2>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
-                { label: "免稅額（每人）", value: "92,000", note: "合併×2" },
+                { label: "免稅額（每人）", value: "97,000", note: "合併×2" },
                 { label: "標準扣除額", value: "131,000", note: "單身｜合併262,000" },
                 { label: "薪資特別扣除額", value: "218,000", note: "每位有薪資者各可扣" },
                 { label: "基本生活費", value: "210,000", note: "每人，不足免稅額可補差額" },
@@ -321,23 +321,23 @@ export default function JointFilingPage() {
                   <p className="text-xs font-bold text-red-700 mb-2">合併申報</p>
                   <div className="space-y-1 text-xs text-gray-600">
                     <p>所得合計：250萬</p>
-                    <p>扣除項：184,000＋262,000＋436,000＝882,000</p>
-                    <p>應稅所得：<strong>1,618,000</strong></p>
-                    <p>稅額：28,000＋84,000＋71,600</p>
-                    <p className="text-base font-bold text-red-700 mt-2">= 183,600 元</p>
+                    <p>扣除項：194,000＋262,000＋436,000＝892,000</p>
+                    <p>應稅所得：<strong>1,608,000</strong></p>
+                    <p>稅額：28,000＋84,000＋69,600</p>
+                    <p className="text-base font-bold text-red-700 mt-2">= 181,600 元</p>
                   </div>
                 </div>
                 <div className="rounded-xl bg-green-50 p-4">
                   <p className="text-xs font-bold text-green-700 mb-2">各類所得分開計算</p>
                   <div className="space-y-1 text-xs text-gray-600">
-                    <p>小明：淨額1,059,000 → 稅87,880</p>
-                    <p>小花：淨額559,000 → 稅27,950</p>
-                    <p className="text-base font-bold text-green-700 mt-2">= 115,830 元</p>
+                    <p>小明：淨額1,054,000 → 稅87,280</p>
+                    <p>小花：淨額554,000 → 稅27,700</p>
+                    <p className="text-base font-bold text-green-700 mt-2">= 114,980 元</p>
                   </div>
                 </div>
               </div>
               <div className="mt-3 rounded-xl bg-indigo-600 px-4 py-3 text-center text-white">
-                <p className="text-sm font-bold">分開計算省 <span className="text-xl">67,770 元</span> ✓</p>
+                <p className="text-sm font-bold">分開計算省 <span className="text-xl">66,620 元</span> ✓</p>
               </div>
             </div>
 
@@ -356,24 +356,24 @@ export default function JointFilingPage() {
                 <div className="rounded-xl bg-green-50 p-4">
                   <p className="text-xs font-bold text-green-700 mb-2">合併申報</p>
                   <div className="space-y-1 text-xs text-gray-600">
-                    <p>扣除項：184,000＋262,000＋218,000＝664,000</p>
-                    <p>應稅所得：<strong>1,336,000</strong></p>
-                    <p>稅額：28,000＋84,000＋15,200</p>
-                    <p className="text-base font-bold text-green-700 mt-2">= 127,200 元</p>
+                    <p>扣除項：194,000＋262,000＋218,000＝674,000</p>
+                    <p>應稅所得：<strong>1,326,000</strong></p>
+                    <p>稅額：28,000＋84,000＋13,200</p>
+                    <p className="text-base font-bold text-green-700 mt-2">= 125,200 元</p>
                   </div>
                 </div>
                 <div className="rounded-xl bg-red-50 p-4">
                   <p className="text-xs font-bold text-red-700 mb-2">各類所得分開計算</p>
                   <div className="space-y-1 text-xs text-gray-600">
-                    <p>小明單獨：免稅92,000＋標準131,000＋薪資218,000</p>
-                    <p>應稅所得：<strong>1,559,000</strong></p>
-                    <p>稅額：28,000＋84,000＋59,800</p>
-                    <p className="text-base font-bold text-red-700 mt-2">= 171,800 元</p>
+                    <p>小明單獨：免稅97,000＋標準131,000＋薪資218,000</p>
+                    <p>應稅所得：<strong>1,554,000</strong></p>
+                    <p>稅額：28,000＋84,000＋58,800</p>
+                    <p className="text-base font-bold text-red-700 mt-2">= 170,800 元</p>
                   </div>
                 </div>
               </div>
               <div className="mt-3 rounded-xl bg-amber-600 px-4 py-3 text-center text-white">
-                <p className="text-sm font-bold">合併申報省 <span className="text-xl">44,600 元</span> ✓</p>
+                <p className="text-sm font-bold">合併申報省 <span className="text-xl">45,600 元</span> ✓</p>
               </div>
             </div>
 
@@ -392,22 +392,22 @@ export default function JointFilingPage() {
                 <div className="rounded-xl bg-red-50 p-4">
                   <p className="text-xs font-bold text-red-700 mb-2">合併申報</p>
                   <div className="space-y-1 text-xs text-gray-600">
-                    <p>合計360萬，扣除882,000，淨額2,718,000</p>
-                    <p>稅額：28,000＋84,000＋252,000＋59,400</p>
-                    <p className="text-base font-bold text-red-700 mt-2">= 423,400 元</p>
+                    <p>合計360萬，扣除892,000，淨額2,708,000</p>
+                    <p>稅額：28,000＋84,000＋252,000＋56,400</p>
+                    <p className="text-base font-bold text-red-700 mt-2">= 420,400 元</p>
                   </div>
                 </div>
                 <div className="rounded-xl bg-green-50 p-4">
                   <p className="text-xs font-bold text-green-700 mb-2">各類所得分開計算</p>
                   <div className="space-y-1 text-xs text-gray-600">
-                    <p>小明：淨額2,559,000 → 稅375,700</p>
-                    <p>小花：淨額159,000 → 稅7,950</p>
-                    <p className="text-base font-bold text-green-700 mt-2">= 383,650 元</p>
+                    <p>小明：淨額2,554,000 → 稅374,200</p>
+                    <p>小花：淨額154,000 → 稅7,700</p>
+                    <p className="text-base font-bold text-green-700 mt-2">= 381,900 元</p>
                   </div>
                 </div>
               </div>
               <div className="mt-3 rounded-xl bg-purple-600 px-4 py-3 text-center text-white">
-                <p className="text-sm font-bold">分開計算省 <span className="text-xl">39,750 元</span> ✓</p>
+                <p className="text-sm font-bold">分開計算省 <span className="text-xl">38,500 元</span> ✓</p>
               </div>
             </div>
           </div>
