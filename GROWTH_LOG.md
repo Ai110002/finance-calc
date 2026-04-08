@@ -1,5 +1,60 @@
 # Growth Log
 
+## 2026-04-08（第四十三次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：WebSearch 確認「報稅計算器 2026」「報稅教學 2026」「股票稅 2026」三個關鍵字 twtaxcalc.com **均未出現**；官方稅務入口、money101、rich01、stockfeel 佔主導；競爭者全是靜態文章，互動計算器仍是空缺
+- **搜尋結論**：域名 authority 尚低，需持續導流累積外部連結；PTT/Dcard 論壇文是最快速的短期流量手段
+
+### 今天做了什麼
+
+#### 1. 補寫主頁面論壇文（最高優先級缺口）
+
+發現 `tax-calculator`（全站最重要頁面）和 `mortgage` 從來沒有自己的論壇文。距離報稅季 5/1 只剩 3 週，窗口正在關閉。
+
+**新增論壇文 × 2**：
+
+| 文件 | 對應頁面 | 目標板 | 核心鉤子 |
+|---|---|---|---|
+| `2026-04-08-tax-calculator-ptt.md` | /tax-calculator | PTT Salary、Dcard 理財版 | 「同樣年薪80萬，稅差8萬」＋114年度更新數字 |
+| `2026-04-08-mortgage-ptt.md` | /mortgage | PTT home-sale、Dcard 房屋版 | 「新青安40年 vs 一般30年，月付差 NT$12,390」 |
+
+論壇文總計：**12 篇**
+
+**新增 Threads 草稿 × 1**：
+
+| 文件 | 對應頁面 | 文案數 |
+|---|---|---|
+| `2026-04-08-tax-calculator.md` | /tax-calculator | 5個版本（A朋友語氣/B數字/C夫妻/D自雇/E最短） |
+
+Threads 草稿總計：**41 篇**
+
+**營收邏輯**：
+- `tax-calculator` 是全站核心，流量進來後直接面對 AdSense 廣告和 TaxAffiliateCTA，轉換率最高的落地頁卻沒有論壇文，是最大的流量獲取缺口
+- `mortgage` 的新青安話題在 PTT home-sale / Dcard 房屋版常態熱門，MortgageAffiliateCTA 是房貸比較聯盟，發文可帶來精準流量
+
+### 預期營收影響
+- **tax-calculator 論壇文**（PTT Salary + Dcard 理財）：每篇發出後預估 500–3000 次閱讀，帶入 50–300 次真實訪客；此頁面有 AdSense + TaxAffiliateCTA，每100訪客預估 NT$30–100 收益
+- **mortgage 論壇文**（PTT home-sale）：新青安話題具高分享性，預估 1000–5000 閱讀；MortgageAffiliateCTA 接房貸比較，轉換價值高
+- **Threads tax-calculator**：補齊最重要頁面的推廣素材，文案 B（數字鉤子）轉傳率最高
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 12 頁等廣告，每天延誤 = 每天少收
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — TaxAffiliateCTA + MortgageAffiliateCTA 等真實連結
+3. **[立即] Ian 發論壇文（報稅季窗口 3 週）**：
+   - `public/forum-posts/2026-04-08-tax-calculator-ptt.md` → PTT Salary板（最高潛力，主頁面）
+   - `public/forum-posts/2026-04-08-mortgage-ptt.md` → PTT home-sale板（新青安話題熱）
+   - `public/forum-posts/2026-04-08-joint-filing-ptt.md` → PTT Salary板（「雙薪省6萬」分享動機強）
+   - `public/forum-posts/2026-04-08-stock-tax-2026-ptt.md` → PTT Stock板
+4. **[立即] Ian 發 Threads 文**：
+   - `public/threads-drafts/2026-04-08-tax-calculator.md` 文案 B（數字鉤子，最短最強）
+   - `public/threads-drafts/2026-04-08-legal-tax-savings-2026.md` 文案 A
+5. **[下次 agent] 寫 `salary-calculator` 和 `bonus-calculator` 論壇文** — 這兩個頁面也是高搜量但沒有論壇文
+
+---
+
 ## 2026-04-08（第四十二次）
 
 ### 管道狀態檢查
