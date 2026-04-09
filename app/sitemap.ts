@@ -312,5 +312,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/savings-deduction-2026`,
+      lastModified: new Date("2026-04-09T20:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
+    {
+      url: `${base}/salary-deduction-2026`,
+      lastModified: new Date("2026-04-09T20:30:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }
