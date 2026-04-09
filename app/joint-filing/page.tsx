@@ -69,6 +69,7 @@ const NAV_LINKS = [
   { href: "/foreign-income-tax", label: "海外所得" },
   { href: "/tax-refund", label: "退稅試算" },
   { href: "/tax-filing-steps", label: "報稅流程" },
+  { href: "/etax-guide-2026", label: "eTax教學" },
   { href: "/tax-refund-timeline", label: "退稅時程" },
   { href: "/day-trading-tax", label: "當沖稅費" },
   { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
