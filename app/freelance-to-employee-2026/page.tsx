@@ -368,8 +368,6 @@ export default function FreelanceToEmployee2026Page() {
             </Link>
           </div>
 
-          <AdUnit className="mb-8" />
-
           {/* Sections */}
           <div className="space-y-6">
             {SECTIONS.map((section) => {
@@ -397,10 +395,18 @@ export default function FreelanceToEmployee2026Page() {
             })}
           </div>
 
-          <AdUnit className="my-8" />
+          {/* 廣告 1 */}
+          <div className="mt-8">
+            <AdUnit />
+          </div>
+
+          {/* 廣告 2 */}
+          <div className="mt-6">
+            <AdUnit />
+          </div>
 
           {/* Affiliate CTA */}
-          <div className="my-8">
+          <div className="mt-6">
             <TaxAffiliateCTA />
           </div>
 
@@ -418,24 +424,25 @@ export default function FreelanceToEmployee2026Page() {
           </div>
 
           {/* Related tools */}
-          <div className="mb-8">
+          <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-xl font-bold text-gray-900">相關工具</h2>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 { href: "/tax-calculator", label: "報稅試算", desc: "輸入所得直接算稅額" },
                 { href: "/freelancer-tax-guide", label: "自由工作者報稅指南", desc: "接案報稅完整說明" },
                 { href: "/salary-vs-freelancer", label: "薪資vs接案試算", desc: "兩種收入的淨收益比較" },
                 { href: "/supplement-premium", label: "二代健保試算", desc: "補充保費精確計算" },
-                { href: "/deduction-compare", label: "列舉vs標準扣除額", desc: "哪種扣除額更省稅" },
                 { href: "/income-tax-guide-2026", label: "報稅完整攻略", desc: "114年度報稅全流程" },
+                { href: "/deduction-compare", label: "列舉vs標準扣除額", desc: "哪種扣除額更省稅" },
+                { href: "/side-income-tax", label: "副業所得申報", desc: "副業收入怎麼報稅" },
               ].map((tool) => (
                 <Link
                   key={tool.href}
                   href={tool.href}
-                  className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:border-green-300 hover:shadow-md"
+                  className="flex flex-col rounded-xl border border-gray-200 p-4 transition hover:border-green-400 hover:bg-green-50"
                 >
                   <p className="font-semibold text-gray-900">{tool.label}</p>
-                  <p className="mt-0.5 text-xs text-gray-500">{tool.desc}</p>
+                  <p className="mt-1 text-xs text-gray-500">{tool.desc}</p>
                 </Link>
               ))}
             </div>
