@@ -324,5 +324,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/disability-deduction-2026`,
+      lastModified: new Date("2026-04-09T22:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
+    {
+      url: `${base}/ltc-deduction-2026`,
+      lastModified: new Date("2026-04-09T22:30:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }
