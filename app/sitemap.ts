@@ -306,5 +306,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/donation-deduction-2026`,
+      lastModified: new Date("2026-04-09T18:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }
