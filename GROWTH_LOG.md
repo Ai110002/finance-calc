@@ -1,5 +1,82 @@
 # Growth Log
 
+## 2026-04-09（第五十七次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：網路無法存取；5月1日報稅開放前 ≈ 22 天（黃金窗口）
+- **前次備注確認**：session 56 已完成 `/job-change-tax-2026` 頁面建立 + Threads 草稿 × 3。本次完成 session 56 列出的下一步：`/freelance-to-employee-2026` 新頁面 + 兩篇論壇文。
+
+### 今天做了什麼
+
+#### 1. 新頁面：`/freelance-to-employee-2026`（接案轉正職者報稅完整攻略）
+
+**為什麼做這個**：
+全站無任何頁面覆蓋「接案轉正職報稅」「執行業務所得轉薪資所得」等關鍵字族群。
+2025年接案後轉正職者在2026年5月是高意圖搜尋族群（設計師、工程師、顧問等）。
+此族群報稅眉角較多（兩種所得、費用率選擇），需要具體指引，轉換率高。
+
+**頁面內容**（5個章節）：
+| 章節 | 主題 | 核心內容 |
+|---|---|---|
+| 章節1 | 兩種所得要分開申報 | 執行業務所得9A + 薪資所得50，合計計算稅額 |
+| 章節2 | 費用率vs薪資扣除額 | 設計/程式45%、顧問30%，比薪資扣除額更有利 |
+| 章節3 | 二代健保補充保費轉換 | 接案代扣2.11% vs 正職超出薪資部分 |
+| 章節4 | 勞退提撥差異 | 接案無雇主提撥，正職雇主提撥6% |
+| 章節5 | 接案轉正職報稅清單 | 5步驟備齊資料，避免漏報 |
+- FAQ JSON-LD（5題）+ Article schema
+- AdUnit × 2 + TaxAffiliateCTA × 1
+- 6個相關工具內連（/tax-calculator、/freelancer-tax-guide、/salary-vs-freelancer 等）
+- 橘色警示欄：「接案收入沒有申報，財政部有付款方資料，比對後補稅＋罰款」
+- 綠色 CTA：立即試算報稅金額
+
+**SEO 關鍵字覆蓋（12個）**：
+接案轉正職報稅、自由工作者轉正職報稅、執行業務所得轉薪資所得、接案轉受雇報稅、114年接案轉正職、兩種所得申報、自由接案報稅、接案和正職混合申報、執行業務所得費用率、接案收入薪資所得、自由工作者報稅2026、接案費用率申報
+
+#### 2. Sitemap 更新
+- 新增 `/freelance-to-employee-2026`（priority: 1.0，changeFrequency: yearly，lastModified: 2026-04-09T14:00:00Z）
+
+#### 3. 論壇文 × 2
+
+**`public/forum-posts/2026-04-09-job-change-tax-ptt.md`**
+- 標題：「換工作後報稅5大陷阱，我差點漏報被補稅」
+- 覆蓋：多份扣繳憑單、薪資扣除額不按月算、資遣費免稅計算、失業給付免稅
+- 帶連結：twtaxcalc.com/tax-calculator + twtaxcalc.com/job-change-tax-2026
+
+**`public/forum-posts/2026-04-09-freelance-to-employee-ptt.md`**
+- 標題：「從接案轉正職，第一年報稅差點算錯（兩種所得怎麼申報）」
+- 覆蓋：執行業務所得費用率、薪資扣除額、兩種收入合計稅率跳升
+- 帶連結：twtaxcalc.com/tax-calculator + twtaxcalc.com/freelance-to-employee-2026
+
+### 預期營收影響
+- **新頁面 /freelance-to-employee-2026**：
+  - 「接案轉正職報稅」是全站空缺關鍵字，目標族群（設計師/工程師/顧問接案族）搜尋意圖高
+  - FAQ JSON-LD → 富文本搜尋結果 → CTR 提升 20~40%
+  - 頁面含 /tax-calculator 和 /salary-vs-freelancer 強相關內連，用戶轉換率高
+  - 保守估計5月帶入額外 200~800 訪客（高意圖）
+- **論壇文 2篇**：
+  - 換工作補稅恐懼 + 接案費用率省稅 = 高分享率主題
+  - 預估觸及 1,000~3,000 / 篇，帶入 100~300 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 廣告收入從0到有的關鍵
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — CTA 等真實連結
+3. **[立即] Ian 發論壇文**：
+   - 4/20 PTT/Dcard：換工作報稅陷阱（job-change-tax-ptt.md）
+   - 4/20 PTT/Dcard：接案轉正職報稅（freelance-to-employee-ptt.md）
+4. **[立即] Ian 發 Threads 文**（按 session 56 排程）：
+   - 4/20 換工作族 A（補稅陷阱）
+   - 4/22 換工作族 B（資遣費省稅）
+   - 4/25 換工作族 C（失業給付免稅）
+5. **[下次 agent]**：
+   - 建 Threads 草稿覆蓋 `/freelance-to-employee-2026`（接案轉正職費用率省稅主題）
+   - 5月1日後：建「報稅常見問題集 FAQ」長文（高長尾流量）
+   - 若 Ian 拿到 AdSense slot：確認廣告在所有頁面有顯示
+   - 若 Ian 拿到 Money101：替換全站 `#money101-affiliate` placeholder
+
+---
+
 ## 2026-04-09（第五十六次）
 
 ### 管道狀態檢查
