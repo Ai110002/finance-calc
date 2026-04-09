@@ -1,5 +1,79 @@
 # Growth Log
 
+## 2026-04-09（第五十四次）
+
+### 管道狀態檢查
+- **AdSense**：`NEXT_PUBLIC_ADSENSE_SLOT` 仍未設定 → **[阻斷] Ian 需要在 Vercel 後台設定**
+- **聯盟行銷**：Money101 links 仍是 placeholder → **[阻斷] Ian 需申請聯盟帳號**
+- **流量**：網路無法存取；5月1日報稅開放前 ≈ 22 天（黃金窗口）
+- **前次備注確認**：session 53 建議「eTax 手把手教學頁面（搜尋量高，現在建4月底能索引）」→ **本次執行：新建 /etax-guide-2026**
+
+### 今天做了什麼
+
+#### 1. 新頁面：`/etax-guide-2026`（eTax 電子報稅完整教學）
+
+**為什麼做這個**：
+「eTax報稅」「電子報稅教學」「網路報稅2026」是5月報稅季的高搜尋量關鍵字。
+現在建頁面，Google 有 22 天索引，剛好能趕上5月1日流量高峰。
+
+**頁面內容**：
+- H1：eTax 網路報稅完整手把手教學
+- 三種申報方式比較（eTax Portal / 手機APP / 紙本）
+- 電腦版 eTax 申報 7 步驟（含「健保卡免讀卡機登入」重點說明）
+- 手機 APP 申報說明
+- 報稅前必備清單
+- 常見 eTax 問題（4題）
+- FAQPage JSON-LD + Article JSON-LD schema
+- AdUnit 廣告佔位 × 3
+- TaxAffiliateCTA 聯盟 CTA
+- 內部連結：/tax-calculator、/joint-filing、/tax-checklist-2026
+
+**SEO 覆蓋關鍵字**：
+eTax報稅、電子報稅、網路報稅2026、eTax教學、手機報稅、健保卡報稅、
+eTax Portal、線上報稅教學、報稅APP、電腦報稅教學（共14個）
+
+#### 2. Sitemap 更新
+- `lastDeploy` 更新至 `2026-04-09T02:00:00Z`
+- 新增 `/etax-guide-2026`（priority: 1.0，changeFrequency: yearly）
+
+#### 3. 推廣內容
+**Threads 草稿**（`public/threads-drafts/2026-04-09-etax-guide.md`，3篇）：
+
+| 草稿 | 核心鉤子 | 建議發布日 |
+|---|---|---|
+| A（eTax 教學版）| 健保卡+手機就能報稅，不需讀卡機 | 4/9-4/20 |
+| B（常見問題版）| 四種登入比較，#4最推薦 | 4/15-4/30 |
+| C（5/1當天版）| 今天開始可以報稅了 | **5/1 一早發** |
+
+**PTT/Dcard 論壇文**（`public/forum-posts/2026-04-09-etax-guide-ptt.md`）：
+完整教學文，附登入方式比較表格、7步驟、FAQ，適合直接發 PTT Tax板
+
+### 預期營收影響
+- **新頁面 /etax-guide-2026**：
+  - 5月報稅季「eTax報稅教學」搜尋量大幅提升（每年5月是全年高峰）
+  - 頁面建好22天後開放申報，Google爬蟲索引後能出現在搜尋結果
+  - 保守估計5月帶入 500~2,000 訪客（報稅教學高意圖流量）
+  - 每頁 AdUnit × 3 → 若帶入1,000訪客，廣告收入估 $50~$200
+  - TaxAffiliateCTA Money101 → 估 5~20 次點擊
+- **5/1 當天 Threads 文**：
+  - 報稅開放日是全年搜尋高峰，當天Threads文觸及有機會放大
+  - 估觸及 2,000~10,000，帶入 200~1,000 訪客
+
+### 下次要做的事（優先順序）
+1. **[阻斷] Ian 設定 Vercel env `NEXT_PUBLIC_ADSENSE_SLOT`** — 廣告收入從0到有的關鍵
+2. **[阻斷] Ian 申請 Money101 聯盟帳號** — CTA 等真實連結才能計算轉換
+3. **[立即] Ian 今天發 Threads 文**：
+   - 本次新增 A（4/9起）：「健保卡+手機就能報稅，不需讀卡機」→ 適合今天就發
+   - session 52 的 3 篇早鳥（A上班族 4/9, B接案 4/10, C夫妻 4/11）→ **今天就發A**
+   - session 53 的 6 篇（房東族 4/12-4/14，贈與稅 4/14-4/16）
+4. **[立即] Ian 發論壇文**（etax教學文今天就能發 PTT Tax板）
+5. **[下次 agent]** 建議：
+   - **5/1 準備**：寫「報稅倒數懶人包」Threads 文，適合 4/25-4/30 發
+   - **JSON-LD 補強**：剩餘無 JSON-LD 的高流量頁面（dividend-tax、freelancer-tax-guide、deduction-compare等）
+   - **etax-guide-2026 加到其他頁面 nav**：更新各頁 NAV_LINKS 加入 eTax 教學入口
+
+---
+
 ## 2026-04-08（第五十三次）
 
 ### 管道狀態檢查
