@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.twtaxcalc.com";
   // Use a fixed date per deploy rather than new Date() on every request
-  const lastDeploy = new Date("2026-04-08T23:00:00Z");
+  const lastDeploy = new Date("2026-04-09T02:00:00Z");
 
   return [
     {
@@ -279,6 +279,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${base}/rental-income-tax-2026`,
       lastModified: new Date("2026-04-08T12:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
+    {
+      url: `${base}/etax-guide-2026`,
+      lastModified: new Date("2026-04-09T02:00:00Z"),
       changeFrequency: "yearly",
       priority: 1.0,
     },
