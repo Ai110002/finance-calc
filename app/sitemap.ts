@@ -342,5 +342,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/insurance-deduction-2026`,
+      lastModified: new Date("2026-04-16T12:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
+    {
+      url: `${base}/mortgage-interest-deduction-2026`,
+      lastModified: new Date("2026-04-16T12:30:00Z"),
+      changeFrequency: "yearly",
+      priority: 1.0,
+    },
   ];
 }
