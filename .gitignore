@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env*.local
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.next/
+dist/
+build/
+.env
+.env.*
+*.log
+.cache/
+.next/dev/cache/turbopack/600cd2fed/00001715.sst
