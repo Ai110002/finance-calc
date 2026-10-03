@@ -30,15 +30,24 @@
 - `next start` 後 sitemap 全部 **65 條路由 200、0 條缺 canonical、0 條 canonical 指向錯誤**
 - 5 個新頁內容量：about 6,306／privacy 10,131／contact 9,328／disclaimer 11,139／sources 10,510 CJK 字
 
-### 待辦（[阻斷] 需 Ian）
-1. **Vercel 部署**：`git push` 後正式站 15 分鐘內沒有變化 → 需要確認 Vercel 專案的 Git 連線與 production branch（本機沒有 `.vercel/project.json`，CLI 未登入，無法自行部署）。詳見下方「部署現況」。
-2. **[阻斷] 部署成功後**才能按 AdSense 後台的「申請審查」。
-3. **Google Search Console**：目前站上沒有 `google-site-verification`，建議驗證後提交 sitemap。
+### 部署：已上線並接上 Git 自動部署
+- **根因確認**：Vercel 專案 `finance-calc`（`prj_5QXqSaNA7N5fqUwLGc4iDIAzO69C`）**從來沒有連接任何 Git repository**（`vercel project inspect` 沒有 Git 區塊）。所以 4 月以來所有 `git push` 都不會觸發部署——這才是 60 頁從未上線、也是 3/29 之後就算 build 修好也不會自動上的原因。
+- **處理**：
+  1. `vercel login`（device flow）→ `vercel link --project finance-calc`
+  2. `vercel deploy --prod` → build 成功（47s），已 alias 到 `https://www.twtaxcalc.com`
+  3. `vercel git connect https://github.com/Ai110002/finance-calc.git` → **已連接**，之後 push 到 `main` 會自動部署
+- **發現一併修掉**：專案建立了 `.env.local`（`VERCEL_OIDC_TOKEN`），已確認在 `.gitignore` 內不會被提交。
+- **線上驗證（cache-busted curl）**：`sitemap.xml` 由 4 個 URL → **65 個 URL**；65 條路由**全部 200**；`/about`、`/privacy`、`/contact`、`/disclaimer`、`/sources`、`/salary-calculator`、`/mortgage` 的 canonical 全部正確且自我指向；footer 在抽樣頁面都出現。
+- 注意：Vercel CDN 會快取舊的 `sitemap.xml`，驗證時要加 `?cb=<timestamp>`，否則會看到 4 個 URL 的舊回應。
+
+### 待辦
+1. **[需 Ian] AdSense 後台按「申請審查」**——網站本體已就緒（65 頁 + 5 信任頁 + canonical + 隱私權政策）。
+2. **[需 Ian] Google Search Console**：站上仍沒有 `google-site-verification`，建議驗證後提交 `sitemap.xml`（65 條 URL），加速收錄。
+3. **`NEXT_PUBLIC_ADSENSE_SLOT` 未設定** → `AdUnit` 元件全部回傳 `null`，廣告不會顯示。審查通過後要在 Vercel 後台補這個環境變數。
 4. `/margin-ratio`（154 CJK 字）與 `/liquidation-sim`（79 CJK 字）是內容最薄的兩頁，建議補說明段落。
 
-### 部署現況（重要）
-- 正式站目前的內容**等於 `local-archive-2026-08-05` 分支的 tree**：6 條路由、4 個 sitemap URL、`package.json` 有那兩個依賴。`main` 上任何 commit 的組合都對不上（main 的 `package.json` 從來沒有那兩個依賴，所以 3/29 之後的 main 不可能 build 出這個結果）。推測是 2026-08-05 環境重整時，從舊的 checkout 部署上去覆蓋了正式站。
-- 已推 `main`（`6a7830e`）但 15 分鐘內線上沒有變化 → Vercel 專案很可能沒有連到 `Ai110002/finance-calc` 的 `main`，或 production branch 設在別的分支。
+### 部署前的歷史狀況（供日後排查）
+- 上線前的正式站內容**等於 `local-archive-2026-08-05` 分支的 tree**：6 條路由、4 個 sitemap URL、`package.json` 有那兩個依賴。`main` 上任何 commit 的組合都對不上（main 的 `package.json` 從來沒有那兩個依賴，所以 3/29 之後的 main 不可能 build 出這個結果）。推測是舊的 checkout 被部署上去覆蓋了正式站；而因為專案沒連 Git，這個舊版就再也沒有被更新過。
 
 ---
 
