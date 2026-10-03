@@ -14,10 +14,6 @@ const PRESETS = [
   { label: "新青安二段式", rate: 1.69, years: 40, grace: 5 },
   { label: "首購族", rate: 2.35, years: 30, grace: 2 },
   { label: "一般房貸", rate: 2.6, years: 30, grace: 0 },
-  { href: "/day-trading-tax", label: "當沖稅費" },
-  { href: "/ira-vs-labor-retirement", label: "勞退vs ETF" },
-  { href: "/legal-tax-savings-2026", label: "省稅10招" },
-  { href: "/rental-income-tax-2026", label: "出租報稅" },
 ];
 
 const BANK_RATES = [
@@ -182,6 +178,30 @@ export default function MortgagePage() {
           className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-blue-400 hover:text-blue-600 transition"
         >
           退稅時程
+        </Link>
+        <Link
+          href="/day-trading-tax"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition"
+        >
+          當沖稅費
+        </Link>
+        <Link
+          href="/ira-vs-labor-retirement"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition"
+        >
+          勞退vs ETF
+        </Link>
+        <Link
+          href="/legal-tax-savings-2026"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition"
+        >
+          省稅10招
+        </Link>
+        <Link
+          href="/rental-income-tax-2026"
+          className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-gray-600 hover:border-emerald-400 hover:text-emerald-600 transition"
+        >
+          出租報稅
         </Link>
       </div>
 

@@ -343,7 +343,7 @@ export default function LegalTaxSavings2026Page() {
                 <Link
                   key={l.href + (("active" in l && l.active) ? "-active" : "")}
                   href={l.href}
-                  className={}
+                  className={`shrink-0 rounded-lg px-3 py-1.5 font-medium transition ${"active" in l && l.active ? "bg-green-600 text-white" : "text-slate-600 hover:bg-slate-100"}`}
                 >
                   {l.label}
                 </Link>

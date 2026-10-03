@@ -17,7 +17,15 @@ declare global {
  *
  * Until a real slot ID is configured, ads will not render.
  */
-export function AdUnit({ className }: { className?: string }) {
+export function AdUnit({
+  className,
+  slot,
+}: {
+  className?: string;
+  /** Placement label only (e.g. "bonus-top"). Ads are configured by
+   *  NEXT_PUBLIC_ADSENSE_SLOT; this just documents where the unit sits. */
+  slot?: string;
+}) {
   const pushed = useRef(false);
   const adSlot = process.env.NEXT_PUBLIC_ADSENSE_SLOT;
 
@@ -35,7 +43,7 @@ export function AdUnit({ className }: { className?: string }) {
   if (!adSlot) return null;
 
   return (
-    <div className={className}>
+    <div className={className} data-ad-placement={slot}>
       <ins
         className="adsbygoogle"
         style={{ display: "block", textAlign: "center" }}
