@@ -40,11 +40,28 @@
 - **線上驗證（cache-busted curl）**：`sitemap.xml` 由 4 個 URL → **65 個 URL**；65 條路由**全部 200**；`/about`、`/privacy`、`/contact`、`/disclaimer`、`/sources`、`/salary-calculator`、`/mortgage` 的 canonical 全部正確且自我指向；footer 在抽樣頁面都出現。
 - 注意：Vercel CDN 會快取舊的 `sitemap.xml`，驗證時要加 `?cb=<timestamp>`，否則會看到 4 個 URL 的舊回應。
 
+### AdSense：已提交複查（2026-10-03 16:10 CST）
+- 進 AdSense 後台（pub-4227670315328051）→ 網站 → `twtaxcalc.com` → 勾選「我確定已修正問題」→ 按「**要求複查**」。
+- 送出前後狀態對照：
+
+| | 送出前 | 送出後 |
+|---|---|---|
+| 核准狀態 | 需要處理 | **正在接受審查** |
+| 狀態詳情 | 缺乏價值的內容 | — |
+| 上次更新時間 | 2026年4月6日 | **2026年10月3日 下午4:10 CST** |
+| 擁有權驗證 | ✅（本來就通過） | ✅ |
+
+- 網站頁面已改為「已要求審查」，狀態列顯示「您的網站尚待審查，還不能放送廣告」。
+- **Ads.txt 狀態仍是「找不到」**：實測 `https://twtaxcalc.com/ads.txt` 與 `https://www.twtaxcalc.com/ads.txt` 皆 200、`text/plain`、內容正確，且舊版部署的 `public/ads.txt` 本來就存在，所以不是檔案缺失。最可能是 4/6 爬蟲的舊紀錄尚未更新，或 apex → www 的 308 轉址讓爬蟲判定網域不符。若複查結果仍顯示找不到，下一步是把 `www.twtaxcalc.com` 另外加進 AdSense 網站清單，或以 apex 直接提供 ads.txt。
+
 ### 待辦
-1. **[需 Ian] AdSense 後台按「申請審查」**——網站本體已就緒（65 頁 + 5 信任頁 + canonical + 隱私權政策）。
-2. **[需 Ian] Google Search Console**：站上仍沒有 `google-site-verification`，建議驗證後提交 `sitemap.xml`（65 條 URL），加速收錄。
-3. **`NEXT_PUBLIC_ADSENSE_SLOT` 未設定** → `AdUnit` 元件全部回傳 `null`，廣告不會顯示。審查通過後要在 Vercel 後台補這個環境變數。
-4. `/margin-ratio`（154 CJK 字）與 `/liquidation-sim`（79 CJK 字）是內容最薄的兩頁，建議補說明段落。
+1. **[需 Ian] Google Search Console**：站上仍沒有 `google-site-verification`，建議驗證後提交 `sitemap.xml`（65 條 URL）。AdSense 複查期間 Google 會抓站，先讓它有索引對審查有利。
+2. **等 AdSense 複查結果**（通常數天到兩週），通過後才放送廣告。
+3. **`NEXT_PUBLIC_ADSENSE_SLOT` 未設定** → `AdUnit` 全部回傳 `null`，審查通過後要在 Vercel 後台補這個環境變數，否則不會有收入。
+4. `/margin-ratio`（154 CJK 字）與 `/liquidation-sim`（79 CJK 字）是全站最薄的兩頁，建議補說明段落。
+
+### 舊待辦（已完成）
+- ~~**[需 Ian] AdSense 後台按「申請審查」**~~ → 2026-10-03 已由 agent 送出複查。
 
 ### 部署前的歷史狀況（供日後排查）
 - 上線前的正式站內容**等於 `local-archive-2026-08-05` 分支的 tree**：6 條路由、4 個 sitemap URL、`package.json` 有那兩個依賴。`main` 上任何 commit 的組合都對不上（main 的 `package.json` 從來沒有那兩個依賴，所以 3/29 之後的 main 不可能 build 出這個結果）。推測是舊的 checkout 被部署上去覆蓋了正式站；而因為專案沒連 Git，這個舊版就再也沒有被更新過。
