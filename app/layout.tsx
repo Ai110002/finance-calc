@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.twtaxcalc.com",
   },
+  verification: {
+    google: "QIueATEYLjLAb9RQ2Z_G7JDqL23fmwihd1nRYhAkHHI",
+  },
 };
 
 export default function RootLayout({
