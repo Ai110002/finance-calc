@@ -29,6 +29,9 @@ export const metadata: Metadata = {
       "雙薪夫妻分開申報省67,770元。上班族勞退自提省23,400元。自由工作者費用率省30%~62%。找到你的族群，30秒掌握最省策略。",
     url: "https://www.twtaxcalc.com/tax-strategy-2026",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/tax-strategy-2026",
+  },
 };
 
 const NAV_LINKS = [

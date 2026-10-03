@@ -29,6 +29,9 @@ export const metadata: Metadata = {
       "副業多賺30萬，實際只多繳8,250元稅？對的，因為費用率。外送員、接案設計師、房東一次搞懂。114年度速查表 + 三種試算範例。",
     url: "https://www.twtaxcalc.com/side-income-tax",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/side-income-tax",
+  },
 };
 
 const NAV_LINKS = [

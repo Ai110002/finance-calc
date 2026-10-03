@@ -27,6 +27,9 @@ export const metadata: Metadata = {
       "114年度夫妻報稅3種方式：合併申報、薪資分開計算、各類所得分開計算。30秒判斷哪種最省，附雙薪/單薪家庭試算範例。",
     url: "https://www.twtaxcalc.com/joint-filing",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/joint-filing",
+  },
 };
 
 const NAV_LINKS = [

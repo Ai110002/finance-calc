@@ -29,6 +29,9 @@ export const metadata: Metadata = {
       "雙薪夫妻分開申報省67,770。幼兒學前每孩省24,000。接案費用率年收百萬省90,000。10招合法省稅全攻略，報稅前5分鐘確認。",
     url: "https://www.twtaxcalc.com/legal-tax-savings-2026",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/legal-tax-savings-2026",
+  },
 };
 
 const NAV_LINKS = [

@@ -24,6 +24,9 @@ export const metadata: Metadata = {
       "每年報稅季最多人犯的5個錯，每個錯可能讓你多繳幾萬元。看看你有沒有中招。",
     url: "https://www.twtaxcalc.com/tax-mistakes-2026",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/tax-mistakes-2026",
+  },
 };
 
 const NAV_LINKS = [

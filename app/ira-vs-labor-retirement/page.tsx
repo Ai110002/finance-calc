@@ -29,6 +29,9 @@ export const metadata: Metadata = {
       "稅率20%的人用打8折的錢存退休金。但30年後ETF績效是否更好？含各月薪節稅試算表、30年複利終值比較、保本機制說明。",
     url: "https://www.twtaxcalc.com/ira-vs-labor-retirement",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/ira-vs-labor-retirement",
+  },
 };
 
 const NAV_LINKS = [

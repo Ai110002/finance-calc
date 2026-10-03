@@ -29,6 +29,9 @@ export const metadata: Metadata = {
       "114年度綜合所得稅：稅率5%~40%，免稅額9.2萬，標準扣除額13.1萬。附上班族/接案族/雙薪家庭三種試算範例，5月截止前30秒算完。",
     url: "https://www.twtaxcalc.com/income-tax-guide-2026",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/income-tax-guide-2026",
+  },
 };
 
 const NAV_LINKS = [

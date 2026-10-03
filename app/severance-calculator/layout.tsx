@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     description: "輸入月薪和年資，立即計算新制或舊制資遣費，並了解退職所得免稅額度。免費免登入。",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/severance-calculator",
+  },
 };
 
 export default function SeveranceCalculatorLayout({

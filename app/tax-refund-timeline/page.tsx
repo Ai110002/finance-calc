@@ -29,6 +29,9 @@ export const metadata: Metadata = {
       "2026年退稅分3批：第1批7月上旬（5/1前申報優先）、第2批8月、第3批9月。本頁說明如何最快拿到退稅：越早申報、選直撥帳戶。",
     url: "https://www.twtaxcalc.com/tax-refund-timeline",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/tax-refund-timeline",
+  },
 };
 
 const NAV_LINKS = [

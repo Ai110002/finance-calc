@@ -27,6 +27,9 @@ export const metadata: Metadata = {
       "114年度最低稅負制（AMT）：海外所得超過100萬才需注意，基本所得額免稅額670萬，超過部分按20%計算。3步驟判斷你需不需要繳AMT。",
     url: "https://www.twtaxcalc.com/amt-calculator",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/amt-calculator",
+  },
 };
 
 const NAV_LINKS = [

@@ -29,6 +29,9 @@ export const metadata: Metadata = {
       "第一次報稅不知從何開始？6步驟圖解攻略：收扣繳憑單→確認所得→選工具→填扣除額→送出→確認退稅。114年度重要時程 + 文件清單，30分鐘完成申報。",
     url: "https://www.twtaxcalc.com/tax-filing-steps",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/tax-filing-steps",
+  },
 };
 
 const NAV_LINKS = [

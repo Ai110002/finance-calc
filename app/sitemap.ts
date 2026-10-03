@@ -366,5 +366,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 1.0,
     },
+    {
+      url: `${base}/about`,
+      lastModified: new Date("2026-10-03T00:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${base}/contact`,
+      lastModified: new Date("2026-10-03T00:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${base}/privacy`,
+      lastModified: new Date("2026-10-03T00:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+    {
+      url: `${base}/disclaimer`,
+      lastModified: new Date("2026-10-03T00:00:00Z"),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+    {
+      url: `${base}/sources`,
+      lastModified: new Date("2026-10-03T00:00:00Z"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }

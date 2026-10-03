@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 
 import { ViewCounter } from "@/components/view-counter";
+import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 
 const font = Noto_Sans_TC({
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body className="min-h-full bg-gray-50 text-gray-900">
         <div className="mx-auto min-h-screen max-w-lg">
           {children}
+          <SiteFooter />
         </div>
         <ViewCounter />
         <Analytics />

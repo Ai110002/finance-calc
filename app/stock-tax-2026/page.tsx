@@ -27,6 +27,9 @@ export const metadata: Metadata = {
       "114年度投資稅務完整指南：台股股利稅、美股海外所得、ETF配息稅、加密貨幣財產交易所得。投資人報稅前必看。",
     url: "https://www.twtaxcalc.com/stock-tax-2026",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/stock-tax-2026",
+  },
 };
 
 const NAV_LINKS = [

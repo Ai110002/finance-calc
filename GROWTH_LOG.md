@@ -1,5 +1,47 @@
 # Growth Log
 
+## 2026-10-03（第六十六次）— 修復中斷 6 個月的 production build
+
+### 管道狀態檢查
+- **AdSense**：收到退件通知「您的網站未通過審查 — 缺乏價值的內容」。追查後確認**不是內容品質問題，而是正式站根本沒有更新**。
+- **正式站實況（curl 實測）**：`/sitemap.xml` 只有 4 個 URL；sitemap 內 60 條路由有 **54 條回 404**，只有 6 條活著（`/`、`/tax-calculator`、`/mortgage`、`/overtime-calculator`、`/margin-ratio`、`/liquidation-sim`）。Google 審查的就是這個 4 頁的舊站。
+- **根因**：`main` 分支從 2026-03-29 起**無法 build**，共 6 個錯誤，Vercel 每次都失敗，production 因此卡在最後一次成功部署的舊版。這是 4 月以來 60 個頁面「做了但從未上線」的原因。
+
+### 修了什麼（6 個 build 錯誤）
+| # | 檔案 | 問題 |
+|---|---|---|
+| 1 | `package.json` | 缺 `@upstash/redis`（`app/api/views`、`app/api/subscribe` 有 import，9fae02d 加入時漏列依賴）|
+| 2 | `package.json` | 缺 `@vercel/analytics`（`app/layout.tsx` import，fbb639e 漏列依賴）|
+| 3 | `app/side-income-tax/page.tsx:319` | JSX 內未轉義的 `<`（`所得淨額<0`）→ 改 `&lt;` |
+| 4 | `app/legal-tax-savings-2026/page.tsx:346` | 空的 `className={}` → 補回與同系列頁面一致的樣式 |
+| 5 | `app/mortgage/page.tsx` | `PRESETS` 被污染：4 個房貸預設方案中混進 4 筆 `{href,label}` 導覽資料，導致型別錯誤，且「快速選擇方案」8 宮格有 4 格顯示 `undefined% · undefined年`。已分離，4 條內連補回導覽列 |
+| 6 | `components/ad-unit.tsx` | 元件未接受 `slot` prop，但 9 處頁面有傳 → 補上 optional prop |
+
+### 同時補上的 SEO / 信任缺口
+- **13 頁缺 canonical**：`amt-calculator`、`income-tax-guide-2026`、`ira-vs-labor-retirement`、`joint-filing`、`legal-tax-savings-2026`、`overtime-calculator`、`severance-calculator`、`side-income-tax`、`stock-tax-2026`、`tax-filing-steps`、`tax-mistakes-2026`、`tax-refund-timeline`、`tax-strategy-2026`。這些頁面原本會繼承 root layout 的 canonical（指向首頁），等於主動告訴 Google「我是首頁的副本」。已全部補上自我指向的 canonical。
+- **新增 5 個信任頁**（AdSense 政策與審查必要項，原本完全沒有）：`/about`、`/privacy`、`/contact`、`/disclaimer`、`/sources`，並新增 `components/site-footer.tsx` 由 `app/layout.tsx` 統一渲染，全站每頁都連得到。
+  - 隱私權政策涵蓋 Cookie、Google AdSense 與第三方廣告廠商、DoubleClick cookie、個人化廣告 opt-out、Vercel Analytics、Redis 瀏覽人次與電子報、資料保留、讀者權利。
+  - `/sources` 列出 9 個官方來源（財政部賦稅署、稅務入口網、財政部、勞動部、勞保局、健保署、內政部不動產資訊平台、全國法規資料庫、金管會）。
+  - 三頁明確聲明：個人獨立經營、**沒有**會計師／律師審閱、不宣稱證照獎項、不使用虛構作者，與政府機關無隸屬關係。
+
+### 驗證（本機，皆為 exit 0 / 200）
+- `npx tsc --noEmit` → 0 error
+- `npm run build` → exit 0（含 5 個新頁）
+- `next start` 後 sitemap 全部 **65 條路由 200、0 條缺 canonical、0 條 canonical 指向錯誤**
+- 5 個新頁內容量：about 6,306／privacy 10,131／contact 9,328／disclaimer 11,139／sources 10,510 CJK 字
+
+### 待辦（[阻斷] 需 Ian）
+1. **Vercel 部署**：`git push` 後正式站 15 分鐘內沒有變化 → 需要確認 Vercel 專案的 Git 連線與 production branch（本機沒有 `.vercel/project.json`，CLI 未登入，無法自行部署）。詳見下方「部署現況」。
+2. **[阻斷] 部署成功後**才能按 AdSense 後台的「申請審查」。
+3. **Google Search Console**：目前站上沒有 `google-site-verification`，建議驗證後提交 sitemap。
+4. `/margin-ratio`（154 CJK 字）與 `/liquidation-sim`（79 CJK 字）是內容最薄的兩頁，建議補說明段落。
+
+### 部署現況（重要）
+- 正式站目前的內容**等於 `local-archive-2026-08-05` 分支的 tree**：6 條路由、4 個 sitemap URL、`package.json` 有那兩個依賴。`main` 上任何 commit 的組合都對不上（main 的 `package.json` 從來沒有那兩個依賴，所以 3/29 之後的 main 不可能 build 出這個結果）。推測是 2026-08-05 環境重整時，從舊的 checkout 部署上去覆蓋了正式站。
+- 已推 `main`（`6a7830e`）但 15 分鐘內線上沒有變化 → Vercel 專案很可能沒有連到 `Ai110002/finance-calc` 的 `main`，或 production branch 設在別的分支。
+
+---
+
 ## 2026-04-17（第六十五次）
 
 ### 管道狀態檢查

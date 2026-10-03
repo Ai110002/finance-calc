@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     description: "依勞基法計算加班費。輸入月薪和加班時數，立即得出應領加班費，並了解如何一起申報所得稅。",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.twtaxcalc.com/overtime-calculator",
+  },
 };
 
 export default function OvertimeCalculatorLayout({
