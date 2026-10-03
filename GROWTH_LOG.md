@@ -54,14 +54,31 @@
 - 網站頁面已改為「已要求審查」，狀態列顯示「您的網站尚待審查，還不能放送廣告」。
 - **Ads.txt 狀態仍是「找不到」**：實測 `https://twtaxcalc.com/ads.txt` 與 `https://www.twtaxcalc.com/ads.txt` 皆 200、`text/plain`、內容正確，且舊版部署的 `public/ads.txt` 本來就存在，所以不是檔案缺失。最可能是 4/6 爬蟲的舊紀錄尚未更新，或 apex → www 的 308 轉址讓爬蟲判定網域不符。若複查結果仍顯示找不到，下一步是把 `www.twtaxcalc.com` 另外加進 AdSense 網站清單，或以 apex 直接提供 ads.txt。
 
-### 待辦
-1. **[需 Ian] Google Search Console**：站上仍沒有 `google-site-verification`，建議驗證後提交 `sitemap.xml`（65 條 URL）。AdSense 複查期間 Google 會抓站，先讓它有索引對審查有利。
-2. **等 AdSense 複查結果**（通常數天到兩週），通過後才放送廣告。
-3. **`NEXT_PUBLIC_ADSENSE_SLOT` 未設定** → `AdUnit` 全部回傳 `null`，審查通過後要在 Vercel 後台補這個環境變數，否則不會有收入。
-4. `/margin-ratio`（154 CJK 字）與 `/liquidation-sim`（79 CJK 字）是全站最薄的兩頁，建議補說明段落。
+### 同日後續：GSC、廣告單元、最薄兩頁（2026-10-03 下午）
+1. **Google Search Console**
+   - 新增資源 `https://www.twtaxcalc.com/`（網址前置字元），以 HTML 中繼標記驗證成功（`app/layout.tsx` 的 `metadata.verification.google`，token `QIueATEYLjLAb9RQ2Z_G7JDqL23fmwihd1nRYhAkHHI`）。
+   - 已提交 `sitemap.xml`。第一次提交時狀態顯示「無法擷取」——原因是提交當下 Vercel CDN 還回舊快取；現已重送，`/sitemap.xml` 實測 200、`application/xml`、65 個 `<loc>`。
+   - 註：DNS 在 Cloudflare（`cloe/skip.ns.cloudflare.com`），沒有 API token，所以沒走 DNS TXT 驗證。
+2. **AdSense 廣告單元**
+   - 後台「廣告 → 按廣告單元 → 文章內廣告」建立 `twtaxcalc-inarticle`，**slot ID `7243582611`**；產生的程式碼與 `components/ad-unit.tsx` 完全一致（`data-ad-layout="in-article"`、`data-ad-format="fluid"`、`data-ad-client="ca-pub-4227670315328051"`）。
+   - Vercel 已設定 `NEXT_PUBLIC_ADSENSE_SLOT=7243582611`（Production + Development）並重新部署。線上實測 `/mortgage`、`/overtime-calculator`、`/tax-calculator` 都出現 `data-ad-slot="7243582611"`。
+   - 通過複查後廣告就會開始放送；`/`、`/about` 等信任頁與兩個工具頁本來就沒有 `AdUnit`。
+3. **兩個最薄頁面補齊**（`/margin-ratio`、`/liquidation-sim`）
+   - `/margin-ratio` 154 → **5,426** CJK 字；`/liquidation-sim` 79 → **4,871** CJK 字（線上實測）。
+   - 新增維持率公式、整戶 vs 個股、追繳與斷頭門檻與流程、補繳與賣股算式、融資成數與利息成本、常見誤解、逐年跌幅情境、各 5 題 FAQ 與站內內連。所有門檻數字直接由 `lib/constants.ts`（`ZONES`／`MARGIN_CALL_RATIO`／`DEFAULT_MARGIN_RATIO`／`PRESET_DROPS`）在頁面渲染。
+   - **修掉一個資料矛盾**：兩個 layout 原本的 FAQPage JSON-LD 答案在頁面上看不到，且聲稱「低於 120% 斷頭」，與 `ZONES` 的 `critical < 130` 衝突。已移除（保留 WebApplication），改由頁面輸出與可見 FAQ 一致的單一 FAQPage。
+4. **sitemap `lastModified`**：全站 65 個網址首次正式上線，日期統一為 `2026-10-03`（先前多為 2026-03/04，且部分是從未實際上線的日期）。
+
+### 待辦（全部為「等結果」或選配）
+1. **等 AdSense 複查結果**（通常數天到兩週）。通過後廣告即開始放送（slot 已設好）。
+2. **等 GSC 回報**：sitemap 狀態若仍顯示「無法擷取」，代表 Google 下次抓取前的舊狀態；`/sitemap.xml` 本身已確認正常。可另外用「網址審查 → 要求建立索引」加速首頁與重點頁。
+3. **選配**：`/margin-ratio` 與 `/liquidation-sim` 補了長文後已具備放廣告的內容量，可考慮各加一個 `<AdUnit />`。
+4. **選配**：Ads.txt 若在複查後仍顯示「找不到」，把 `www.twtaxcalc.com` 另外加進 AdSense 網站清單。
 
 ### 舊待辦（已完成）
 - ~~**[需 Ian] AdSense 後台按「申請審查」**~~ → 2026-10-03 已由 agent 送出複查。
+- ~~**[需 Ian] Google Search Console 驗證與提交 sitemap**~~ → 已由 agent 完成。
+- ~~**`NEXT_PUBLIC_ADSENSE_SLOT` 未設定**~~ → 已設為 `7243582611` 並部署。
 
 ### 部署前的歷史狀況（供日後排查）
 - 上線前的正式站內容**等於 `local-archive-2026-08-05` 分支的 tree**：6 條路由、4 個 sitemap URL、`package.json` 有那兩個依賴。`main` 上任何 commit 的組合都對不上（main 的 `package.json` 從來沒有那兩個依賴，所以 3/29 之後的 main 不可能 build 出這個結果）。推測是舊的 checkout 被部署上去覆蓋了正式站；而因為專案沒連 Git，這個舊版就再也沒有被更新過。
